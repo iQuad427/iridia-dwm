@@ -1,0 +1,49 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="dwm-simple"/>
+  <ProjectSessionItem path="dwm-simple;dwm-simple"/>
+  <ProjectSessionItem path="dwm-simple;dwm-simple;Header"/>
+  <ProjectSessionItem path="dwm-simple;dwm-simple;Internal"/>
+  <ProjectSessionItem path="dwm-simple;dwm-simple;Source"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="28" y="1276" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../include/dwm.h" selected="0" top="1241" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="199" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="dwm-simple.c" selected="1" top="173" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="dwm-simple" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="dwm1001_configuration" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/Users/quentin/Desktop/uwb_project/iridia-uwb/doc/DWM1001_DWM1001-DEV_MDEK1001_Sources_and_Docs_v11/DWM1001/Source_Code/DWM1001_on_board_package/DWM1001_on_board_package_R2.0/dwm/lib" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
