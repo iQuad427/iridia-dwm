@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'ss_twr_init' 
+ * Project: 'initiator' 
  * Target:  'nrf52832_xxaa' 
  */
 
