@@ -444,23 +444,24 @@ omponents\libraries\experimental_section_vars -I..\..\..\..\..\..\..\components
 ..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\..\components\
 libraries\util -I..\..\..\..\..\..\..\components\toolchain -I..\..\..\.. -I..\.
 .\..\..\..\..\..\external\fprintf -I..\..\..\..\..\..\..\external\segger_rtt -I
-..\..\config -I.\RTE\_nrf52832_xxaa -IQ:\Users\quent\AppData\Local\Arm\Packs\AR
-M\CMSIS\4.5.0\CMSIS\Include -IQ:\Users\quent\AppData\Local\Arm\Packs\NordicSemi
-conductor\nRF_DeviceFamilyPack\8.15.4\Device\Include --predefine="__EVAL SETA 1
-" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 537" --pr
-edefine="_RTE_ SETA 1" --predefine="NRF52 SETA 1" --predefine="_RTE_ SETA 1" --
-predefine="BOARD_PCA10040 SETA 1" --predefine="CONFIG_GPIO_AS_PINRESET SETA 1" 
---predefine="FLOAT_ABI_HARD SETA 1" --predefine="NRF52 SETA 1" --predefine="NRF
-52832_XXAA SETA 1" --predefine="NRF52_PAN_74 SETA 1" --predefine="SWI_DISABLE0 
-SETA 1" --cpreproc_opts=-DBOARD_PCA10040,-DCONFIG_GPIO_AS_PINRESET,-DFLOAT_ABI_
+..\..\config -I.\RTE\Device\nRF52832_xxAA -I.\RTE\_nrf52832_xxaa -IQ:\Users\que
+nt\AppData\Local\Arm\Packs\ARM\CMSIS\4.5.0\CMSIS\Include -IQ:\Users\quent\AppDa
+ta\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.15.4\Device\Inclu
+de --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__U
+VISION_VERSION SETA 537" --predefine="_RTE_ SETA 1" --predefine="NRF52 SETA 1" 
+--predefine="_RTE_ SETA 1" --predefine="BOARD_PCA10040 SETA 1" --predefine="CON
+FIG_GPIO_AS_PINRESET SETA 1" --predefine="FLOAT_ABI_HARD SETA 1" --predefine="N
+RF52 SETA 1" --predefine="NRF52832_XXAA SETA 1" --predefine="NRF52_PAN_74 SETA 
+1" --predefine="SWI_DISABLE0 SETA 1" --cpreproc_opts=-DBOARD_PCA10040,-DCONFIG_
 
 
 
 ARM Macro Assembler    Page 8 
 
 
-HARD,-DNRF52,-DNRF52832_XXAA,-DNRF52_PAN_74,-DSWI_DISABLE0 --list=.\_build\arm_
-startup_nrf52.lst RTE/Device/nRF52832_xxAA/arm_startup_nrf52.s
+GPIO_AS_PINRESET,-DFLOAT_ABI_HARD,-DNRF52,-DNRF52832_XXAA,-DNRF52_PAN_74,-DSWI_
+DISABLE0 --list=.\_build\arm_startup_nrf52.lst RTE/Device/nRF52832_xxAA/arm_sta
+rtup_nrf52.s
 
 
 
