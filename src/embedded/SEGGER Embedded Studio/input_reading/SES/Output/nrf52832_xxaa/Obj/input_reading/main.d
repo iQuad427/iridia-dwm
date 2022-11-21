@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/input_reading/main.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\src\embedded\programs\input_reading\main.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\src\embedded\SEGGER\ Embedded\ Studio\input_reading\main.c \
  ../config/sdk_config.h \
  ../../../../../lib/nRF5_SDK_14.2.0/external/freertos/source/include/FreeRTOS.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stddef.h \
@@ -74,5 +74,4 @@ Output/nrf52832_xxaa/Obj/input_reading/main.o: \
  ../../../../../lib/deca_driver/deca_types.h \
  ../../../../../lib/deca_driver/deca_regs.h \
  ../../../../../lib/deca_driver/deca_version.h \
- ../../../../../lib/UART/uart.h \
- Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/signal.h
+ ../../../../../lib/UART/uart.h

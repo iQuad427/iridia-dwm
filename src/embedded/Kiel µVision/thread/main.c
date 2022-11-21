@@ -47,6 +47,7 @@ int main(void)
   while (1)
   {
     printf("Main Thread\r\n"); 
+		osDelay(100);
   }
 }
 

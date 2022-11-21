@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/input_reading/nrf_fprintf.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\external\fprintf\nrf_fprintf.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\external\fprintf\nrf_fprintf.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdint.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdbool.h \
@@ -31,5 +31,5 @@ Output/nrf52832_xxaa/Obj/input_reading/nrf_fprintf.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdio.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error_weak.h \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\external\fprintf\nrf_fprintf_format.h \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\external\fprintf\nrf_fprintf.h
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\external\fprintf\nrf_fprintf_format.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\external\fprintf\nrf_fprintf.h

@@ -1,6 +1,6 @@
 Output/nrf52832_xxaa/Obj/input_reading/bsp.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\libraries\bsp\bsp.c \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\libraries\bsp\bsp.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\libraries\bsp\bsp.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\libraries\bsp\bsp.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdint.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdbool.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/boards/boards.h \
@@ -32,4 +32,4 @@ Output/nrf52832_xxaa/Obj/input_reading/bsp.o: \
  ../../../../../include/boards/dw1001_dev.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stddef.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/nordic_common.h \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\libraries\bsp\bsp_config.h
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\libraries\bsp\bsp_config.h

@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/input_reading/nrf_drv_uart.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\drivers_nrf\uart\nrf_drv_uart.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\drivers_nrf\uart\nrf_drv_uart.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdint.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdbool.h \
@@ -26,7 +26,7 @@ Output/nrf52832_xxaa/Obj/input_reading/nrf_drv_uart.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52_name_change.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/compiler_abstraction.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_macros.h \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\drivers_nrf\uart\nrf_drv_uart.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\drivers_nrf\uart\nrf_drv_uart.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_peripherals.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52832_peripherals.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_uart.h \

@@ -1,6 +1,6 @@
 Output/nrf52832_xxaa/Obj/input_reading/boards.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\boards\boards.c \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\boards\boards.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\boards\boards.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\boards\boards.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_gpio.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52.h \

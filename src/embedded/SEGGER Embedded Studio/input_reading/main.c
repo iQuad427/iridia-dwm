@@ -35,7 +35,6 @@
 #include "deca_regs.h"
 #include "deca_device_api.h"
 #include "uart.h"
-#include <signal.h>
 	
 //-----------------dw1000----------------------------
 
@@ -78,8 +77,6 @@ void handle_isr(int signal) {
 
 int main(void)
 {
-  signal(SIGINT, handle_isr);
-
   /* Setup some LEDs for debug Green and Blue on DWM1001-DEV */
   LEDS_CONFIGURE(BSP_LED_0_MASK | BSP_LED_1_MASK | BSP_LED_2_MASK);
   LEDS_ON(BSP_LED_0_MASK | BSP_LED_1_MASK | BSP_LED_2_MASK );

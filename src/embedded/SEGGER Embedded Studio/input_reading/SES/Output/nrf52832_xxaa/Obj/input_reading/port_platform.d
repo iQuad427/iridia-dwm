@@ -1,6 +1,6 @@
 Output/nrf52832_xxaa/Obj/input_reading/port_platform.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\deca_driver\port\port_platform.c \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\deca_driver\port\port_platform.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\port\port_platform.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\port\port_platform.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdint.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/string.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/__crossworks.h \

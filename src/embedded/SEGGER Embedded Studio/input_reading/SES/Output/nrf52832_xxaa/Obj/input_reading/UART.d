@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/input_reading/UART.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\UART\UART.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\UART\UART.c \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdbool.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdint.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdio.h \
@@ -32,7 +32,7 @@ Output/nrf52832_xxaa/Obj/input_reading/UART.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_peripherals.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52832_peripherals.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stddef.h \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\UART\UART.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\UART\UART.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/bsp/bsp.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/boards/boards.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_gpio.h \

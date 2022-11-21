@@ -1,9 +1,7 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
  <Bookmarks/>
- <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
- </Breakpoints>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
  <ExecutionProfileWindow/>
  <FrameBufferWindow>
   <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
@@ -42,10 +40,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="159" useTextEdit="1" path="../main.c" left="0" selected="1" top="128" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1277" useTextEdit="1" path="../../../../../include/dwm/dwm.h" left="0" top="1249" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="111" useTextEdit="1" path="../../../../../lib/nRF5_SDK_14.2.0/components/libraries/uart/retarget.c" left="0" top="95" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="57" useTextEdit="1" openedFrom="C:/Users/quent/OneDrive/Bureau/iridia-uwb-main/iridia-uwb-main/src/embedded/programs/input_reading/main.c" path="Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.70a/include/signal.h" left="0" top="24" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="78" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="5" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1277" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../include/dwm/dwm.h" selected="0" top="1249" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="111" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../lib/nRF5_SDK_14.2.0/components/libraries/uart/retarget.c" selected="0" top="95" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="57" useTextEdit="1" openedFrom="C:/Users/quent/OneDrive/Bureau/iridia-uwb-main/iridia-uwb-main/src/embedded/programs/input_reading/main.c" useBinaryEdit="0" left="0" path="Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.70a/include/signal.h" selected="0" top="24" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="input_reading" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="input_reading" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

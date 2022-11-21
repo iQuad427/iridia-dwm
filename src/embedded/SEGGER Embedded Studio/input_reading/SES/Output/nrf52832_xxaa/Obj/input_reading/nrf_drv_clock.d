@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/input_reading/nrf_drv_clock.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\drivers_nrf\clock\nrf_drv_clock.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\drivers_nrf\clock\nrf_drv_clock.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdint.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdbool.h \
@@ -26,7 +26,7 @@ Output/nrf52832_xxaa/Obj/input_reading/nrf_drv_clock.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52_name_change.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/compiler_abstraction.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_macros.h \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\drivers_nrf\clock\nrf_drv_clock.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\drivers_nrf\clock\nrf_drv_clock.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_errors.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/nrf_assert.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error.h \

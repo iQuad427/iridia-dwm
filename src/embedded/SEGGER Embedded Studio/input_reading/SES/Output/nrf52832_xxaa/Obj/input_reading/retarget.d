@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/input_reading/retarget.o: \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\libraries\uart\retarget.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\libraries\uart\retarget.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdint.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdbool.h \
@@ -27,7 +27,7 @@ Output/nrf52832_xxaa/Obj/input_reading/retarget.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/compiler_abstraction.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_macros.h \
  Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.70a/include/stdio.h \
- C\:\Users\quent\OneDrive\Bureau\iridia-uwb-main\iridia-uwb-main\lib\nRF5_SDK_14.2.0\components\libraries\uart\app_uart.h \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\nRF5_SDK_14.2.0\components\libraries\uart\app_uart.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_util_platform.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/nrf_assert.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error.h \
