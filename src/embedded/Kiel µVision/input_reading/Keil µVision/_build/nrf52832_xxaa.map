@@ -1901,31 +1901,31 @@ Memory Map of the image
     0x00000218   0x00000218   0x00000024   Code   RO         3006    .text               arm_startup_nrf52.o
     0x0000023c   0x0000023c   0x00000024   Code   RO         3099    .text               mc_w.l(memcpya.o)
     0x00000260   0x00000260   0x00000024   Code   RO         3441    .text               mc_w.l(init.o)
-    0x00000284   0x00000284   0x000001ac   Code   RO          404    i.GPIOTE_IRQHandler  nrf_drv_gpiote.o
-    0x00000430   0x00000430   0x00000058   Code   RO         1015    i.POWER_CLOCK_IRQHandler  nrf_drv_clock.o
-    0x00000488   0x00000488   0x00000010   Code   RO          666    i.SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler  nrf_drv_spi.o
+    0x00000284   0x00000284   0x000001ac   Code   RO          407    i.GPIOTE_IRQHandler  nrf_drv_gpiote.o
+    0x00000430   0x00000430   0x00000058   Code   RO         1018    i.POWER_CLOCK_IRQHandler  nrf_drv_clock.o
+    0x00000488   0x00000488   0x00000010   Code   RO          669    i.SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler  nrf_drv_spi.o
     0x00000498   0x00000498   0x00000010   Code   RO         3013    i.SystemCoreClockUpdate  system_nrf52.o
     0x000004a8   0x000004a8   0x00000214   Code   RO         3014    i.SystemInit        system_nrf52.o
-    0x000006bc   0x000006bc   0x00000020   Code   RO          779    i.UARTE0_UART0_IRQHandler  nrf_drv_uart.o
+    0x000006bc   0x000006bc   0x00000020   Code   RO          782    i.UARTE0_UART0_IRQHandler  nrf_drv_uart.o
     0x000006dc   0x000006dc   0x00000020   Code   RO         3176    i.__0printf$2       mc_w.l(printf2.o)
     0x000006fc   0x000006fc   0x0000000e   Code   RO         3445    i.__scatterload_copy  mc_w.l(handlers.o)
     0x0000070a   0x0000070a   0x00000002   Code   RO         3446    i.__scatterload_null  mc_w.l(handlers.o)
     0x0000070c   0x0000070c   0x0000000e   Code   RO         3447    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x0000071a   0x0000071a   0x000000d6   Code   RO         3183    i._printf_core      mc_w.l(printf2.o)
-    0x000007f0   0x000007f0   0x00000030   Code   RO         1238    i.app_error_fault_handler  app_error_weak.o
-    0x00000820   0x00000820   0x00000016   Code   RO         1199    i.app_error_handler_bare  app_error.o
-    0x00000836   0x00000836   0x00000018   Code   RO         1668    i.app_fifo_get      app_fifo.o
-    0x0000084e   0x0000084e   0x00000022   Code   RO         1669    i.app_fifo_init     app_fifo.o
-    0x00000870   0x00000870   0x0000001a   Code   RO         1671    i.app_fifo_put      app_fifo.o
+    0x000007f0   0x000007f0   0x00000030   Code   RO         1241    i.app_error_fault_handler  app_error_weak.o
+    0x00000820   0x00000820   0x00000016   Code   RO         1202    i.app_error_handler_bare  app_error.o
+    0x00000836   0x00000836   0x00000018   Code   RO         1671    i.app_fifo_get      app_fifo.o
+    0x0000084e   0x0000084e   0x00000022   Code   RO         1672    i.app_fifo_init     app_fifo.o
+    0x00000870   0x00000870   0x0000001a   Code   RO         1674    i.app_fifo_put      app_fifo.o
     0x0000088a   0x0000088a   0x00000002   PAD
-    0x0000088c   0x0000088c   0x00000034   Code   RO         1742    i.app_uart_get      app_uart_fifo.o
-    0x000008c0   0x000008c0   0x000000c0   Code   RO         1743    i.app_uart_init     app_uart_fifo.o
-    0x00000980   0x00000980   0x0000003c   Code   RO         1744    i.app_uart_put      app_uart_fifo.o
-    0x000009bc   0x000009bc   0x000000f0   Code   RO          780    i.apply_config      nrf_drv_uart.o
+    0x0000088c   0x0000088c   0x00000034   Code   RO         1745    i.app_uart_get      app_uart_fifo.o
+    0x000008c0   0x000008c0   0x000000c0   Code   RO         1746    i.app_uart_init     app_uart_fifo.o
+    0x00000980   0x00000980   0x0000003c   Code   RO         1747    i.app_uart_put      app_uart_fifo.o
+    0x000009bc   0x000009bc   0x000000f0   Code   RO          783    i.apply_config      nrf_drv_uart.o
     0x00000aac   0x00000aac   0x0000003c   Code   RO         2959    i.boUART_Init       uart.o
     0x00000ae8   0x00000ae8   0x00000010   Code   RO         2960    i.boUART_getc       uart.o
-    0x00000af8   0x00000af8   0x00000010   Code   RO          407    i.channel_port_get  nrf_drv_gpiote.o
-    0x00000b08   0x00000b08   0x00000028   Code   RO         1016    i.clock_clk_started_notify  nrf_drv_clock.o
+    0x00000af8   0x00000af8   0x00000010   Code   RO          410    i.channel_port_get  nrf_drv_gpiote.o
+    0x00000b08   0x00000b08   0x00000028   Code   RO         1019    i.clock_clk_started_notify  nrf_drv_clock.o
     0x00000b30   0x00000b30   0x00000004   Code   RO         2839    i.deca_sleep        port_platform.o
     0x00000b34   0x00000b34   0x0000003c   Code   RO         3015    i.errata_108        system_nrf52.o
     0x00000b70   0x00000b70   0x0000003c   Code   RO         3016    i.errata_12         system_nrf52.o
@@ -1937,59 +1937,59 @@ Memory Map of the image
     0x00000cb8   0x00000cb8   0x0000002c   Code   RO         3022    i.errata_37         system_nrf52.o
     0x00000ce4   0x00000ce4   0x0000002c   Code   RO         3023    i.errata_57         system_nrf52.o
     0x00000d10   0x00000d10   0x0000002c   Code   RO         3024    i.errata_66         system_nrf52.o
-    0x00000d3c   0x00000d3c   0x00000014   Code   RO         1674    i.fifo_get          app_fifo.o
-    0x00000d50   0x00000d50   0x00000012   Code   RO         1675    i.fifo_put          app_fifo.o
-    0x00000d62   0x00000d62   0x00000022   Code   RO          667    i.finish_transfer   nrf_drv_spi.o
-    0x00000d84   0x00000d84   0x0000000e   Code   RO         1810    i.fputc             retarget.o
+    0x00000d3c   0x00000d3c   0x00000014   Code   RO         1677    i.fifo_get          app_fifo.o
+    0x00000d50   0x00000d50   0x00000012   Code   RO         1678    i.fifo_put          app_fifo.o
+    0x00000d62   0x00000d62   0x00000022   Code   RO          670    i.finish_transfer   nrf_drv_spi.o
+    0x00000d84   0x00000d84   0x0000000e   Code   RO         1813    i.fputc             retarget.o
     0x00000d92   0x00000d92   0x00000002   PAD
     0x00000d94   0x00000d94   0x0000001c   Code   RO            4    i.handle_function   main.o
-    0x00000db0   0x00000db0   0x0000008c   Code   RO          781    i.interrupts_enable  nrf_drv_uart.o
-    0x00000e3c   0x00000e3c   0x00000026   Code   RO          668    i.irq_handler_spi   nrf_drv_spi.o
-    0x00000e62   0x00000e62   0x0000000e   Code   RO         1019    i.item_dequeue      nrf_drv_clock.o
+    0x00000db0   0x00000db0   0x0000008c   Code   RO          784    i.interrupts_enable  nrf_drv_uart.o
+    0x00000e3c   0x00000e3c   0x00000026   Code   RO          671    i.irq_handler_spi   nrf_drv_spi.o
+    0x00000e62   0x00000e62   0x0000000e   Code   RO         1022    i.item_dequeue      nrf_drv_clock.o
     0x00000e70   0x00000e70   0x000000c8   Code   RO            5    i.main              main.o
-    0x00000f38   0x00000f38   0x00000010   Code   RO          408    i.nrf_bitmask_bit_is_set  nrf_drv_gpiote.o
-    0x00000f48   0x00000f48   0x0000000e   Code   RO         1023    i.nrf_clock_event_check  nrf_drv_clock.o
-    0x00000f56   0x00000f56   0x00000010   Code   RO         1024    i.nrf_clock_event_clear  nrf_drv_clock.o
+    0x00000f38   0x00000f38   0x00000010   Code   RO          411    i.nrf_bitmask_bit_is_set  nrf_drv_gpiote.o
+    0x00000f48   0x00000f48   0x0000000e   Code   RO         1026    i.nrf_clock_event_check  nrf_drv_clock.o
+    0x00000f56   0x00000f56   0x00000010   Code   RO         1027    i.nrf_clock_event_clear  nrf_drv_clock.o
     0x00000f66   0x00000f66   0x0000000a   Code   RO         2842    i.nrf_delay_ms      port_platform.o
     0x00000f70   0x00000f70   0x0000008c   Code   RO         2843    i.nrf_delay_us      port_platform.o
-    0x00000ffc   0x00000ffc   0x00000038   Code   RO          345    i.nrf_drv_common_irq_enable  nrf_drv_common.o
-    0x00001034   0x00001034   0x00000006   Code   RO          783    i.nrf_drv_get_IRQn  nrf_drv_uart.o
-    0x0000103a   0x0000103a   0x00000010   Code   RO          784    i.nrf_drv_is_in_RAM  nrf_drv_uart.o
+    0x00000ffc   0x00000ffc   0x00000038   Code   RO          348    i.nrf_drv_common_irq_enable  nrf_drv_common.o
+    0x00001034   0x00001034   0x00000006   Code   RO          786    i.nrf_drv_get_IRQn  nrf_drv_uart.o
+    0x0000103a   0x0000103a   0x00000010   Code   RO          787    i.nrf_drv_is_in_RAM  nrf_drv_uart.o
     0x0000104a   0x0000104a   0x00000002   PAD
-    0x0000104c   0x0000104c   0x0000006c   Code   RO          786    i.nrf_drv_uart_init  nrf_drv_uart.o
-    0x000010b8   0x000010b8   0x000000b8   Code   RO          787    i.nrf_drv_uart_rx   nrf_drv_uart.o
-    0x00001170   0x00001170   0x00000030   Code   RO          790    i.nrf_drv_uart_rx_enable  nrf_drv_uart.o
-    0x000011a0   0x000011a0   0x000000a8   Code   RO          791    i.nrf_drv_uart_rx_for_uart  nrf_drv_uart.o
-    0x00001248   0x00001248   0x000000ac   Code   RO          792    i.nrf_drv_uart_rx_for_uarte  nrf_drv_uart.o
-    0x000012f4   0x000012f4   0x000000ac   Code   RO          794    i.nrf_drv_uart_tx   nrf_drv_uart.o
-    0x000013a0   0x000013a0   0x0000008c   Code   RO          796    i.nrf_drv_uart_tx_for_uart  nrf_drv_uart.o
-    0x0000142c   0x0000142c   0x00000018   Code   RO          797    i.nrf_drv_uart_tx_in_progress  nrf_drv_uart.o
-    0x00001444   0x00001444   0x00000024   Code   RO          799    i.nrf_gpio_cfg      nrf_drv_uart.o
-    0x00001468   0x00001468   0x00000012   Code   RO          801    i.nrf_gpio_cfg_input  nrf_drv_uart.o
-    0x0000147a   0x0000147a   0x00000014   Code   RO          802    i.nrf_gpio_cfg_output  nrf_drv_uart.o
-    0x0000148e   0x0000148e   0x0000001e   Code   RO          434    i.nrf_gpio_cfg_sense_set  nrf_drv_gpiote.o
-    0x000014ac   0x000014ac   0x00000010   Code   RO          676    i.nrf_gpio_pin_set  nrf_drv_spi.o
-    0x000014bc   0x000014bc   0x00000024   Code   RO          435    i.nrf_gpio_ports_read  nrf_drv_gpiote.o
-    0x000014e0   0x000014e0   0x00000014   Code   RO          436    i.nrf_gpiote_event_clear  nrf_drv_gpiote.o
-    0x000014f4   0x000014f4   0x00000014   Code   RO          437    i.nrf_gpiote_event_is_set  nrf_drv_gpiote.o
-    0x00001508   0x00001508   0x0000000a   Code   RO          803    i.nrf_uart_event_check  nrf_drv_uart.o
-    0x00001512   0x00001512   0x0000000c   Code   RO          804    i.nrf_uart_event_clear  nrf_drv_uart.o
-    0x0000151e   0x0000151e   0x0000000c   Code   RO          805    i.nrf_uart_int_enable_check  nrf_drv_uart.o
-    0x0000152a   0x0000152a   0x0000000a   Code   RO          806    i.nrf_uarte_event_check  nrf_drv_uart.o
-    0x00001534   0x00001534   0x0000000c   Code   RO          807    i.nrf_uarte_event_clear  nrf_drv_uart.o
-    0x00001540   0x00001540   0x00000034   Code   RO          809    i.rx_byte           nrf_drv_uart.o
-    0x00001574   0x00001574   0x00000016   Code   RO          810    i.rx_done_event     nrf_drv_uart.o
-    0x0000158a   0x0000158a   0x00000020   Code   RO          811    i.rx_enable         nrf_drv_uart.o
-    0x000015aa   0x000015aa   0x00000072   Code   RO          678    i.transfer_byte     nrf_drv_spi.o
-    0x0000161c   0x0000161c   0x00000022   Code   RO          812    i.tx_byte           nrf_drv_uart.o
-    0x0000163e   0x0000163e   0x0000001a   Code   RO          813    i.tx_done_event     nrf_drv_uart.o
-    0x00001658   0x00001658   0x000000ac   Code   RO         1745    i.uart_event_handler  app_uart_fifo.o
-    0x00001704   0x00001704   0x00000126   Code   RO          814    i.uart_irq_handler  nrf_drv_uart.o
-    0x0000182a   0x0000182a   0x000000f8   Code   RO          815    i.uarte_irq_handler  nrf_drv_uart.o
+    0x0000104c   0x0000104c   0x0000006c   Code   RO          789    i.nrf_drv_uart_init  nrf_drv_uart.o
+    0x000010b8   0x000010b8   0x000000b8   Code   RO          790    i.nrf_drv_uart_rx   nrf_drv_uart.o
+    0x00001170   0x00001170   0x00000030   Code   RO          793    i.nrf_drv_uart_rx_enable  nrf_drv_uart.o
+    0x000011a0   0x000011a0   0x000000a8   Code   RO          794    i.nrf_drv_uart_rx_for_uart  nrf_drv_uart.o
+    0x00001248   0x00001248   0x000000ac   Code   RO          795    i.nrf_drv_uart_rx_for_uarte  nrf_drv_uart.o
+    0x000012f4   0x000012f4   0x000000ac   Code   RO          797    i.nrf_drv_uart_tx   nrf_drv_uart.o
+    0x000013a0   0x000013a0   0x0000008c   Code   RO          799    i.nrf_drv_uart_tx_for_uart  nrf_drv_uart.o
+    0x0000142c   0x0000142c   0x00000018   Code   RO          800    i.nrf_drv_uart_tx_in_progress  nrf_drv_uart.o
+    0x00001444   0x00001444   0x00000024   Code   RO          802    i.nrf_gpio_cfg      nrf_drv_uart.o
+    0x00001468   0x00001468   0x00000012   Code   RO          804    i.nrf_gpio_cfg_input  nrf_drv_uart.o
+    0x0000147a   0x0000147a   0x00000014   Code   RO          805    i.nrf_gpio_cfg_output  nrf_drv_uart.o
+    0x0000148e   0x0000148e   0x0000001e   Code   RO          437    i.nrf_gpio_cfg_sense_set  nrf_drv_gpiote.o
+    0x000014ac   0x000014ac   0x00000010   Code   RO          679    i.nrf_gpio_pin_set  nrf_drv_spi.o
+    0x000014bc   0x000014bc   0x00000024   Code   RO          438    i.nrf_gpio_ports_read  nrf_drv_gpiote.o
+    0x000014e0   0x000014e0   0x00000014   Code   RO          439    i.nrf_gpiote_event_clear  nrf_drv_gpiote.o
+    0x000014f4   0x000014f4   0x00000014   Code   RO          440    i.nrf_gpiote_event_is_set  nrf_drv_gpiote.o
+    0x00001508   0x00001508   0x0000000a   Code   RO          806    i.nrf_uart_event_check  nrf_drv_uart.o
+    0x00001512   0x00001512   0x0000000c   Code   RO          807    i.nrf_uart_event_clear  nrf_drv_uart.o
+    0x0000151e   0x0000151e   0x0000000c   Code   RO          808    i.nrf_uart_int_enable_check  nrf_drv_uart.o
+    0x0000152a   0x0000152a   0x0000000a   Code   RO          809    i.nrf_uarte_event_check  nrf_drv_uart.o
+    0x00001534   0x00001534   0x0000000c   Code   RO          810    i.nrf_uarte_event_clear  nrf_drv_uart.o
+    0x00001540   0x00001540   0x00000034   Code   RO          812    i.rx_byte           nrf_drv_uart.o
+    0x00001574   0x00001574   0x00000016   Code   RO          813    i.rx_done_event     nrf_drv_uart.o
+    0x0000158a   0x0000158a   0x00000020   Code   RO          814    i.rx_enable         nrf_drv_uart.o
+    0x000015aa   0x000015aa   0x00000072   Code   RO          681    i.transfer_byte     nrf_drv_spi.o
+    0x0000161c   0x0000161c   0x00000022   Code   RO          815    i.tx_byte           nrf_drv_uart.o
+    0x0000163e   0x0000163e   0x0000001a   Code   RO          816    i.tx_done_event     nrf_drv_uart.o
+    0x00001658   0x00001658   0x000000ac   Code   RO         1748    i.uart_event_handler  app_uart_fifo.o
+    0x00001704   0x00001704   0x00000126   Code   RO          817    i.uart_irq_handler  nrf_drv_uart.o
+    0x0000182a   0x0000182a   0x000000f8   Code   RO          818    i.uarte_irq_handler  nrf_drv_uart.o
     0x00001922   0x00001922   0x00000002   Code   RO         2961    i.vHandleUartInternalErrors  uart.o
     0x00001924   0x00001924   0x00000014   Code   RO         2962    i.vUartErrorHandle  uart.o
-    0x00001938   0x00001938   0x00000004   Data   RO          441    .constdata          nrf_drv_gpiote.o
-    0x0000193c   0x0000193c   0x00000020   Data   RO         1747    .constdata          app_uart_fifo.o
+    0x00001938   0x00001938   0x00000004   Data   RO          444    .constdata          nrf_drv_gpiote.o
+    0x0000193c   0x0000193c   0x00000020   Data   RO         1750    .constdata          app_uart_fifo.o
     0x0000195c   0x0000195c   0x00000018   Data   RO         2964    .constdata          uart.o
     0x00001974   0x00001974   0x00000020   Data   RO         3443    Region$$Table       anon$$obj.o
 
@@ -1998,14 +1998,14 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00001994   0x00000010   Data   RW         1748    .data               app_uart_fifo.o
-    0x20000010   0x000019a4   0x00000004   Data   RW         1811    .data               retarget.o
+    0x20000000   0x00001994   0x00000010   Data   RW         1751    .data               app_uart_fifo.o
+    0x20000010   0x000019a4   0x00000004   Data   RW         1814    .data               retarget.o
     0x20000014   0x000019a8   0x00000004   Data   RW         3025    .data               system_nrf52.o
-    0x20000018        -       0x00000058   Zero   RW          440    .bss                nrf_drv_gpiote.o
-    0x20000070        -       0x00000024   Zero   RW          679    .bss                nrf_drv_spi.o
-    0x20000094        -       0x00000020   Zero   RW          816    .bss                nrf_drv_uart.o
-    0x200000b4        -       0x00000014   Zero   RW         1038    .bss                nrf_drv_clock.o
-    0x200000c8        -       0x00000020   Zero   RW         1746    .bss                app_uart_fifo.o
+    0x20000018        -       0x00000058   Zero   RW          443    .bss                nrf_drv_gpiote.o
+    0x20000070        -       0x00000024   Zero   RW          682    .bss                nrf_drv_spi.o
+    0x20000094        -       0x00000020   Zero   RW          819    .bss                nrf_drv_uart.o
+    0x200000b4        -       0x00000014   Zero   RW         1041    .bss                nrf_drv_clock.o
+    0x200000c8        -       0x00000020   Zero   RW         1749    .bss                app_uart_fifo.o
     0x200000e8        -       0x00000220   Zero   RW         2963    .bss                uart.o
     0x20000308        -       0x00002000   Zero   RW         3003    STACK               arm_startup_nrf52.o
 

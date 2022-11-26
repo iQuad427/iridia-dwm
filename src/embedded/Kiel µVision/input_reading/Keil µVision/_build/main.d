@@ -29,3 +29,4 @@
 .\_build\main.o: ..\..\..\..\..\lib\nRF5_SDK_14.2.0\components\libraries\util\app_error_weak.h
 .\_build\main.o: Q:\Keil_v5\ARM\ARMCCv506u7\Bin\..\include\stdlib.h
 .\_build\main.o: ..\..\..\..\..\include\boards\dw1001_dev.h
+.\_build\main.o: ..\..\..\..\..\lib\deca_driver\deca_device_api.h

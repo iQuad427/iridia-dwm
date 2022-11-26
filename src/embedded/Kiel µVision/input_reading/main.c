@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <UART.h>
 #include <boards.h>
+#include <deca_device_api.h>
 
 void handle_function(char* input) {
   printf("TOTAL INPUT : %s\r\n", input);
