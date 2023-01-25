@@ -28,8 +28,8 @@ Troubleshooting :
 		- at least avoid memset() on big stack buffers, break threads (and main thread, so app stops)
 */
 
-extern int resp_main(void);
-extern int init_main(void);
+//extern int resp_main(void);
+//extern int init_main(void);
 
 
 typedef struct args_t {
@@ -40,10 +40,19 @@ typedef struct args_t {
 void thread_job(void const *argument) {
 	args* args_r = (args*) argument;
 	
-	while (1) {
-		printf("Thread : %d\r\n", args_r->thread_id);
-		osDelay(10000);
+	printf("Thread : %d\r\n", args_r->thread_id);
+	osDelay(1000);
+	
+	if (args_r->thread_id == 1) {
+		printf("Entered thread as : INITIATOR\r\n");
+	} else if (args_r->thread_id == 2) {
+		printf("Entered thread as : RESPONDER\r\n");
 	}
+	
+	//while (1) {
+	//	printf("Thread : %d\r\n", args_r->thread_id);
+	//	osDelay(10000);
+	//}
 }
 
 osThreadDef(thread_job, osPriorityAboveNormal, 2, 0); // define thread_job as a thread function

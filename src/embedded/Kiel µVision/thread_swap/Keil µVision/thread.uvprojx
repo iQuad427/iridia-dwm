@@ -395,6 +395,11 @@
               <FileType>5</FileType>
               <FilePath>..\config\sdk_config.h</FilePath>
             </File>
+            <File>
+              <FileName>do_things.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\do_things.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

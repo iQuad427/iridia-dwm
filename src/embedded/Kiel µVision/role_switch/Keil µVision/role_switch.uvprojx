@@ -395,26 +395,6 @@
               <FileType>5</FileType>
               <FilePath>..\config\sdk_config.h</FilePath>
             </File>
-            <File>
-              <FileName>init_controller.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\init_controller.c</FilePath>
-            </File>
-            <File>
-              <FileName>init_main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\init_main.c</FilePath>
-            </File>
-            <File>
-              <FileName>resp_controller.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\resp_controller.c</FilePath>
-            </File>
-            <File>
-              <FileName>resp_main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\resp_main.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>

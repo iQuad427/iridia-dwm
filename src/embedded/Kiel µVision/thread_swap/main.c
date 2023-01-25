@@ -26,9 +26,16 @@ Troubleshooting :
 		- at least avoid memset() on big stack buffers, break threads (and main thread, so app stops)
 */
 
+
+//extern int resp_main(void);
+//extern int init_main(void);
+
 typedef struct args_t {
 	int thread_id;
 } args;
+
+
+extern int doing_stuff(void);
 
 
 void thread_job(void const *argument) {
@@ -42,6 +49,10 @@ void thread_job(void const *argument) {
 	} else if (args_r->thread_id == 2) {
 		printf("Entered thread as : RESPONDER\r\n");
 	}
+	
+	doing_stuff();
+	printf("done\r\n");
+	osDelay(100);
 }
 
 osThreadDef(thread_job, osPriorityAboveNormal, 2, 0); // define thread_job as a thread function
@@ -93,6 +104,8 @@ int main(void)
 			} else if (!strcmp(total_input, "RESP")) {
 				if (thread_id != 0) osThreadTerminate(thread_id);
 				thread_id = handle_function(arg2);
+			} else if (!strcmp(total_input, "STOP")) {
+				if (thread_id != 0) osThreadTerminate(thread_id);
 			}
 			
 			memset(total_input, 0, sizeof(char) * 1024);
@@ -109,6 +122,3 @@ int main(void)
 		osDelay(300);
   }
 }
-
-
-
