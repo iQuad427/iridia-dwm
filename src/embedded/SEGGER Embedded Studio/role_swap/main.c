@@ -67,16 +67,22 @@ static dwt_config_t config = {
 extern int ss_init_run(void);
 extern int ss_resp_run(void);
 
-void handle_function(char* input) {
+void handle_function(char* input, char* state) {
   printf("TOTAL INPUT : %s\r\n", input);
 
   if (!strcmp(input, "RESP")) {
-    printf("WENT RESP\r\n");
+    strcpy(state, input);
+    printf("WENT RESP : %s\r\n", state);
     ss_resp_run();
   } else if (!strcmp(input, "INIT")) {
-    printf("WENT INIT\r\n");
+    strcpy(state, input);
+    printf("WENT INIT : %s\r\n", state);
     ss_init_run();
+  } else if (!strcmp(input, "STOP")) {
+    strcpy(state, input);
+    printf("WENT STOP : %s\r\n", state);
   }
+
 
 }
 
@@ -131,6 +137,7 @@ int main(void)
   // INPUR READING INIT
   char input_buffer[1];
   char total_input[1024];
+  char state[5];
   int input_index = 0;
 
 
@@ -145,7 +152,7 @@ int main(void)
       printf("END OF TRANSMISSION\r\n");
 
       total_input[input_index] = '\0';
-      handle_function(total_input);
+      handle_function(total_input, state);
 
       // clean buffer memory
       memset(input_buffer, 0, sizeof(input_buffer));
@@ -158,6 +165,13 @@ int main(void)
     }
     // clean the input buffer
     input_buffer[0] = '\0';
+
+    if (!strcmp(state, "RESP")) {
+      ss_resp_run();
+    } else if (!strcmp(state, "INIT")) {
+      ss_init_run();
+    }
+
   }
 
 }

@@ -2562,8 +2562,6 @@ Discarded input sections
                 0x0000000000000000       0x68 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
  .text.libc.setjmp
                 0x0000000000000000        0xe Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
- .text.libc.strcpy
-                0x0000000000000000       0x44 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
  .text          0x0000000000000000        0x0 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
  .data          0x0000000000000000        0x0 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
  .bss           0x0000000000000000        0x0 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
@@ -3028,7 +3026,7 @@ SRAM             0x0000000020000000 0x0000000000010000 xw
 Linker script and memory map
 
                 0x0000000000000000                __do_debug_operation = __do_debug_operation_mempoll
-                0x0000000000005170                __vfprintf = __vfprintf_short_float_long
+                0x0000000000005228                __vfprintf = __vfprintf_short_float_long
                 0x0000000000000000                __vfscanf = __vfscanf_int
                 0x0000000000000000                __FLASH_segment_start__ = 0x0
                 0x0000000000080000                __FLASH_segment_end__ = 0x80000
@@ -3125,7 +3123,7 @@ Linker script and memory map
                 0x0000000000000001                . = ASSERT (((__init_rodata_start__ == __init_rodata_end__) || ((__init_rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .init_rodata is too large to fit in FLASH memory segment)
                 0x00000000000002b0                __text_load_start__ = ALIGN (__init_rodata_end__, 0x4)
 
-.text           0x00000000000002b0     0x5da8
+.text           0x00000000000002b0     0x5e60
                 0x00000000000002b0                __text_start__ = .
  *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
  .glue_7        0x00000000000002b0        0x0 linker stubs
@@ -3145,603 +3143,606 @@ Linker script and memory map
                 0x000000000000057c       0x2a Output/nrf52832_xxaa/Obj/initiator/main.o
  *fill*         0x00000000000005a6        0x2 
  .text.handle_function
-                0x00000000000005a8       0x60 Output/nrf52832_xxaa/Obj/initiator/main.o
+                0x00000000000005a8       0x9c Output/nrf52832_xxaa/Obj/initiator/main.o
                 0x00000000000005a8                handle_function
- .text.main     0x0000000000000608      0x138 Output/nrf52832_xxaa/Obj/initiator/main.o
-                0x0000000000000608                main
+ .text.main     0x0000000000000644      0x170 Output/nrf52832_xxaa/Obj/initiator/main.o
+                0x0000000000000644                main
  .text.ss_resp_run
-                0x0000000000000740      0x1ac Output/nrf52832_xxaa/Obj/initiator/resp_main.o
-                0x0000000000000740                ss_resp_run
+                0x00000000000007b4      0x1ac Output/nrf52832_xxaa/Obj/initiator/resp_main.o
+                0x00000000000007b4                ss_resp_run
  .text.get_rx_timestamp_u64
-                0x00000000000008ec       0x6e Output/nrf52832_xxaa/Obj/initiator/resp_main.o
+                0x0000000000000960       0x6e Output/nrf52832_xxaa/Obj/initiator/resp_main.o
  .text.resp_msg_set_ts
-                0x000000000000095a       0x54 Output/nrf52832_xxaa/Obj/initiator/resp_main.o
- *fill*         0x00000000000009ae        0x2 
+                0x00000000000009ce       0x54 Output/nrf52832_xxaa/Obj/initiator/resp_main.o
+ *fill*         0x0000000000000a22        0x2 
  .text.dwt_initialise
-                0x00000000000009b0      0x184 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000009b0                dwt_initialise
+                0x0000000000000a24      0x184 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000a24                dwt_initialise
  .text.dwt_readdevid
-                0x0000000000000b34       0x10 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000b34                dwt_readdevid
+                0x0000000000000ba8       0x10 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000ba8                dwt_readdevid
  .text.dwt_configure
-                0x0000000000000b44      0x304 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000b44                dwt_configure
+                0x0000000000000bb8      0x304 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000bb8                dwt_configure
  .text.dwt_setrxantennadelay
-                0x0000000000000e48       0x22 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000e48                dwt_setrxantennadelay
+                0x0000000000000ebc       0x22 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000ebc                dwt_setrxantennadelay
  .text.dwt_settxantennadelay
-                0x0000000000000e6a       0x20 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000e6a                dwt_settxantennadelay
+                0x0000000000000ede       0x20 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000ede                dwt_settxantennadelay
  .text.dwt_writetxdata
-                0x0000000000000e8a       0x46 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000e8a                dwt_writetxdata
+                0x0000000000000efe       0x46 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000efe                dwt_writetxdata
  .text.dwt_writetxfctrl
-                0x0000000000000ed0       0x44 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000ed0                dwt_writetxfctrl
+                0x0000000000000f44       0x44 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000f44                dwt_writetxfctrl
  .text.dwt_readrxdata
-                0x0000000000000f14       0x2a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000f14                dwt_readrxdata
+                0x0000000000000f88       0x2a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000f88                dwt_readrxdata
  .text.dwt_readcarrierintegrator
-                0x0000000000000f3e       0x60 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000f3e                dwt_readcarrierintegrator
+                0x0000000000000fb2       0x60 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000000fb2                dwt_readcarrierintegrator
  .text.dwt_readtxtimestamplo32
-                0x0000000000000f9e       0x10 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000f9e                dwt_readtxtimestamplo32
+                0x0000000000001012       0x10 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001012                dwt_readtxtimestamplo32
  .text.dwt_readrxtimestamp
-                0x0000000000000fae       0x1a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000fae                dwt_readrxtimestamp
+                0x0000000000001022       0x1a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001022                dwt_readrxtimestamp
  .text.dwt_readrxtimestamplo32
-                0x0000000000000fc8       0x10 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000fc8                dwt_readrxtimestamplo32
+                0x000000000000103c       0x10 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x000000000000103c                dwt_readrxtimestamplo32
  .text.dwt_writetodevice
-                0x0000000000000fd8       0xbc Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000000fd8                dwt_writetodevice
+                0x000000000000104c       0xbc Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x000000000000104c                dwt_writetodevice
  .text.dwt_readfromdevice
-                0x0000000000001094       0xb6 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001094                dwt_readfromdevice
+                0x0000000000001108       0xb6 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001108                dwt_readfromdevice
  .text.dwt_read32bitoffsetreg
-                0x000000000000114a       0x48 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x000000000000114a                dwt_read32bitoffsetreg
+                0x00000000000011be       0x48 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x00000000000011be                dwt_read32bitoffsetreg
  .text.dwt_read16bitoffsetreg
-                0x0000000000001192       0x40 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001192                dwt_read16bitoffsetreg
+                0x0000000000001206       0x40 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001206                dwt_read16bitoffsetreg
  .text.dwt_read8bitoffsetreg
-                0x00000000000011d2       0x26 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000011d2                dwt_read8bitoffsetreg
+                0x0000000000001246       0x26 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001246                dwt_read8bitoffsetreg
  .text.dwt_write8bitoffsetreg
-                0x00000000000011f8       0x28 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000011f8                dwt_write8bitoffsetreg
+                0x000000000000126c       0x28 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x000000000000126c                dwt_write8bitoffsetreg
  .text.dwt_write16bitoffsetreg
-                0x0000000000001220       0x3e Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001220                dwt_write16bitoffsetreg
+                0x0000000000001294       0x3e Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001294                dwt_write16bitoffsetreg
  .text.dwt_write32bitoffsetreg
-                0x000000000000125e       0x48 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x000000000000125e                dwt_write32bitoffsetreg
+                0x00000000000012d2       0x48 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x00000000000012d2                dwt_write32bitoffsetreg
  .text._dwt_otpread
-                0x00000000000012a6       0x3c Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000012a6                _dwt_otpread
+                0x000000000000131a       0x3c Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x000000000000131a                _dwt_otpread
  .text._dwt_aonarrayupload
-                0x00000000000012e2       0x1a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000012e2                _dwt_aonarrayupload
+                0x0000000000001356       0x1a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001356                _dwt_aonarrayupload
  .text._dwt_configlde
-                0x00000000000012fc       0x3e Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000012fc                _dwt_configlde
+                0x0000000000001370       0x3e Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001370                _dwt_configlde
  .text._dwt_loaducodefromrom
-                0x000000000000133a       0x24 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x000000000000133a                _dwt_loaducodefromrom
+                0x00000000000013ae       0x24 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x00000000000013ae                _dwt_loaducodefromrom
  .text.dwt_setrxaftertxdelay
-                0x000000000000135e       0x36 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x000000000000135e                dwt_setrxaftertxdelay
+                0x00000000000013d2       0x36 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x00000000000013d2                dwt_setrxaftertxdelay
  .text._dwt_enableclocks
-                0x0000000000001394      0x158 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001394                _dwt_enableclocks
+                0x0000000000001408      0x158 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001408                _dwt_enableclocks
  .text._dwt_disablesequencing
-                0x00000000000014ec       0x16 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000014ec                _dwt_disablesequencing
+                0x0000000000001560       0x16 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001560                _dwt_disablesequencing
  .text.dwt_setdelayedtrxtime
-                0x0000000000001502       0x18 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001502                dwt_setdelayedtrxtime
- *fill*         0x000000000000151a        0x2 
+                0x0000000000001576       0x18 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001576                dwt_setdelayedtrxtime
+ *fill*         0x000000000000158e        0x2 
  .text.dwt_starttx
-                0x000000000000151c       0xd4 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x000000000000151c                dwt_starttx
+                0x0000000000001590       0xd4 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001590                dwt_starttx
  .text.dwt_forcetrxoff
-                0x00000000000015f0       0x60 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000015f0                dwt_forcetrxoff
+                0x0000000000001664       0x60 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001664                dwt_forcetrxoff
  .text.dwt_syncrxbufptrs
-                0x0000000000001650       0x38 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001650                dwt_syncrxbufptrs
+                0x00000000000016c4       0x38 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x00000000000016c4                dwt_syncrxbufptrs
  .text.dwt_rxenable
-                0x0000000000001688       0x8e Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001688                dwt_rxenable
- *fill*         0x0000000000001716        0x2 
+                0x00000000000016fc       0x8e Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x00000000000016fc                dwt_rxenable
+ *fill*         0x000000000000178a        0x2 
  .text.dwt_setrxtimeout
-                0x0000000000001718       0x90 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x0000000000001718                dwt_setrxtimeout
+                0x000000000000178c       0x90 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x000000000000178c                dwt_setrxtimeout
  .text.dwt_rxreset
-                0x00000000000017a8       0x1a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000017a8                dwt_rxreset
- *fill*         0x00000000000017c2        0x2 
+                0x000000000000181c       0x1a Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x000000000000181c                dwt_rxreset
+ *fill*         0x0000000000001836        0x2 
  .text.dwt_softreset
-                0x00000000000017c4       0x48 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x00000000000017c4                dwt_softreset
+                0x0000000000001838       0x48 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001838                dwt_softreset
  .text.dwt_setxtaltrim
-                0x000000000000180c       0x34 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
-                0x000000000000180c                dwt_setxtaltrim
+                0x0000000000001880       0x34 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+                0x0000000000001880                dwt_setxtaltrim
  .text.nrf_gpio_pin_port_decode
-                0x0000000000001840        0xe Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x00000000000018b4        0xe Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .text.nrf_gpio_cfg
-                0x000000000000184e       0x62 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x00000000000018c2       0x62 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .text.nrf_gpio_cfg_output
-                0x00000000000018b0       0x22 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001924       0x22 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .text.nrf_gpio_cfg_input
-                0x00000000000018d2       0x2a Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001946       0x2a Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .text.nrf_gpio_pin_clear
-                0x00000000000018fc       0x28 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001970       0x28 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .text.nrf_gpio_port_out_clear
-                0x0000000000001924       0x14 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001998       0x14 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .text.nrf_delay_us
-                0x0000000000001938       0xa0 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x00000000000019ac       0xa0 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .text.nrf_delay_ms
-                0x00000000000019d8       0x1e Output/nrf52832_xxaa/Obj/initiator/port_platform.o
- *fill*         0x00000000000019f6        0x2 
+                0x0000000000001a4c       0x1e Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+ *fill*         0x0000000000001a6a        0x2 
  .text.spi_event_handler
-                0x00000000000019f8       0x18 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x00000000000019f8                spi_event_handler
+                0x0000000000001a6c       0x18 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001a6c                spi_event_handler
  .text.readfromspi
-                0x0000000000001a10      0x144 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001a10                readfromspi
+                0x0000000000001a84      0x144 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001a84                readfromspi
  .text.writetospi
-                0x0000000000001b54      0x130 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001b54                writetospi
+                0x0000000000001bc8      0x130 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001bc8                writetospi
  .text.reset_DW1000
-                0x0000000000001c84       0x26 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001c84                reset_DW1000
- *fill*         0x0000000000001caa        0x2 
+                0x0000000000001cf8       0x26 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001cf8                reset_DW1000
+ *fill*         0x0000000000001d1e        0x2 
  .text.port_set_dw1000_slowrate
-                0x0000000000001cac       0x48 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001cac                port_set_dw1000_slowrate
+                0x0000000000001d20       0x48 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001d20                port_set_dw1000_slowrate
  .text.port_set_dw1000_fastrate
-                0x0000000000001cf4       0x4c Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001cf4                port_set_dw1000_fastrate
+                0x0000000000001d68       0x4c Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001d68                port_set_dw1000_fastrate
  .text.deca_sleep
-                0x0000000000001d40       0x14 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001d40                deca_sleep
+                0x0000000000001db4       0x14 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001db4                deca_sleep
  .text.decamutexon
-                0x0000000000001d54        0x6 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001d54                decamutexon
+                0x0000000000001dc8        0x6 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001dc8                decamutexon
  .text.decamutexoff
-                0x0000000000001d5a        0xa Output/nrf52832_xxaa/Obj/initiator/port_platform.o
-                0x0000000000001d5a                decamutexoff
+                0x0000000000001dce        0xa Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x0000000000001dce                decamutexoff
  .text.__NVIC_SystemReset
-                0x0000000000001d64       0x28 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x0000000000001dd8       0x28 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.SystemCoreClockUpdate
-                0x0000000000001d8c       0x14 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
-                0x0000000000001d8c                SystemCoreClockUpdate
+                0x0000000000001e00       0x14 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x0000000000001e00                SystemCoreClockUpdate
  .text.SystemInit
-                0x0000000000001da0      0x2c0 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
-                0x0000000000001da0                SystemInit
+                0x0000000000001e14      0x2c0 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x0000000000001e14                SystemInit
  .text.errata_12
-                0x0000000000002060       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x00000000000020d4       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_16
-                0x00000000000020b8       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x000000000000212c       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_31
-                0x00000000000020f0       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x0000000000002164       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_32
-                0x0000000000002148       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x00000000000021bc       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_36
-                0x0000000000002180       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x00000000000021f4       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_37
-                0x00000000000021d8       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x000000000000224c       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_57
-                0x0000000000002210       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x0000000000002284       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_66
-                0x0000000000002248       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x00000000000022bc       0x38 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_108
-                0x0000000000002280       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x00000000000022f4       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.errata_136
-                0x00000000000022d8       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+                0x000000000000234c       0x58 Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
  .text.__aeabi_read_tp
-                0x0000000000002330        0x8 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
-                0x0000000000002330                __aeabi_read_tp
+                0x00000000000023a4        0x8 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
+                0x00000000000023a4                __aeabi_read_tp
  .text.__printf_lock
-                0x0000000000002338        0x2 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
-                0x0000000000002338                __printf_lock
+                0x00000000000023ac        0x2 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
+                0x00000000000023ac                __printf_lock
  .text.__printf_unlock
-                0x000000000000233a        0x2 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
-                0x000000000000233a                __printf_unlock
+                0x00000000000023ae        0x2 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
+                0x00000000000023ae                __printf_unlock
  .text.boUART_Init
-                0x000000000000233c       0x48 Output/nrf52832_xxaa/Obj/initiator/UART.o
-                0x000000000000233c                boUART_Init
+                0x00000000000023b0       0x48 Output/nrf52832_xxaa/Obj/initiator/UART.o
+                0x00000000000023b0                boUART_Init
  .text.boUART_getc
-                0x0000000000002384       0x2a Output/nrf52832_xxaa/Obj/initiator/UART.o
-                0x0000000000002384                boUART_getc
+                0x00000000000023f8       0x2a Output/nrf52832_xxaa/Obj/initiator/UART.o
+                0x00000000000023f8                boUART_getc
  .text.vUartErrorHandle
-                0x00000000000023ae       0x34 Output/nrf52832_xxaa/Obj/initiator/UART.o
+                0x0000000000002422       0x34 Output/nrf52832_xxaa/Obj/initiator/UART.o
  .text.vHandleUartInternalErrors
-                0x00000000000023e2        0xa Output/nrf52832_xxaa/Obj/initiator/UART.o
+                0x0000000000002456        0xa Output/nrf52832_xxaa/Obj/initiator/UART.o
  .text.nrf_clock_int_disable
-                0x00000000000023ec       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+                0x0000000000002460       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
  .text.nrf_clock_event_clear
-                0x0000000000002400       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+                0x0000000000002474       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
  .text.nrf_clock_event_check
-                0x0000000000002428       0x22 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+                0x000000000000249c       0x22 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
  .text.item_dequeue
-                0x000000000000244a       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
- *fill*         0x000000000000246a        0x2 
+                0x00000000000024be       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+ *fill*         0x00000000000024de        0x2 
  .text.clock_clk_started_notify
-                0x000000000000246c       0x4c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+                0x00000000000024e0       0x4c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
  .text.POWER_CLOCK_IRQHandler
-                0x00000000000024b8       0x5c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
-                0x00000000000024b8                POWER_CLOCK_IRQHandler
+                0x000000000000252c       0x5c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+                0x000000000000252c                POWER_CLOCK_IRQHandler
  .text.__NVIC_EnableIRQ
-                0x0000000000002514       0x34 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
+                0x0000000000002588       0x34 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
  .text.__NVIC_ClearPendingIRQ
-                0x0000000000002548       0x38 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
+                0x00000000000025bc       0x38 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
  .text.__NVIC_SetPriority
-                0x0000000000002580       0x50 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
+                0x00000000000025f4       0x50 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
  .text.nrf_drv_common_irq_enable
-                0x00000000000025d0       0x3e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
-                0x00000000000025d0                nrf_drv_common_irq_enable
+                0x0000000000002644       0x3e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
+                0x0000000000002644                nrf_drv_common_irq_enable
  .text.nrf_gpiote_event_is_set
-                0x000000000000260e       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x0000000000002682       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpiote_event_clear
-                0x0000000000002638       0x36 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000026ac       0x36 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpiote_event_addr_get
-                0x000000000000266e       0x1a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000026e2       0x1a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpiote_int_is_enabled
-                0x0000000000002688       0x18 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000026fc       0x18 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpiote_event_pin_get
-                0x00000000000026a0       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x0000000000002714       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpiote_event_polarity_get
-                0x00000000000026c0       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x0000000000002734       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpio_pin_port_decode
-                0x00000000000026e4        0xe Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x0000000000002758        0xe Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpio_cfg_sense_set
-                0x00000000000026f2       0x5c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x0000000000002766       0x5c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpio_pin_sense_get
-                0x000000000000274e       0x2c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000027c2       0x2c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpio_port_in_read
-                0x000000000000277a       0x10 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000027ee       0x10 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_gpio_ports_read
-                0x000000000000278a       0x50 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000027fe       0x50 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_bitmask_bit_is_set
-                0x00000000000027da       0x30 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x000000000000284e       0x30 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.nrf_bitmask_bit_set
-                0x000000000000280a       0x40 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
- *fill*         0x000000000000284a        0x2 
+                0x000000000000287e       0x40 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+ *fill*         0x00000000000028be        0x2 
  .text.channel_port_get
-                0x000000000000284c       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000028c0       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.channel_handler_get
-                0x0000000000002868       0x18 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000028dc       0x18 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
  .text.GPIOTE_IRQHandler
-                0x0000000000002880      0x2e0 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
-                0x0000000000002880                GPIOTE_IRQHandler
+                0x00000000000028f4      0x2e0 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+                0x00000000000028f4                GPIOTE_IRQHandler
  .text.__NVIC_DisableIRQ
-                0x0000000000002b60       0x44 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002bd4       0x44 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_event_clear
-                0x0000000000002ba4       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002c18       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_event_check
-                0x0000000000002bce       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002c42       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_int_enable
-                0x0000000000002bf2       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002c66       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_int_disable
-                0x0000000000002c06       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002c7a       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_enable
-                0x0000000000002c1a       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002c8e       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_disable
-                0x0000000000002c2c       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002ca0       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_pins_set
-                0x0000000000002c3e       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002cb2       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_txd_set
-                0x0000000000002c66       0x1a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002cda       0x1a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_rxd_get
-                0x0000000000002c80       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002cf4       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_frequency_set
-                0x0000000000002c92       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002d06       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_spi_configure
-                0x0000000000002ca6       0x64 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002d1a       0x64 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_drv_common_irq_disable
-                0x0000000000002d0a       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002d7e       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_pin_port_decode
-                0x0000000000002d26        0xe Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002d9a        0xe Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_cfg
-                0x0000000000002d34       0x62 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002da8       0x62 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_cfg_output
-                0x0000000000002d96       0x22 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002e0a       0x22 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_cfg_input
-                0x0000000000002db8       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002e2c       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_pin_set
-                0x0000000000002de2       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002e56       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_pin_clear
-                0x0000000000002e0a       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002e7e       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_port_out_set
-                0x0000000000002e32       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002ea6       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.nrf_gpio_port_out_clear
-                0x0000000000002e46       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
- *fill*         0x0000000000002e5a        0x2 
+                0x0000000000002eba       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+ *fill*         0x0000000000002ece        0x2 
  .text.nrf_drv_spi_init
-                0x0000000000002e5c      0x188 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
-                0x0000000000002e5c                nrf_drv_spi_init
+                0x0000000000002ed0      0x188 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000002ed0                nrf_drv_spi_init
  .text.nrf_drv_spi_uninit
-                0x0000000000002fe4       0x60 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
-                0x0000000000002fe4                nrf_drv_spi_uninit
+                0x0000000000003058       0x60 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000003058                nrf_drv_spi_uninit
  .text.nrf_drv_spi_transfer
-                0x0000000000003044       0x3e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
-                0x0000000000003044                nrf_drv_spi_transfer
+                0x00000000000030b8       0x3e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x00000000000030b8                nrf_drv_spi_transfer
  .text.finish_transfer
-                0x0000000000003082       0x3e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x00000000000030f6       0x3e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.transfer_byte
-                0x00000000000030c0      0x108 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000003134      0x108 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.spi_xfer
-                0x00000000000031c8       0xca Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
- *fill*         0x0000000000003292        0x2 
+                0x000000000000323c       0xca Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+ *fill*         0x0000000000003306        0x2 
  .text.nrf_drv_spi_xfer
-                0x0000000000003294       0xc4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
-                0x0000000000003294                nrf_drv_spi_xfer
+                0x0000000000003308       0xc4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000003308                nrf_drv_spi_xfer
  .text.irq_handler_spi
-                0x0000000000003358       0x34 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x00000000000033cc       0x34 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
  .text.SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
-                0x000000000000338c       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
-                0x000000000000338c                SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                0x0000000000003400       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+                0x0000000000003400                SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
  .text.nrf_uart_event_clear
-                0x00000000000033ac       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003420       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_event_check
-                0x00000000000033d6       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000344a       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_int_enable
-                0x00000000000033fa       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000346e       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_int_enable_check
-                0x000000000000340e       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003482       0x20 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_int_disable
-                0x000000000000342e       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000034a2       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_errorsrc_get_and_clear
-                0x0000000000003442       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000034b6       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_enable
-                0x000000000000345e       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000034d2       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_txrx_pins_set
-                0x0000000000003470       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000034e4       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_hwfc_pins_set
-                0x000000000000348e       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003502       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_rxd_get
-                0x00000000000034ac       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003520       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_txd_set
-                0x00000000000034be       0x1a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003532       0x1a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_task_trigger
-                0x00000000000034d8       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000354c       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_configure
-                0x00000000000034f4       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003568       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uart_baudrate_set
-                0x000000000000351e       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003592       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_event_clear
-                0x0000000000003532       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000035a6       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_event_check
-                0x000000000000355c       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000035d0       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_shorts_enable
-                0x0000000000003580       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000035f4       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_shorts_disable
-                0x000000000000359c       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .text.nrf_uarte_int_enable
-                0x00000000000035ba       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .text.nrf_uarte_int_disable
-                0x00000000000035ce       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .text.nrf_uarte_errorsrc_get_and_clear
-                0x00000000000035e2       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .text.nrf_uarte_enable
-                0x00000000000035fe       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .text.nrf_uarte_txrx_pins_set
                 0x0000000000003610       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .text.nrf_uarte_int_enable
+                0x000000000000362e       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .text.nrf_uarte_int_disable
+                0x0000000000003642       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .text.nrf_uarte_errorsrc_get_and_clear
+                0x0000000000003656       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .text.nrf_uarte_enable
+                0x0000000000003672       0x12 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .text.nrf_uarte_txrx_pins_set
+                0x0000000000003684       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_hwfc_pins_set
-                0x000000000000362e       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000036a2       0x1e Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_task_trigger
-                0x000000000000364c       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000036c0       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_configure
-                0x0000000000003668       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000036dc       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_baudrate_set
-                0x0000000000003692       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003706       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_tx_buffer_set
-                0x00000000000036a6       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000371a       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_tx_amount_get
-                0x00000000000036ca       0x10 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000373e       0x10 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_rx_buffer_set
-                0x00000000000036da       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000374e       0x24 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_uarte_rx_amount_get
-                0x00000000000036fe       0x10 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003772       0x10 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_drv_get_IRQn
-                0x000000000000370e       0x16 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003782       0x16 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_drv_is_in_RAM
-                0x0000000000003724       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003798       0x1c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_gpio_pin_port_decode
-                0x0000000000003740        0xe Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000037b4        0xe Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_gpio_cfg
-                0x000000000000374e       0x62 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000037c2       0x62 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_gpio_cfg_output
-                0x00000000000037b0       0x22 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003824       0x22 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_gpio_cfg_input
-                0x00000000000037d2       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003846       0x2a Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_gpio_pin_set
-                0x00000000000037fc       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003870       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_gpio_port_out_set
-                0x0000000000003824       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003898       0x14 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.apply_config
-                0x0000000000003838      0x160 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000038ac      0x160 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.interrupts_enable
-                0x0000000000003998       0xd4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003a0c       0xd4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.uart_enable
-                0x0000000000003a6c       0x3c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003ae0       0x3c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_drv_uart_init
-                0x0000000000003aa8       0x90 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
-                0x0000000000003aa8                nrf_drv_uart_init
- .text.tx_byte  0x0000000000003b38       0x46 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- *fill*         0x0000000000003b7e        0x2 
+                0x0000000000003b1c       0x90 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003b1c                nrf_drv_uart_init
+ .text.tx_byte  0x0000000000003bac       0x46 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ *fill*         0x0000000000003bf2        0x2 
  .text.nrf_drv_uart_tx_for_uart
-                0x0000000000003b80       0xe4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003bf4       0xe4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_drv_uart_tx_for_uarte
-                0x0000000000003c64       0xbc Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003cd8       0xbc Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_drv_uart_tx
-                0x0000000000003d20       0xa0 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
-                0x0000000000003d20                nrf_drv_uart_tx
+                0x0000000000003d94       0xa0 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003d94                nrf_drv_uart_tx
  .text.nrf_drv_uart_tx_in_progress
-                0x0000000000003dc0       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
-                0x0000000000003dc0                nrf_drv_uart_tx_in_progress
+                0x0000000000003e34       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003e34                nrf_drv_uart_tx_in_progress
  .text.rx_enable
-                0x0000000000003de8       0x36 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .text.rx_byte  0x0000000000003e1e       0x54 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- *fill*         0x0000000000003e72        0x2 
+                0x0000000000003e5c       0x36 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .text.rx_byte  0x0000000000003e92       0x54 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ *fill*         0x0000000000003ee6        0x2 
  .text.nrf_drv_uart_rx_for_uart
-                0x0000000000003e74      0x158 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000003ee8      0x158 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_drv_uart_rx_for_uarte
-                0x0000000000003fcc      0x130 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000004040      0x130 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.nrf_drv_uart_rx
-                0x00000000000040fc      0x158 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
-                0x00000000000040fc                nrf_drv_uart_rx
+                0x0000000000004170      0x158 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000004170                nrf_drv_uart_rx
  .text.nrf_drv_uart_rx_enable
-                0x0000000000004254       0x54 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
-                0x0000000000004254                nrf_drv_uart_rx_enable
+                0x00000000000042c8       0x54 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000042c8                nrf_drv_uart_rx_enable
  .text.rx_done_event
-                0x00000000000042a8       0x36 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000431c       0x36 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.tx_done_event
-                0x00000000000042de       0x3c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x0000000000004352       0x3c Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.uart_irq_handler
-                0x000000000000431a      0x1d4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x000000000000438e      0x1d4 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
  .text.uarte_irq_handler
-                0x00000000000044ee      0x160 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- *fill*         0x000000000000464e        0x2 
+                0x0000000000004562      0x160 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ *fill*         0x00000000000046c2        0x2 
  .text.UARTE0_UART0_IRQHandler
-                0x0000000000004650       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
-                0x0000000000004650                UARTE0_UART0_IRQHandler
+                0x00000000000046c4       0x28 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+                0x00000000000046c4                UARTE0_UART0_IRQHandler
  .text.app_error_handler_bare
-                0x0000000000004678       0x2a Output/nrf52832_xxaa/Obj/initiator/app_error.o
-                0x0000000000004678                app_error_handler_bare
- *fill*         0x00000000000046a2        0x2 
+                0x00000000000046ec       0x2a Output/nrf52832_xxaa/Obj/initiator/app_error.o
+                0x00000000000046ec                app_error_handler_bare
+ *fill*         0x0000000000004716        0x2 
  .text.__NVIC_SystemReset
-                0x00000000000046a4       0x28 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
+                0x0000000000004718       0x28 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
  .text.app_error_fault_handler
-                0x00000000000046cc       0x20 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
-                0x00000000000046cc                app_error_fault_handler
+                0x0000000000004740       0x20 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
+                0x0000000000004740                app_error_fault_handler
  .text.fifo_length
-                0x00000000000046ec       0x18 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+                0x0000000000004760       0x18 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
  .text.fifo_put
-                0x0000000000004704       0x30 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+                0x0000000000004778       0x30 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
  .text.fifo_peek
-                0x0000000000004734       0x2e Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+                0x00000000000047a8       0x2e Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
  .text.fifo_get
-                0x0000000000004762       0x24 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+                0x00000000000047d6       0x24 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
  .text.app_fifo_init
-                0x0000000000004786       0x58 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
-                0x0000000000004786                app_fifo_init
+                0x00000000000047fa       0x58 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+                0x00000000000047fa                app_fifo_init
  .text.app_fifo_put
-                0x00000000000047de       0x36 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
-                0x00000000000047de                app_fifo_put
+                0x0000000000004852       0x36 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+                0x0000000000004852                app_fifo_put
  .text.app_fifo_get
-                0x0000000000004814       0x2a Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
-                0x0000000000004814                app_fifo_get
+                0x0000000000004888       0x2a Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+                0x0000000000004888                app_fifo_get
  .text.fifo_length
-                0x000000000000483e       0x18 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
- *fill*         0x0000000000004856        0x2 
+                0x00000000000048b2       0x18 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+ *fill*         0x00000000000048ca        0x2 
  .text.uart_event_handler
-                0x0000000000004858       0xfc Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+                0x00000000000048cc       0xfc Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
  .text.app_uart_init
-                0x0000000000004954      0x128 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
-                0x0000000000004954                app_uart_init
+                0x00000000000049c8      0x128 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+                0x00000000000049c8                app_uart_init
  .text.app_uart_get
-                0x0000000000004a7c       0x5c Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
-                0x0000000000004a7c                app_uart_get
+                0x0000000000004af0       0x5c Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+                0x0000000000004af0                app_uart_get
  .text.app_uart_put
-                0x0000000000004ad8       0x60 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
-                0x0000000000004ad8                app_uart_put
+                0x0000000000004b4c       0x60 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+                0x0000000000004b4c                app_uart_put
  .text.__putchar
-                0x0000000000004b38       0x1c Output/nrf52832_xxaa/Obj/initiator/retarget.o
-                0x0000000000004b38                __putchar
+                0x0000000000004bac       0x1c Output/nrf52832_xxaa/Obj/initiator/retarget.o
+                0x0000000000004bac                __putchar
  .text.__aeabi_dmul
-                0x0000000000004b54      0x138 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004b54                __aeabi_dmul
+                0x0000000000004bc8      0x138 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004bc8                __aeabi_dmul
  .text.__aeabi_i2d
-                0x0000000000004c8c       0x28 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004c8c                __aeabi_i2d
+                0x0000000000004d00       0x28 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004d00                __aeabi_i2d
  .text.__aeabi_f2d
-                0x0000000000004cb4       0x34 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004cb4                __aeabi_f2d
+                0x0000000000004d28       0x34 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004d28                __aeabi_f2d
  .text.__aeabi_d2f
-                0x0000000000004ce8       0x54 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004ce8                __aeabi_d2f
+                0x0000000000004d5c       0x54 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004d5c                __aeabi_d2f
  .text.__float32_isinf
-                0x0000000000004d3c       0x14 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004d3c                __float32_isinf
+                0x0000000000004db0       0x14 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004db0                __float32_isinf
  .text.__float32_isnan
-                0x0000000000004d50       0x14 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004d50                __float32_isnan
+                0x0000000000004dc4       0x14 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004dc4                __float32_isnan
  .text.__float32_signbit
-                0x0000000000004d64        0xc Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004d64                __float32_signbit
- .text.fabsf    0x0000000000004d70        0x8 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004d70                fabsf
-                0x0000000000004d70                fabs(float)
- .text.floorf   0x0000000000004d78       0x70 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004d78                floorf
-                0x0000000000004d78                floor(float)
- .text.frexpf   0x0000000000004de8       0x3c Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004de8                frexpf
-                0x0000000000004de8                frexp(float, int*)
- .text.ldexpf   0x0000000000004e24       0x48 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x0000000000004e24                ldexp(float, int)
-                0x0000000000004e24                ldexpf
+                0x0000000000004dd8        0xc Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004dd8                __float32_signbit
+ .text.fabsf    0x0000000000004de4        0x8 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004de4                fabsf
+                0x0000000000004de4                fabs(float)
+ .text.floorf   0x0000000000004dec       0x70 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004dec                floorf
+                0x0000000000004dec                floor(float)
+ .text.frexpf   0x0000000000004e5c       0x3c Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004e5c                frexpf
+                0x0000000000004e5c                frexp(float, int*)
+ .text.ldexpf   0x0000000000004e98       0x48 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x0000000000004e98                ldexp(float, int)
+                0x0000000000004e98                ldexpf
  .text.libc.__RAL_pow10f
-                0x0000000000004e6c       0x44 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004e6c                __RAL_pow10f
+                0x0000000000004ee0       0x44 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x0000000000004ee0                __RAL_pow10f
  .text.libc.__putc
-                0x0000000000004eb0       0x36 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004eb0                __putc
+                0x0000000000004f24       0x36 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x0000000000004f24                __putc
  .text.libc.__RAL_print_padding
-                0x0000000000004ee6       0x1c Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004ee6                __RAL_print_padding
+                0x0000000000004f5a       0x1c Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x0000000000004f5a                __RAL_print_padding
  .text.libc.__RAL_pre_padding
-                0x0000000000004f02       0x1a Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004f02                __RAL_pre_padding
+                0x0000000000004f76       0x1a Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x0000000000004f76                __RAL_pre_padding
  .text.libc.abs
-                0x0000000000004f1c        0x8 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004f1c                abs
+                0x0000000000004f90        0x8 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x0000000000004f90                abs
  .text.libc.__aeabi_errno_addr
-                0x0000000000004f24       0x14 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004f24                __aeabi_errno_addr
+                0x0000000000004f98       0x14 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x0000000000004f98                __aeabi_errno_addr
  .text.libc.memcmp
-                0x0000000000004f38       0x6e Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004f38                memcmp
- *fill*         0x0000000000004fa6        0x2 
+                0x0000000000004fac       0x6e Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x0000000000004fac                memcmp
+ *fill*         0x000000000000501a        0x2 
  .text.libc.printf
-                0x0000000000004fa8       0x40 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004fa8                printf
+                0x000000000000501c       0x40 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000000501c                printf
  .text.libc.strnlen
-                0x0000000000004fe8       0x22 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x0000000000004fe8                strnlen
+                0x000000000000505c       0x22 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000000505c                strnlen
  .text.libc.memcpy
-                0x000000000000500a       0x52 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x000000000000500a                __aeabi_memcpy
-                0x000000000000500a                memcpy
-                0x0000000000005016                __aeabi_memcpy8
-                0x0000000000005016                __aeabi_memcpy4
+                0x000000000000507e       0x52 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x000000000000507e                __aeabi_memcpy
+                0x000000000000507e                memcpy
+                0x000000000000508a                __aeabi_memcpy8
+                0x000000000000508a                __aeabi_memcpy4
  .text.libc.memset
-                0x000000000000505c       0x66 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x000000000000505c                memset
+                0x00000000000050d0       0x66 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x00000000000050d0                memset
+ .text.libc.strcpy
+                0x0000000000005136       0x44 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x0000000000005136                strcpy
  .text.libc.strcmp
-                0x00000000000050c2       0x4e Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x00000000000050c2                strcmp
+                0x000000000000517a       0x4e Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x000000000000517a                strcmp
  .text.libc.strlen
-                0x0000000000005110       0x60 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x0000000000005110                strlen
+                0x00000000000051c8       0x60 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x00000000000051c8                strlen
  .text.libc.__vfprintf_short_float_long
-                0x0000000000005170      0xd90 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
-                0x0000000000005170                __vfprintf_short_float_long
+                0x0000000000005228      0xd90 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+                0x0000000000005228                __vfprintf_short_float_long
  .text.libc.modff
-                0x0000000000005f00       0x5c Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
-                0x0000000000005f00                modf(float, float*)
-                0x0000000000005f00                modff
+                0x0000000000005fb8       0x5c Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x0000000000005fb8                modf(float, float*)
+                0x0000000000005fb8                modff
  .text.libc.fmodf
-                0x0000000000005f5c       0xfc Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
-                0x0000000000005f5c                fmod(float, float)
-                0x0000000000005f5c                fmodf
-                0x0000000000006058                __text_end__ = (__text_start__ + SIZEOF (.text))
-                0x0000000000005da8                __text_size__ = SIZEOF (.text)
-                0x0000000000006058                __text_load_end__ = __text_end__
+                0x0000000000006014       0xfc Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x0000000000006014                fmod(float, float)
+                0x0000000000006014                fmodf
+                0x0000000000006110                __text_end__ = (__text_start__ + SIZEOF (.text))
+                0x0000000000005e60                __text_size__ = SIZEOF (.text)
+                0x0000000000006110                __text_load_end__ = __text_end__
 
 .vfp11_veneer   0x0000000100000000        0x0
  .vfp11_veneer  0x0000000100000000        0x0 linker stubs
@@ -3752,123 +3753,124 @@ Linker script and memory map
 .iplt           0x0000000100000000        0x0
  .iplt          0x0000000100000000        0x0 Output/nrf52832_xxaa/Obj/initiator/init_main.o
                 0x0000000000000001                . = ASSERT (((__text_start__ == __text_end__) || ((__text_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .text is too large to fit in FLASH memory segment)
-                0x0000000000006058                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
+                0x0000000000006110                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
 
-.dtors          0x0000000000006058        0x0
-                0x0000000000006058                __dtors_start__ = .
+.dtors          0x0000000000006110        0x0
+                0x0000000000006110                __dtors_start__ = .
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.fini_array)
  *(SORT_BY_NAME(.fini_array.*))
-                0x0000000000006058                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
+                0x0000000000006110                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
                 0x0000000000000000                __dtors_size__ = SIZEOF (.dtors)
-                0x0000000000006058                __dtors_load_end__ = __dtors_end__
+                0x0000000000006110                __dtors_load_end__ = __dtors_end__
                 0x0000000000000001                . = ASSERT (((__dtors_start__ == __dtors_end__) || ((__dtors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .dtors is too large to fit in FLASH memory segment)
-                0x0000000000006058                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
+                0x0000000000006110                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
 
-.ctors          0x0000000000006058        0x0
-                0x0000000000006058                __ctors_start__ = .
+.ctors          0x0000000000006110        0x0
+                0x0000000000006110                __ctors_start__ = .
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
  *(.init_array)
  *(SORT_BY_NAME(.init_array.*))
-                0x0000000000006058                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
+                0x0000000000006110                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
                 0x0000000000000000                __ctors_size__ = SIZEOF (.ctors)
-                0x0000000000006058                __ctors_load_end__ = __ctors_end__
+                0x0000000000006110                __ctors_load_end__ = __ctors_end__
                 0x0000000000000001                . = ASSERT (((__ctors_start__ == __ctors_end__) || ((__ctors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ctors is too large to fit in FLASH memory segment)
-                0x0000000000006058                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
+                0x0000000000006110                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
 
-.rodata         0x0000000000006058      0x2a0
-                0x0000000000006058                __rodata_start__ = .
+.rodata         0x0000000000006110      0x2d0
+                0x0000000000006110                __rodata_start__ = .
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000000006058       0x10 Output/nrf52832_xxaa/Obj/initiator/init_main.o
- .rodata        0x0000000000006068       0x70 Output/nrf52832_xxaa/Obj/initiator/main.o
+ .rodata        0x0000000000006110       0x10 Output/nrf52832_xxaa/Obj/initiator/init_main.o
+ .rodata        0x0000000000006120       0x9c Output/nrf52832_xxaa/Obj/initiator/main.o
  .rodata.chan_idx
-                0x00000000000060d8        0x8 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x00000000000060d8                chan_idx
+                0x00000000000061bc        0x8 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x00000000000061bc                chan_idx
  .rodata.tx_config
-                0x00000000000060e0       0x18 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x00000000000060e0                tx_config
+                0x00000000000061c4       0x18 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x00000000000061c4                tx_config
  .rodata.fs_pll_cfg
-                0x00000000000060f8       0x18 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x00000000000060f8                fs_pll_cfg
+                0x00000000000061dc       0x18 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x00000000000061dc                fs_pll_cfg
  .rodata.fs_pll_tune
-                0x0000000000006110        0x6 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x0000000000006110                fs_pll_tune
- *fill*         0x0000000000006116        0x2 
+                0x00000000000061f4        0x6 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x00000000000061f4                fs_pll_tune
+ *fill*         0x00000000000061fa        0x2 
  .rodata.rx_config
-                0x0000000000006118        0x2 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x0000000000006118                rx_config
- *fill*         0x000000000000611a        0x2 
+                0x00000000000061fc        0x2 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x00000000000061fc                rx_config
+ *fill*         0x00000000000061fe        0x2 
  .rodata.agc_config
-                0x000000000000611c        0x8 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x000000000000611c                agc_config
+                0x0000000000006200        0x8 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x0000000000006200                agc_config
  .rodata.dwnsSFDlen
-                0x0000000000006124        0x3 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x0000000000006124                dwnsSFDlen
- *fill*         0x0000000000006127        0x1 
- .rodata.sftsh  0x0000000000006128        0xc Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x0000000000006128                sftsh
+                0x0000000000006208        0x3 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x0000000000006208                dwnsSFDlen
+ *fill*         0x000000000000620b        0x1 
+ .rodata.sftsh  0x000000000000620c        0xc Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x000000000000620c                sftsh
  .rodata.dtune1
-                0x0000000000006134        0x4 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x0000000000006134                dtune1
+                0x0000000000006218        0x4 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x0000000000006218                dtune1
  .rodata.digital_bb_config
-                0x0000000000006138       0x20 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x0000000000006138                digital_bb_config
+                0x000000000000621c       0x20 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x000000000000621c                digital_bb_config
  .rodata.lde_replicaCoeff
-                0x0000000000006158       0x32 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
-                0x0000000000006158                lde_replicaCoeff
- *fill*         0x000000000000618a        0x2 
- .rodata.spi    0x000000000000618c        0x8 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
- .rodata        0x0000000000006194       0x20 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+                0x000000000000623c       0x32 Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+                0x000000000000623c                lde_replicaCoeff
+ *fill*         0x000000000000626e        0x2 
+ .rodata.spi    0x0000000000006270        0x8 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+ .rodata        0x0000000000006278       0x20 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
  .rodata.comm_params
-                0x00000000000061b4       0x18 Output/nrf52832_xxaa/Obj/initiator/UART.o
-                0x00000000000061b4                comm_params
- .rodata        0x00000000000061cc       0x20 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+                0x0000000000006298       0x18 Output/nrf52832_xxaa/Obj/initiator/UART.o
+                0x0000000000006298                comm_params
+ .rodata        0x00000000000062b0       0x20 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
  .rodata.libc.__RAL_hex_lc
-                0x00000000000061ec       0x10 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x00000000000061ec                __RAL_hex_lc
+                0x00000000000062d0       0x10 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x00000000000062d0                __RAL_hex_lc
  .rodata.libc.__RAL_hex_uc
-                0x00000000000061fc       0x10 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x00000000000061fc                __RAL_hex_uc
+                0x00000000000062e0       0x10 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x00000000000062e0                __RAL_hex_uc
  .rodata.libc.__aeabi_EDOM
-                0x000000000000620c        0x4 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000000620c                __aeabi_EDOM
+                0x00000000000062f0        0x4 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x00000000000062f0                __aeabi_EDOM
  .rodata.libc.powerf
-                0x0000000000006210       0x18 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x00000000000062f4       0x18 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
  .rodata.libc.__vfprintf_int.str1.4
-                0x0000000000006228        0x7 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
- *fill*         0x000000000000622f        0x1 
+                0x000000000000630c        0x7 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+ *fill*         0x0000000000006313        0x1 
  .rodata.libc.__vfprintf_float_long.str1.4
-                0x0000000000006230       0x28 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+                0x0000000000006314       0x28 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+ *fill*         0x000000000000633c        0x4 
  .rodata.libc.ipow10
-                0x0000000000006258       0xa0 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
-                0x00000000000062f8                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
-                0x00000000000002a0                __rodata_size__ = SIZEOF (.rodata)
-                0x00000000000062f8                __rodata_load_end__ = __rodata_end__
+                0x0000000000006340       0xa0 Q:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.42/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+                0x00000000000063e0                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
+                0x00000000000002d0                __rodata_size__ = SIZEOF (.rodata)
+                0x00000000000063e0                __rodata_load_end__ = __rodata_end__
 
 .rel.dyn        0x0000000000000000        0x0
  .rel.iplt      0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/initiator/init_main.o
                 0x0000000000000001                . = ASSERT (((__rodata_start__ == __rodata_end__) || ((__rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .rodata is too large to fit in FLASH memory segment)
-                0x00000000000062f8                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
+                0x00000000000063e0                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
 
-.ARM.exidx      0x00000000000062f8        0x0
-                0x00000000000062f8                __ARM.exidx_start__ = .
-                0x00000000000062f8                __exidx_start = __ARM.exidx_start__
+.ARM.exidx      0x00000000000063e0        0x0
+                0x00000000000063e0                __ARM.exidx_start__ = .
+                0x00000000000063e0                __exidx_start = __ARM.exidx_start__
  *(.ARM.exidx .ARM.exidx.*)
-                0x00000000000062f8                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
+                0x00000000000063e0                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
                 0x0000000000000000                __ARM.exidx_size__ = SIZEOF (.ARM.exidx)
-                0x00000000000062f8                __exidx_end = __ARM.exidx_end__
-                0x00000000000062f8                __ARM.exidx_load_end__ = __ARM.exidx_end__
+                0x00000000000063e0                __exidx_end = __ARM.exidx_end__
+                0x00000000000063e0                __ARM.exidx_load_end__ = __ARM.exidx_end__
                 0x0000000000000001                . = ASSERT (((__ARM.exidx_start__ == __ARM.exidx_end__) || ((__ARM.exidx_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ARM.exidx is too large to fit in FLASH memory segment)
-                0x00000000000062f8                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
+                0x00000000000063e0                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
 
-.fast           0x0000000020000000        0x0 load address 0x00000000000062f8
+.fast           0x0000000020000000        0x0 load address 0x00000000000063e0
                 0x0000000020000000                __fast_start__ = .
  *(.fast .fast.*)
                 0x0000000020000000                __fast_end__ = (__fast_start__ + SIZEOF (.fast))
                 0x0000000000000000                __fast_size__ = SIZEOF (.fast)
-                0x00000000000062f8                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
+                0x00000000000063e0                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
                 0x0000000000000001                . = ASSERT (((__fast_load_start__ == __fast_load_end__) || ((__fast_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .fast is too large to fit in FLASH memory segment)
 
 .fast_run       0x0000000020000000        0x0
@@ -3877,9 +3879,9 @@ Linker script and memory map
                 0x0000000000000000                __fast_run_size__ = (__fast_run_end__ - __fast_run_start__)
                 0x0000000020000000                __fast_run_load_end__ = __fast_run_end__
                 0x0000000000000001                . = ASSERT (((__fast_run_start__ == __fast_run_end__) || ((__fast_run_end__ - __SRAM_segment_start__) <= __SRAM_segment_size__)), error: .fast_run is too large to fit in SRAM memory segment)
-                0x00000000000062f8                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
+                0x00000000000063e0                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
 
-.data           0x0000000020000000       0x6c load address 0x00000000000062f8
+.data           0x0000000020000000       0x6c load address 0x00000000000063e0
                 0x0000000020000000                __data_start__ = .
  *(.data .data.* .gnu.linkonce.d.*)
  .data.tx_poll_msg
@@ -3904,7 +3906,7 @@ Linker script and memory map
                 0x0000000020000064        0x8 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
                 0x000000002000006c                __data_end__ = (__data_start__ + SIZEOF (.data))
                 0x000000000000006c                __data_size__ = SIZEOF (.data)
-                0x0000000000006364                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
+                0x000000000000644c                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
 
 .igot.plt       0x0000000100000000        0x0
  .igot.plt      0x0000000100000000        0x0 Output/nrf52832_xxaa/Obj/initiator/init_main.o
@@ -3916,14 +3918,14 @@ Linker script and memory map
                 0x000000000000006c                __data_run_size__ = (__data_run_end__ - __data_run_start__)
                 0x000000002000006c                __data_run_load_end__ = __data_run_end__
                 0x0000000000000001                . = ASSERT (((__data_run_start__ == __data_run_end__) || ((__data_run_end__ - __SRAM_segment_start__) <= __SRAM_segment_size__)), error: .data_run is too large to fit in SRAM memory segment)
-                0x0000000000006364                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
+                0x000000000000644c                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
 
-.tdata          0x000000002000006c        0x0 load address 0x0000000000006364
+.tdata          0x000000002000006c        0x0 load address 0x000000000000644c
                 0x000000002000006c                __tdata_start__ = .
  *(.tdata .tdata.*)
                 0x000000002000006c                __tdata_end__ = (__tdata_start__ + SIZEOF (.tdata))
                 0x0000000000000000                __tdata_size__ = SIZEOF (.tdata)
-                0x0000000000006364                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
+                0x000000000000644c                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
                 0x0000000000000001                . = ASSERT (((__tdata_load_start__ == __tdata_load_end__) || ((__tdata_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .tdata is too large to fit in FLASH memory segment)
 
 .tdata_run      0x000000002000006c        0x0
@@ -3943,119 +3945,119 @@ Linker script and memory map
                 0x0000000000000000                __nrf_sections_run_size__ = SIZEOF (.nrf_sections_run)
                 0x000000002000006c                __nrf_sections_run_load_end__ = __nrf_sections_run_end__
                 0x0000000000000001                . = ASSERT (((__nrf_sections_run_start__ == __nrf_sections_run_end__) || ((__nrf_sections_run_end__ - __SRAM_segment_start__) <= __SRAM_segment_size__)), error: .nrf_sections_run is too large to fit in SRAM memory segment)
-                0x0000000000006364                __dfu_trans_load_start__ = ALIGN ((__tdata_load_start__ + SIZEOF (.tdata)), 0x4)
+                0x000000000000644c                __dfu_trans_load_start__ = ALIGN ((__tdata_load_start__ + SIZEOF (.tdata)), 0x4)
 
-.dfu_trans      0x0000000000006364        0x0
-                0x0000000000006364                __dfu_trans_start__ = .
-                0x0000000000006364                __start_dfu_trans = __dfu_trans_start__
+.dfu_trans      0x000000000000644c        0x0
+                0x000000000000644c                __dfu_trans_start__ = .
+                0x000000000000644c                __start_dfu_trans = __dfu_trans_start__
  *(SORT_BY_NAME(.dfu_trans*))
-                0x0000000000006364                __dfu_trans_end__ = (__dfu_trans_start__ + SIZEOF (.dfu_trans))
+                0x000000000000644c                __dfu_trans_end__ = (__dfu_trans_start__ + SIZEOF (.dfu_trans))
                 0x0000000000000000                __dfu_trans_size__ = SIZEOF (.dfu_trans)
-                0x0000000000006364                __stop_dfu_trans = __dfu_trans_end__
-                0x0000000000006364                __dfu_trans_load_end__ = __dfu_trans_end__
+                0x000000000000644c                __stop_dfu_trans = __dfu_trans_end__
+                0x000000000000644c                __dfu_trans_load_end__ = __dfu_trans_end__
                 0x0000000000000001                . = ASSERT (((__dfu_trans_start__ == __dfu_trans_end__) || ((__dfu_trans_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .dfu_trans is too large to fit in FLASH memory segment)
-                0x0000000000006364                __log_const_data_load_start__ = ALIGN (__dfu_trans_end__, 0x4)
+                0x000000000000644c                __log_const_data_load_start__ = ALIGN (__dfu_trans_end__, 0x4)
 
 .log_const_data
-                0x0000000000006364        0x0
-                0x0000000000006364                __log_const_data_start__ = .
-                0x0000000000006364                __start_log_const_data = __log_const_data_start__
+                0x000000000000644c        0x0
+                0x000000000000644c                __log_const_data_start__ = .
+                0x000000000000644c                __start_log_const_data = __log_const_data_start__
  *(.log_const_data*)
-                0x0000000000006364                __log_const_data_end__ = (__log_const_data_start__ + SIZEOF (.log_const_data))
+                0x000000000000644c                __log_const_data_end__ = (__log_const_data_start__ + SIZEOF (.log_const_data))
                 0x0000000000000000                __log_const_data_size__ = SIZEOF (.log_const_data)
-                0x0000000000006364                __stop_log_const_data = __log_const_data_end__
-                0x0000000000006364                __log_const_data_load_end__ = __log_const_data_end__
+                0x000000000000644c                __stop_log_const_data = __log_const_data_end__
+                0x000000000000644c                __log_const_data_load_end__ = __log_const_data_end__
                 0x0000000000000001                . = ASSERT (((__log_const_data_start__ == __log_const_data_end__) || ((__log_const_data_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_const_data is too large to fit in FLASH memory segment)
-                0x0000000000006364                __svc_data_load_start__ = ALIGN (__log_const_data_end__, 0x4)
+                0x000000000000644c                __svc_data_load_start__ = ALIGN (__log_const_data_end__, 0x4)
 
-.svc_data       0x0000000000006364        0x0
-                0x0000000000006364                __svc_data_start__ = .
-                0x0000000000006364                __start_svc_data = __svc_data_start__
+.svc_data       0x000000000000644c        0x0
+                0x000000000000644c                __svc_data_start__ = .
+                0x000000000000644c                __start_svc_data = __svc_data_start__
  *(.svc_data*)
-                0x0000000000006364                __svc_data_end__ = (__svc_data_start__ + SIZEOF (.svc_data))
+                0x000000000000644c                __svc_data_end__ = (__svc_data_start__ + SIZEOF (.svc_data))
                 0x0000000000000000                __svc_data_size__ = SIZEOF (.svc_data)
-                0x0000000000006364                __stop_svc_data = __svc_data_end__
-                0x0000000000006364                __svc_data_load_end__ = __svc_data_end__
+                0x000000000000644c                __stop_svc_data = __svc_data_end__
+                0x000000000000644c                __svc_data_load_end__ = __svc_data_end__
                 0x0000000000000001                . = ASSERT (((__svc_data_start__ == __svc_data_end__) || ((__svc_data_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .svc_data is too large to fit in FLASH memory segment)
-                0x0000000000006364                __sdh_ble_observers_load_start__ = ALIGN (__svc_data_end__, 0x4)
+                0x000000000000644c                __sdh_ble_observers_load_start__ = ALIGN (__svc_data_end__, 0x4)
 
 .sdh_ble_observers
-                0x0000000000006364        0x0
-                0x0000000000006364                __sdh_ble_observers_start__ = .
-                0x0000000000006364                __start_sdh_ble_observers = __sdh_ble_observers_start__
+                0x000000000000644c        0x0
+                0x000000000000644c                __sdh_ble_observers_start__ = .
+                0x000000000000644c                __start_sdh_ble_observers = __sdh_ble_observers_start__
  *(SORT_BY_NAME(.sdh_ble_observers*))
-                0x0000000000006364                __sdh_ble_observers_end__ = (__sdh_ble_observers_start__ + SIZEOF (.sdh_ble_observers))
+                0x000000000000644c                __sdh_ble_observers_end__ = (__sdh_ble_observers_start__ + SIZEOF (.sdh_ble_observers))
                 0x0000000000000000                __sdh_ble_observers_size__ = SIZEOF (.sdh_ble_observers)
-                0x0000000000006364                __stop_sdh_ble_observers = __sdh_ble_observers_end__
-                0x0000000000006364                __sdh_ble_observers_load_end__ = __sdh_ble_observers_end__
+                0x000000000000644c                __stop_sdh_ble_observers = __sdh_ble_observers_end__
+                0x000000000000644c                __sdh_ble_observers_load_end__ = __sdh_ble_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_ble_observers_start__ == __sdh_ble_observers_end__) || ((__sdh_ble_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_ble_observers is too large to fit in FLASH memory segment)
-                0x0000000000006364                __sdh_req_observers_load_start__ = ALIGN (__sdh_ble_observers_end__, 0x4)
+                0x000000000000644c                __sdh_req_observers_load_start__ = ALIGN (__sdh_ble_observers_end__, 0x4)
 
 .sdh_req_observers
-                0x0000000000006364        0x0
-                0x0000000000006364                __sdh_req_observers_start__ = .
-                0x0000000000006364                __start_sdh_req_observers = __sdh_req_observers_start__
+                0x000000000000644c        0x0
+                0x000000000000644c                __sdh_req_observers_start__ = .
+                0x000000000000644c                __start_sdh_req_observers = __sdh_req_observers_start__
  *(SORT_BY_NAME(.sdh_req_observers*))
-                0x0000000000006364                __sdh_req_observers_end__ = (__sdh_req_observers_start__ + SIZEOF (.sdh_req_observers))
+                0x000000000000644c                __sdh_req_observers_end__ = (__sdh_req_observers_start__ + SIZEOF (.sdh_req_observers))
                 0x0000000000000000                __sdh_req_observers_size__ = SIZEOF (.sdh_req_observers)
-                0x0000000000006364                __stop_sdh_req_observers = __sdh_req_observers_end__
-                0x0000000000006364                __sdh_req_observers_load_end__ = __sdh_req_observers_end__
+                0x000000000000644c                __stop_sdh_req_observers = __sdh_req_observers_end__
+                0x000000000000644c                __sdh_req_observers_load_end__ = __sdh_req_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_req_observers_start__ == __sdh_req_observers_end__) || ((__sdh_req_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_req_observers is too large to fit in FLASH memory segment)
-                0x0000000000006364                __sdh_state_observers_load_start__ = ALIGN (__sdh_req_observers_end__, 0x4)
+                0x000000000000644c                __sdh_state_observers_load_start__ = ALIGN (__sdh_req_observers_end__, 0x4)
 
 .sdh_state_observers
-                0x0000000000006364        0x0
-                0x0000000000006364                __sdh_state_observers_start__ = .
-                0x0000000000006364                __start_sdh_state_observers = __sdh_state_observers_start__
+                0x000000000000644c        0x0
+                0x000000000000644c                __sdh_state_observers_start__ = .
+                0x000000000000644c                __start_sdh_state_observers = __sdh_state_observers_start__
  *(SORT_BY_NAME(.sdh_state_observers*))
-                0x0000000000006364                __sdh_state_observers_end__ = (__sdh_state_observers_start__ + SIZEOF (.sdh_state_observers))
+                0x000000000000644c                __sdh_state_observers_end__ = (__sdh_state_observers_start__ + SIZEOF (.sdh_state_observers))
                 0x0000000000000000                __sdh_state_observers_size__ = SIZEOF (.sdh_state_observers)
-                0x0000000000006364                __stop_sdh_state_observers = __sdh_state_observers_end__
-                0x0000000000006364                __sdh_state_observers_load_end__ = __sdh_state_observers_end__
+                0x000000000000644c                __stop_sdh_state_observers = __sdh_state_observers_end__
+                0x000000000000644c                __sdh_state_observers_load_end__ = __sdh_state_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_state_observers_start__ == __sdh_state_observers_end__) || ((__sdh_state_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_state_observers is too large to fit in FLASH memory segment)
-                0x0000000000006364                __sdh_stack_observers_load_start__ = ALIGN (__sdh_state_observers_end__, 0x4)
+                0x000000000000644c                __sdh_stack_observers_load_start__ = ALIGN (__sdh_state_observers_end__, 0x4)
 
 .sdh_stack_observers
-                0x0000000000006364        0x0
-                0x0000000000006364                __sdh_stack_observers_start__ = .
-                0x0000000000006364                __start_sdh_stack_observers = __sdh_stack_observers_start__
+                0x000000000000644c        0x0
+                0x000000000000644c                __sdh_stack_observers_start__ = .
+                0x000000000000644c                __start_sdh_stack_observers = __sdh_stack_observers_start__
  *(SORT_BY_NAME(.sdh_stack_observers*))
-                0x0000000000006364                __sdh_stack_observers_end__ = (__sdh_stack_observers_start__ + SIZEOF (.sdh_stack_observers))
+                0x000000000000644c                __sdh_stack_observers_end__ = (__sdh_stack_observers_start__ + SIZEOF (.sdh_stack_observers))
                 0x0000000000000000                __sdh_stack_observers_size__ = SIZEOF (.sdh_stack_observers)
-                0x0000000000006364                __stop_sdh_stack_observers = __sdh_stack_observers_end__
-                0x0000000000006364                __sdh_stack_observers_load_end__ = __sdh_stack_observers_end__
+                0x000000000000644c                __stop_sdh_stack_observers = __sdh_stack_observers_end__
+                0x000000000000644c                __sdh_stack_observers_load_end__ = __sdh_stack_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_stack_observers_start__ == __sdh_stack_observers_end__) || ((__sdh_stack_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_stack_observers is too large to fit in FLASH memory segment)
-                0x0000000000006364                __sdh_soc_observers_load_start__ = ALIGN (__sdh_stack_observers_end__, 0x4)
+                0x000000000000644c                __sdh_soc_observers_load_start__ = ALIGN (__sdh_stack_observers_end__, 0x4)
 
 .sdh_soc_observers
-                0x0000000000006364        0x0
-                0x0000000000006364                __sdh_soc_observers_start__ = .
-                0x0000000000006364                __start_sdh_soc_observers = __sdh_soc_observers_start__
+                0x000000000000644c        0x0
+                0x000000000000644c                __sdh_soc_observers_start__ = .
+                0x000000000000644c                __start_sdh_soc_observers = __sdh_soc_observers_start__
  *(SORT_BY_NAME(.sdh_soc_observers*))
-                0x0000000000006364                __sdh_soc_observers_end__ = (__sdh_soc_observers_start__ + SIZEOF (.sdh_soc_observers))
+                0x000000000000644c                __sdh_soc_observers_end__ = (__sdh_soc_observers_start__ + SIZEOF (.sdh_soc_observers))
                 0x0000000000000000                __sdh_soc_observers_size__ = SIZEOF (.sdh_soc_observers)
-                0x0000000000006364                __stop_sdh_soc_observers = __sdh_soc_observers_end__
-                0x0000000000006364                __sdh_soc_observers_load_end__ = __sdh_soc_observers_end__
+                0x000000000000644c                __stop_sdh_soc_observers = __sdh_soc_observers_end__
+                0x000000000000644c                __sdh_soc_observers_load_end__ = __sdh_soc_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_soc_observers_start__ == __sdh_soc_observers_end__) || ((__sdh_soc_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_soc_observers is too large to fit in FLASH memory segment)
-                0x0000000000006364                __nrf_sections_load_start__ = ALIGN (__sdh_soc_observers_end__, 0x4)
+                0x000000000000644c                __nrf_sections_load_start__ = ALIGN (__sdh_soc_observers_end__, 0x4)
 
-.nrf_sections   0x0000000000006364        0x0
-                0x0000000000006364                __nrf_sections_start__ = .
-                0x0000000000006364                __start_nrf_sections = __nrf_sections_start__
+.nrf_sections   0x000000000000644c        0x0
+                0x000000000000644c                __nrf_sections_start__ = .
+                0x000000000000644c                __start_nrf_sections = __nrf_sections_start__
  *(.nrf_sections .nrf_sections.*)
-                0x0000000000006364                __nrf_sections_end__ = (__nrf_sections_start__ + SIZEOF (.nrf_sections))
+                0x000000000000644c                __nrf_sections_end__ = (__nrf_sections_start__ + SIZEOF (.nrf_sections))
                 0x0000000000000000                __nrf_sections_size__ = SIZEOF (.nrf_sections)
-                0x0000000000006364                __nrf_sections_load_end__ = __nrf_sections_end__
+                0x000000000000644c                __nrf_sections_load_end__ = __nrf_sections_end__
                 0x0000000000000001                . = ASSERT (((__nrf_sections_start__ == __nrf_sections_end__) || ((__nrf_sections_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .nrf_sections is too large to fit in FLASH memory segment)
-                0x0000000000006364                __log_dynamic_data_load_start__ = ALIGN (__nrf_sections_end__, 0x4)
+                0x000000000000644c                __log_dynamic_data_load_start__ = ALIGN (__nrf_sections_end__, 0x4)
 
 .log_dynamic_data
-                0x000000002000006c        0x0 load address 0x0000000000006364
+                0x000000002000006c        0x0 load address 0x000000000000644c
                 0x000000002000006c                __log_dynamic_data_start__ = .
  *(.log_dynamic_data*)
                 0x000000002000006c                __log_dynamic_data_end__ = (__log_dynamic_data_start__ + SIZEOF (.log_dynamic_data))
                 0x0000000000000000                __log_dynamic_data_size__ = SIZEOF (.log_dynamic_data)
-                0x0000000000006364                __log_dynamic_data_load_end__ = (__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data))
+                0x000000000000644c                __log_dynamic_data_load_end__ = (__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data))
                 0x0000000000000001                . = ASSERT (((__log_dynamic_data_load_start__ == __log_dynamic_data_load_end__) || ((__log_dynamic_data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_dynamic_data is too large to fit in FLASH memory segment)
 
 .log_dynamic_data_run
@@ -4067,16 +4069,16 @@ Linker script and memory map
                 0x000000002000006c                __stop_log_dynamic_data = __log_dynamic_data_run_end__
                 0x000000002000006c                __log_dynamic_data_run_load_end__ = __log_dynamic_data_run_end__
                 0x0000000000000001                . = ASSERT (((__log_dynamic_data_run_start__ == __log_dynamic_data_run_end__) || ((__log_dynamic_data_run_end__ - __SRAM_segment_start__) <= __SRAM_segment_size__)), error: .log_dynamic_data_run is too large to fit in SRAM memory segment)
-                0x0000000000006364                __fs_data_load_start__ = ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4)
+                0x000000000000644c                __fs_data_load_start__ = ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4)
 
-.fs_data        0x000000002000006c        0x0 load address 0x0000000000006364
+.fs_data        0x000000002000006c        0x0 load address 0x000000000000644c
                 0x000000002000006c                __fs_data_start__ = .
  *(.fs_data*)
                 0x000000002000006c                __fs_data_end__ = (__fs_data_start__ + SIZEOF (.fs_data))
                 0x0000000000000000                __fs_data_size__ = SIZEOF (.fs_data)
-                0x0000000000006364                __fs_data_load_end__ = (__fs_data_load_start__ + SIZEOF (.fs_data))
-                0x0000000000006364                __FLASH_segment_used_end__ = (ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4) + SIZEOF (.fs_data))
-                0x0000000000006364                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
+                0x000000000000644c                __fs_data_load_end__ = (__fs_data_load_start__ + SIZEOF (.fs_data))
+                0x000000000000644c                __FLASH_segment_used_end__ = (ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4) + SIZEOF (.fs_data))
+                0x000000000000644c                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
                 0x0000000000000001                . = ASSERT (((__fs_data_load_start__ == __fs_data_load_end__) || ((__fs_data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .fs_data is too large to fit in FLASH memory segment)
 
 .fs_data_run    0x000000002000006c        0x0
@@ -4289,27 +4291,27 @@ LOAD linker stubs
  .debug_frame   0x0000000000003598      0x118 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
  .debug_frame   0x00000000000036b0       0x60 Output/nrf52832_xxaa/Obj/initiator/retarget.o
 
-.debug_info     0x0000000000000000     0xec96
+.debug_info     0x0000000000000000     0xecc5
  .debug_info    0x0000000000000000      0xa34 Output/nrf52832_xxaa/Obj/initiator/init_main.o
- .debug_info    0x0000000000000a34      0xcf3 Output/nrf52832_xxaa/Obj/initiator/main.o
- .debug_info    0x0000000000001727      0xa1e Output/nrf52832_xxaa/Obj/initiator/resp_main.o
- .debug_info    0x0000000000002145     0x1cb2 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
- .debug_info    0x0000000000003df7      0x2fe Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
- .debug_info    0x00000000000040f5     0x11e6 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
- .debug_info    0x00000000000052db       0x23 Output/nrf52832_xxaa/Obj/initiator/ses_nrf52_startup.o
- .debug_info    0x00000000000052fe     0x113d Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
- .debug_info    0x000000000000643b       0x22 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
- .debug_info    0x000000000000645d      0x409 Output/nrf52832_xxaa/Obj/initiator/UART.o
- .debug_info    0x0000000000006866      0xc64 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
- .debug_info    0x00000000000074ca      0x623 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
- .debug_info    0x0000000000007aed     0x1af7 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
- .debug_info    0x00000000000095e4     0x141d Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
- .debug_info    0x000000000000aa01     0x2805 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .debug_info    0x000000000000d206      0x2c1 Output/nrf52832_xxaa/Obj/initiator/app_error.o
- .debug_info    0x000000000000d4c7      0x328 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
- .debug_info    0x000000000000d7ef      0x41f Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
- .debug_info    0x000000000000dc0e      0xf64 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
- .debug_info    0x000000000000eb72      0x124 Output/nrf52832_xxaa/Obj/initiator/retarget.o
+ .debug_info    0x0000000000000a34      0xd22 Output/nrf52832_xxaa/Obj/initiator/main.o
+ .debug_info    0x0000000000001756      0xa1e Output/nrf52832_xxaa/Obj/initiator/resp_main.o
+ .debug_info    0x0000000000002174     0x1cb2 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+ .debug_info    0x0000000000003e26      0x2fe Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+ .debug_info    0x0000000000004124     0x11e6 Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+ .debug_info    0x000000000000530a       0x23 Output/nrf52832_xxaa/Obj/initiator/ses_nrf52_startup.o
+ .debug_info    0x000000000000532d     0x113d Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+ .debug_info    0x000000000000646a       0x22 Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
+ .debug_info    0x000000000000648c      0x409 Output/nrf52832_xxaa/Obj/initiator/UART.o
+ .debug_info    0x0000000000006895      0xc64 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+ .debug_info    0x00000000000074f9      0x623 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
+ .debug_info    0x0000000000007b1c     0x1af7 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+ .debug_info    0x0000000000009613     0x141d Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+ .debug_info    0x000000000000aa30     0x2805 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .debug_info    0x000000000000d235      0x2c1 Output/nrf52832_xxaa/Obj/initiator/app_error.o
+ .debug_info    0x000000000000d4f6      0x328 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
+ .debug_info    0x000000000000d81e      0x41f Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+ .debug_info    0x000000000000dc3d      0xf64 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+ .debug_info    0x000000000000eba1      0x124 Output/nrf52832_xxaa/Obj/initiator/retarget.o
 
 .debug_abbrev   0x0000000000000000     0x239c
  .debug_abbrev  0x0000000000000000      0x1c1 Output/nrf52832_xxaa/Obj/initiator/init_main.o
@@ -4473,33 +4475,33 @@ LOAD linker stubs
  .debug_ranges  0x0000000000000d50       0x40 Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
  .debug_ranges  0x0000000000000d90       0x18 Output/nrf52832_xxaa/Obj/initiator/retarget.o
 
-.debug_line     0x0000000000000000     0x7389
+.debug_line     0x0000000000000000     0x73a8
  .debug_line    0x0000000000000000      0x321 Output/nrf52832_xxaa/Obj/initiator/init_main.o
- .debug_line    0x0000000000000321      0x3a1 Output/nrf52832_xxaa/Obj/initiator/main.o
- .debug_line    0x00000000000006c2      0x361 Output/nrf52832_xxaa/Obj/initiator/resp_main.o
- .debug_line    0x0000000000000a23     0x152f Output/nrf52832_xxaa/Obj/initiator/deca_device.o
- .debug_line    0x0000000000001f52       0x9c Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
- .debug_line    0x0000000000001fee      0x5cf Output/nrf52832_xxaa/Obj/initiator/port_platform.o
- .debug_line    0x00000000000025bd       0xd5 Output/nrf52832_xxaa/Obj/initiator/ses_nrf52_startup.o
- .debug_line    0x0000000000002692      0x78e Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
- .debug_line    0x0000000000002e20      0x2ba Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
- .debug_line    0x00000000000030da      0x21c Output/nrf52832_xxaa/Obj/initiator/UART.o
- .debug_line    0x00000000000032f6      0x749 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
- .debug_line    0x0000000000003a3f      0x2da Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
- .debug_line    0x0000000000003d19      0xeec Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
- .debug_line    0x0000000000004c05      0x8de Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
- .debug_line    0x00000000000054e3     0x1216 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
- .debug_line    0x00000000000066f9      0x231 Output/nrf52832_xxaa/Obj/initiator/app_error.o
- .debug_line    0x000000000000692a      0x1c4 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
- .debug_line    0x0000000000006aee      0x2e6 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
- .debug_line    0x0000000000006dd4      0x48f Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
- .debug_line    0x0000000000007263      0x126 Output/nrf52832_xxaa/Obj/initiator/retarget.o
+ .debug_line    0x0000000000000321      0x3c0 Output/nrf52832_xxaa/Obj/initiator/main.o
+ .debug_line    0x00000000000006e1      0x361 Output/nrf52832_xxaa/Obj/initiator/resp_main.o
+ .debug_line    0x0000000000000a42     0x152f Output/nrf52832_xxaa/Obj/initiator/deca_device.o
+ .debug_line    0x0000000000001f71       0x9c Output/nrf52832_xxaa/Obj/initiator/deca_params_init.o
+ .debug_line    0x000000000000200d      0x5cf Output/nrf52832_xxaa/Obj/initiator/port_platform.o
+ .debug_line    0x00000000000025dc       0xd5 Output/nrf52832_xxaa/Obj/initiator/ses_nrf52_startup.o
+ .debug_line    0x00000000000026b1      0x78e Output/nrf52832_xxaa/Obj/initiator/system_nrf52.o
+ .debug_line    0x0000000000002e3f      0x2ba Output/nrf52832_xxaa/Obj/initiator/thumb_crt0.o
+ .debug_line    0x00000000000030f9      0x21c Output/nrf52832_xxaa/Obj/initiator/UART.o
+ .debug_line    0x0000000000003315      0x749 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_clock.o
+ .debug_line    0x0000000000003a5e      0x2da Output/nrf52832_xxaa/Obj/initiator/nrf_drv_common.o
+ .debug_line    0x0000000000003d38      0xeec Output/nrf52832_xxaa/Obj/initiator/nrf_drv_gpiote.o
+ .debug_line    0x0000000000004c24      0x8de Output/nrf52832_xxaa/Obj/initiator/nrf_drv_spi.o
+ .debug_line    0x0000000000005502     0x1216 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o
+ .debug_line    0x0000000000006718      0x231 Output/nrf52832_xxaa/Obj/initiator/app_error.o
+ .debug_line    0x0000000000006949      0x1c4 Output/nrf52832_xxaa/Obj/initiator/app_error_weak.o
+ .debug_line    0x0000000000006b0d      0x2e6 Output/nrf52832_xxaa/Obj/initiator/app_fifo.o
+ .debug_line    0x0000000000006df3      0x48f Output/nrf52832_xxaa/Obj/initiator/app_uart_fifo.o
+ .debug_line    0x0000000000007282      0x126 Output/nrf52832_xxaa/Obj/initiator/retarget.o
 
 .debug_str      0x0000000000000000     0x58cb
  .debug_str     0x0000000000000000      0x8bd Output/nrf52832_xxaa/Obj/initiator/init_main.o
                                         0x914 (size before relaxing)
  .debug_str     0x00000000000008bd      0x3f1 Output/nrf52832_xxaa/Obj/initiator/main.o
-                                        0xb6c (size before relaxing)
+                                        0xb72 (size before relaxing)
  .debug_str     0x0000000000000cae       0xd5 Output/nrf52832_xxaa/Obj/initiator/resp_main.o
                                         0x8e2 (size before relaxing)
  .debug_str     0x0000000000000d83      0xcb6 Output/nrf52832_xxaa/Obj/initiator/deca_device.o
