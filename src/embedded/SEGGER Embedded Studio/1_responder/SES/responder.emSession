@@ -14,6 +14,10 @@
   <ProjectSessionItem path="responder"/>
   <ProjectSessionItem path="responder;responder"/>
   <ProjectSessionItem path="responder;responder;Application"/>
+  <ProjectSessionItem path="responder;responder;Board Definition"/>
+  <ProjectSessionItem path="responder;responder;Board Support"/>
+  <ProjectSessionItem path="responder;responder;Config"/>
+  <ProjectSessionItem path="responder;responder;Decadriver"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -39,8 +43,9 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../lib/nRF5_SDK_14.2.0/external/fprintf/nrf_fprintf.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="111" useTextEdit="1" path="../../../../../lib/nRF5_SDK_14.2.0/components/libraries/uart/retarget.c" left="0" top="69" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../resp_main.c" left="0" selected="1" top="129" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="111" useTextEdit="1" path="../../../../../lib/nRF5_SDK_14.2.0/components/libraries/uart/retarget.c" left="0" top="71" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="190" useTextEdit="1" path="../resp_main.c" left="0" top="138" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="49" y="118" useTextEdit="1" path="../main.c" left="0" selected="1" top="66" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="responder" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
