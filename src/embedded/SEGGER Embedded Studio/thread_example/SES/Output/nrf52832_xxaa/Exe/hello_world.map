@@ -97,11 +97,11 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0xf0 Output/nrf52832_xxaa/Obj/hello_world/boards.o
  .debug_ranges  0x0000000000000000       0xe0 Output/nrf52832_xxaa/Obj/hello_world/boards.o
- .debug_line    0x0000000000000000      0x539 Output/nrf52832_xxaa/Obj/hello_world/boards.o
- .debug_str     0x0000000000000000      0x77a Output/nrf52832_xxaa/Obj/hello_world/boards.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/boards.o
+ .debug_line    0x0000000000000000      0x540 Output/nrf52832_xxaa/Obj/hello_world/boards.o
+ .debug_str     0x0000000000000000      0x7a5 Output/nrf52832_xxaa/Obj/hello_world/boards.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/boards.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/boards.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/boards.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
@@ -120,20 +120,20 @@ Discarded input sections
  .text.bsp_wakeup_button_disable
                 0x0000000000000000        0xc Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .debug_frame   0x0000000000000000       0xe0 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
- .debug_info    0x0000000000000000      0x337 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
- .debug_abbrev  0x0000000000000000      0x11a Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+ .debug_info    0x0000000000000000      0x34a Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+ .debug_abbrev  0x0000000000000000      0x142 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .debug_pubnames
-                0x0000000000000000       0xba Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+                0x0000000000000000       0xf4 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .debug_pubtypes
-                0x0000000000000000      0x11a Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+                0x0000000000000000      0x10a Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .debug_aranges
                 0x0000000000000000       0x50 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .debug_ranges  0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
- .debug_line    0x0000000000000000      0x18b Output/nrf52832_xxaa/Obj/hello_world/bsp.o
- .debug_str     0x0000000000000000      0x775 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+ .debug_line    0x0000000000000000      0x1d1 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+ .debug_str     0x0000000000000000      0x7c6 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/bsp.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
@@ -146,10 +146,10 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
- .debug_str     0x0000000000000000      0x251 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
+ .debug_str     0x0000000000000000      0x27c Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/bsp_nfc.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
@@ -213,20 +213,20 @@ Discarded input sections
  .bss.rx_buf.1  0x0000000000000000       0x20 Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .bss.tx_buf.0  0x0000000000000000      0x200 Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .debug_frame   0x0000000000000000       0xa8 Output/nrf52832_xxaa/Obj/hello_world/UART.o
- .debug_info    0x0000000000000000      0x409 Output/nrf52832_xxaa/Obj/hello_world/UART.o
- .debug_abbrev  0x0000000000000000      0x161 Output/nrf52832_xxaa/Obj/hello_world/UART.o
+ .debug_info    0x0000000000000000      0x472 Output/nrf52832_xxaa/Obj/hello_world/UART.o
+ .debug_abbrev  0x0000000000000000      0x188 Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .debug_pubnames
-                0x0000000000000000      0x397 Output/nrf52832_xxaa/Obj/hello_world/UART.o
+                0x0000000000000000      0x3ba Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .debug_pubtypes
-                0x0000000000000000      0x161 Output/nrf52832_xxaa/Obj/hello_world/UART.o
+                0x0000000000000000      0x185 Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .debug_aranges
                 0x0000000000000000       0x38 Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .debug_ranges  0x0000000000000000       0x28 Output/nrf52832_xxaa/Obj/hello_world/UART.o
- .debug_line    0x0000000000000000      0x212 Output/nrf52832_xxaa/Obj/hello_world/UART.o
- .debug_str     0x0000000000000000      0x685 Output/nrf52832_xxaa/Obj/hello_world/UART.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/UART.o
+ .debug_line    0x0000000000000000      0x217 Output/nrf52832_xxaa/Obj/hello_world/UART.o
+ .debug_str     0x0000000000000000      0x6eb Output/nrf52832_xxaa/Obj/hello_world/UART.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/UART.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/UART.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
@@ -296,20 +296,20 @@ Discarded input sections
  .text.nrf_drv_common_irq_enable
                 0x0000000000000000       0x3e Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .debug_frame   0x0000000000000000       0xfc Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
- .debug_info    0x0000000000000000      0x623 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
+ .debug_info    0x0000000000000000      0x61c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .debug_abbrev  0x0000000000000000      0x198 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .debug_pubnames
                 0x0000000000000000      0x430 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .debug_pubtypes
-                0x0000000000000000      0x120 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
+                0x0000000000000000      0x110 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .debug_aranges
                 0x0000000000000000       0x50 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .debug_ranges  0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
- .debug_line    0x0000000000000000      0x2ca Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
- .debug_str     0x0000000000000000      0x699 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
+ .debug_line    0x0000000000000000      0x2cf Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
+ .debug_str     0x0000000000000000      0x6b8 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_common.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
@@ -584,7 +584,7 @@ Discarded input sections
  .text.nrf_drv_uart_errorsrc_get
                 0x0000000000000000       0x5c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
  .text.nrf_drv_uart_tx_abort
-                0x0000000000000000       0xa0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+                0x0000000000000000       0x9c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
  .text.nrf_drv_uart_rx_abort
                 0x0000000000000000       0x4c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_button.o
@@ -611,20 +611,20 @@ Discarded input sections
  .text.app_error_fault_handler
                 0x0000000000000000       0x20 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .debug_frame   0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
- .debug_info    0x0000000000000000      0x328 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
+ .debug_info    0x0000000000000000      0x321 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .debug_abbrev  0x0000000000000000      0x119 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .debug_pubnames
                 0x0000000000000000       0x4f Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .debug_pubtypes
-                0x0000000000000000      0x108 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
+                0x0000000000000000       0xf8 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .debug_aranges
                 0x0000000000000000       0x28 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .debug_ranges  0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
- .debug_line    0x0000000000000000      0x1b4 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
- .debug_str     0x0000000000000000      0x337 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
+ .debug_line    0x0000000000000000      0x1b9 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
+ .debug_str     0x0000000000000000      0x356 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/app_error_weak.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
@@ -637,20 +637,20 @@ Discarded input sections
  .bss.m_error_data.0
                 0x0000000000000000       0x20 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .debug_frame   0x0000000000000000       0x80 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
- .debug_info    0x0000000000000000      0x2c1 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
- .debug_abbrev  0x0000000000000000      0x111 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
+ .debug_info    0x0000000000000000      0x2dd Output/nrf52832_xxaa/Obj/hello_world/app_error.o
+ .debug_abbrev  0x0000000000000000      0x12d Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .debug_pubnames
-                0x0000000000000000       0x82 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
+                0x0000000000000000       0x9e Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .debug_pubtypes
                 0x0000000000000000      0x117 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .debug_aranges
                 0x0000000000000000       0x30 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .debug_ranges  0x0000000000000000       0x20 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
- .debug_line    0x0000000000000000      0x221 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
- .debug_str     0x0000000000000000      0x365 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
+ .debug_line    0x0000000000000000      0x233 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
+ .debug_str     0x0000000000000000      0x3a8 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/app_error.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
@@ -680,31 +680,31 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x50 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
  .debug_ranges  0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
- .debug_line    0x0000000000000000      0x2ea Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
- .debug_str     0x0000000000000000      0x7af Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
+ .debug_line    0x0000000000000000      0x2ef Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
+ .debug_str     0x0000000000000000      0x7da Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/app_util_platform.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .text.assert_nrf_callback
                 0x0000000000000000       0x2e Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .debug_frame   0x0000000000000000       0x38 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
- .debug_info    0x0000000000000000      0x10b Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
- .debug_abbrev  0x0000000000000000       0xa8 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
+ .debug_info    0x0000000000000000      0x127 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
+ .debug_abbrev  0x0000000000000000       0xc4 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .debug_pubnames
-                0x0000000000000000       0x2a Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
+                0x0000000000000000       0x46 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .debug_pubtypes
                 0x0000000000000000       0xed Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .debug_aranges
                 0x0000000000000000       0x20 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .debug_ranges  0x0000000000000000       0x10 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
- .debug_line    0x0000000000000000       0xf8 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
- .debug_str     0x0000000000000000      0x2bc Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
+ .debug_line    0x0000000000000000      0x111 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
+ .debug_str     0x0000000000000000      0x2ff Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_assert.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
@@ -773,20 +773,20 @@ Discarded input sections
  .rodata._aV2C.0
                 0x0000000000000000       0x10 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
  .debug_frame   0x0000000000000000       0xd8 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
- .debug_info    0x0000000000000000      0x474 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
- .debug_abbrev  0x0000000000000000      0x191 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+ .debug_info    0x0000000000000000      0x489 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+ .debug_abbrev  0x0000000000000000      0x1bd Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
  .debug_pubnames
-                0x0000000000000000       0x67 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+                0x0000000000000000       0x8f Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
  .debug_pubtypes
-                0x0000000000000000      0x175 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+                0x0000000000000000      0x157 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
  .debug_aranges
                 0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
  .debug_ranges  0x0000000000000000       0x30 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
- .debug_line    0x0000000000000000      0x459 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
- .debug_str     0x0000000000000000      0x3ba Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+ .debug_line    0x0000000000000000      0x452 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+ .debug_str     0x0000000000000000      0x3f9 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf_format.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
@@ -795,20 +795,20 @@ Discarded input sections
  .text.nrf_fprintf
                 0x0000000000000000       0x30 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .debug_frame   0x0000000000000000       0x80 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
- .debug_info    0x0000000000000000      0x1f7 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
- .debug_abbrev  0x0000000000000000      0x103 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+ .debug_info    0x0000000000000000      0x206 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+ .debug_abbrev  0x0000000000000000      0x118 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .debug_pubnames
-                0x0000000000000000       0x3f Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+                0x0000000000000000       0x53 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .debug_pubtypes
-                0x0000000000000000      0x15c Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+                0x0000000000000000      0x13e Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .debug_aranges
                 0x0000000000000000       0x28 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .debug_ranges  0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
- .debug_line    0x0000000000000000      0x164 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
- .debug_str     0x0000000000000000      0x33f Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+ .debug_line    0x0000000000000000      0x16d Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+ .debug_str     0x0000000000000000      0x36e Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_fprintf.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
@@ -823,20 +823,20 @@ Discarded input sections
  .text.nrf_balloc_free
                 0x0000000000000000       0x34 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .debug_frame   0x0000000000000000       0xc4 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
- .debug_info    0x0000000000000000      0x297 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
- .debug_abbrev  0x0000000000000000      0x164 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+ .debug_info    0x0000000000000000      0x2b4 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+ .debug_abbrev  0x0000000000000000      0x180 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .debug_pubnames
-                0x0000000000000000       0x81 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+                0x0000000000000000       0xc6 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .debug_pubtypes
-                0x0000000000000000      0x12a Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+                0x0000000000000000      0x11a Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .debug_aranges
                 0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .debug_ranges  0x0000000000000000       0x30 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
- .debug_line    0x0000000000000000      0x264 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
- .debug_str     0x0000000000000000      0x390 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+ .debug_line    0x0000000000000000      0x282 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+ .debug_str     0x0000000000000000      0x3ec Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_balloc.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
@@ -861,20 +861,20 @@ Discarded input sections
  .text.nrf_memobj_read
                 0x0000000000000000       0x24 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .debug_frame   0x0000000000000000      0x1b0 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
- .debug_info    0x0000000000000000      0x726 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
- .debug_abbrev  0x0000000000000000      0x1b4 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+ .debug_info    0x0000000000000000      0x78c Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+ .debug_abbrev  0x0000000000000000      0x203 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .debug_pubnames
-                0x0000000000000000       0xdf Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+                0x0000000000000000      0x127 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .debug_pubtypes
-                0x0000000000000000      0x1f3 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+                0x0000000000000000      0x1e3 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .debug_aranges
                 0x0000000000000000       0x68 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .debug_ranges  0x0000000000000000       0x58 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
- .debug_line    0x0000000000000000      0x40d Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
- .debug_str     0x0000000000000000      0x592 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
- .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+ .debug_line    0x0000000000000000      0x417 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+ .debug_str     0x0000000000000000      0x5e9 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+ .comment       0x0000000000000000       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .ARM.attributes
-                0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
+                0x0000000000000000       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_memobj.o
  .text          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_strerror.o
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_strerror.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/hello_world/nrf_strerror.o
@@ -1028,8 +1028,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
  .debug_ranges  0x0000000000000000       0x48 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
- .debug_line    0x0000000000000000      0x45e Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
- .debug_str     0x0000000000000000      0x383 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
+ .debug_line    0x0000000000000000      0x463 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
+ .debug_str     0x0000000000000000      0x39b Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
  .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT_printf.o
@@ -1132,8 +1132,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000      0x108 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
  .debug_ranges  0x0000000000000000       0xf8 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
- .debug_line    0x0000000000000000      0x872 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
- .debug_str     0x0000000000000000      0x656 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
+ .debug_line    0x0000000000000000      0x877 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
+ .debug_str     0x0000000000000000      0x66e Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
  .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/SEGGER_RTT.o
@@ -1370,8 +1370,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000      0x308 Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
  .debug_ranges  0x0000000000000000      0x2f8 Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
- .debug_line    0x0000000000000000     0x1536 Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
- .debug_str     0x0000000000000000      0xfe8 Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
+ .debug_line    0x0000000000000000     0x153b Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
+ .debug_str     0x0000000000000000     0x1000 Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
  .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/deca_device.o
@@ -1409,8 +1409,8 @@ Discarded input sections
                 0x0000000000000000       0xee Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
- .debug_line    0x0000000000000000       0x9c Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
- .debug_str     0x0000000000000000      0x2fb Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
+ .debug_line    0x0000000000000000       0xa1 Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
+ .debug_str     0x0000000000000000      0x313 Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
  .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/deca_params_init.o
@@ -1441,8 +1441,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x20 Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
  .debug_ranges  0x0000000000000000       0x10 Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
- .debug_line    0x0000000000000000      0x14c Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
- .debug_str     0x0000000000000000      0x2e9 Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
+ .debug_line    0x0000000000000000      0x151 Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
+ .debug_str     0x0000000000000000      0x301 Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
  .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/deca_range_tables.o
@@ -1505,8 +1505,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0xb8 Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
  .debug_ranges  0x0000000000000000       0xa8 Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
- .debug_line    0x0000000000000000      0x5c5 Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
- .debug_str     0x0000000000000000      0xf9f Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
+ .debug_line    0x0000000000000000      0x5ca Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
+ .debug_str     0x0000000000000000      0xfb7 Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
  .comment       0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/port_platform.o
@@ -4260,73 +4260,73 @@ LOAD linker stubs
  .debug_frame   0x0000000000002148      0x118 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
  .debug_frame   0x0000000000002260       0x60 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
 
-.debug_info     0x0000000000000000     0x8fec
+.debug_info     0x0000000000000000     0x91c6
  .debug_info    0x0000000000000000      0x646 Output/nrf52832_xxaa/Obj/hello_world/main.o
  .debug_info    0x0000000000000646       0x23 Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
- .debug_info    0x0000000000000669     0x113d Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
- .debug_info    0x00000000000017a6       0x22 Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
- .debug_info    0x00000000000017c8      0xc64 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
- .debug_info    0x000000000000242c     0x1af7 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
- .debug_info    0x0000000000003f23     0x141d Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
- .debug_info    0x0000000000005340     0x2805 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
- .debug_info    0x0000000000007b45      0x41f Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
- .debug_info    0x0000000000007f64      0xf64 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
- .debug_info    0x0000000000008ec8      0x124 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+ .debug_info    0x0000000000000669     0x1144 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
+ .debug_info    0x00000000000017ad       0x22 Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
+ .debug_info    0x00000000000017cf      0xca6 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+ .debug_info    0x0000000000002475     0x1b13 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+ .debug_info    0x0000000000003f88     0x142d Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+ .debug_info    0x00000000000053b5     0x2816 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+ .debug_info    0x0000000000007bcb      0x418 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+ .debug_info    0x0000000000007fe3     0x10bf Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+ .debug_info    0x00000000000090a2      0x124 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
 
-.debug_abbrev   0x0000000000000000     0x144a
+.debug_abbrev   0x0000000000000000     0x1507
  .debug_abbrev  0x0000000000000000      0x1ae Output/nrf52832_xxaa/Obj/hello_world/main.o
  .debug_abbrev  0x00000000000001ae       0x14 Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
  .debug_abbrev  0x00000000000001c2      0x201 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
  .debug_abbrev  0x00000000000003c3       0x12 Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
- .debug_abbrev  0x00000000000003d5      0x34c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
- .debug_abbrev  0x0000000000000721      0x31a Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
- .debug_abbrev  0x0000000000000a3b      0x322 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
- .debug_abbrev  0x0000000000000d5d      0x306 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
- .debug_abbrev  0x0000000000001063      0x130 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
- .debug_abbrev  0x0000000000001193      0x1ed Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
- .debug_abbrev  0x0000000000001380       0xca Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+ .debug_abbrev  0x00000000000003d5      0x374 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+ .debug_abbrev  0x0000000000000749      0x32f Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+ .debug_abbrev  0x0000000000000a78      0x337 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+ .debug_abbrev  0x0000000000000daf      0x31b Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+ .debug_abbrev  0x00000000000010ca      0x130 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+ .debug_abbrev  0x00000000000011fa      0x243 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+ .debug_abbrev  0x000000000000143d       0xca Output/nrf52832_xxaa/Obj/hello_world/retarget.o
 
 .debug_pubnames
-                0x0000000000000000     0x3851
+                0x0000000000000000     0x3a26
  .debug_pubnames
                 0x0000000000000000      0x15b Output/nrf52832_xxaa/Obj/hello_world/main.o
  .debug_pubnames
                 0x000000000000015b      0x108 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
  .debug_pubnames
-                0x0000000000000263      0x92c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+                0x0000000000000263      0x9b4 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
  .debug_pubnames
-                0x0000000000000b8f     0x125c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+                0x0000000000000c17     0x127a Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
  .debug_pubnames
-                0x0000000000001deb      0x6ec Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+                0x0000000000001e91      0x70a Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
  .debug_pubnames
-                0x00000000000024d7      0xfab Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+                0x000000000000259b      0xfc9 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
  .debug_pubnames
-                0x0000000000003482       0xc8 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+                0x0000000000003564       0xc8 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
  .debug_pubnames
-                0x000000000000354a      0x2d9 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+                0x000000000000362c      0x3cc Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
  .debug_pubnames
-                0x0000000000003823       0x2e Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+                0x00000000000039f8       0x2e Output/nrf52832_xxaa/Obj/hello_world/retarget.o
 
 .debug_pubtypes
-                0x0000000000000000     0x14e6
+                0x0000000000000000     0x14ba
  .debug_pubtypes
                 0x0000000000000000      0x235 Output/nrf52832_xxaa/Obj/hello_world/main.o
  .debug_pubtypes
-                0x0000000000000235      0x1a7 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
+                0x0000000000000235      0x1b0 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
  .debug_pubtypes
-                0x00000000000003dc      0x22e Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+                0x00000000000003e5      0x21e Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
  .debug_pubtypes
-                0x000000000000060a      0x2c5 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+                0x0000000000000603      0x2c3 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
  .debug_pubtypes
-                0x00000000000008cf      0x343 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+                0x00000000000008c6      0x333 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
  .debug_pubtypes
-                0x0000000000000c12      0x3e5 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+                0x0000000000000bf9      0x3d5 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
  .debug_pubtypes
-                0x0000000000000ff7       0xfa Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+                0x0000000000000fce       0xea Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
  .debug_pubtypes
-                0x00000000000010f1      0x2fc Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+                0x00000000000010b8      0x309 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
  .debug_pubtypes
-                0x00000000000013ed       0xf9 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+                0x00000000000013c1       0xf9 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
 
 .debug_aranges  0x0000000000000000      0x9c0
  .debug_aranges
@@ -4364,89 +4364,90 @@ LOAD linker stubs
  .debug_ranges  0x00000000000008c8       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
  .debug_ranges  0x0000000000000908       0x18 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
 
-.debug_line     0x0000000000000000     0x46e3
+.debug_line     0x0000000000000000     0x47ec
  .debug_line    0x0000000000000000      0x275 Output/nrf52832_xxaa/Obj/hello_world/main.o
  .debug_line    0x0000000000000275       0xd5 Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
- .debug_line    0x000000000000034a      0x77e Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
- .debug_line    0x0000000000000ac8      0x2af Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
- .debug_line    0x0000000000000d77      0x739 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
- .debug_line    0x00000000000014b0      0xee2 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
- .debug_line    0x0000000000002392      0x8ce Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
- .debug_line    0x0000000000002c60     0x1206 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
- .debug_line    0x0000000000003e66      0x2dc Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
- .debug_line    0x0000000000004142      0x485 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
- .debug_line    0x00000000000045c7      0x11c Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+ .debug_line    0x000000000000034a      0x783 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
+ .debug_line    0x0000000000000acd      0x2af Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
+ .debug_line    0x0000000000000d7c      0x747 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+ .debug_line    0x00000000000014c3      0xf02 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+ .debug_line    0x00000000000023c5      0x8d2 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+ .debug_line    0x0000000000002c97     0x12bf Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+ .debug_line    0x0000000000003f56      0x2e1 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+ .debug_line    0x0000000000004237      0x499 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+ .debug_line    0x00000000000046d0      0x11c Output/nrf52832_xxaa/Obj/hello_world/retarget.o
 
-.debug_str      0x0000000000000000     0x467a
+.debug_str      0x0000000000000000     0x48c7
  .debug_str     0x0000000000000000      0x5af Output/nrf52832_xxaa/Obj/hello_world/main.o
                                         0x5f6 (size before relaxing)
  .debug_str     0x00000000000005af       0x7d Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
                                          0xd4 (size before relaxing)
- .debug_str     0x000000000000062c      0x5a1 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
-                                        0x7ab (size before relaxing)
- .debug_str     0x0000000000000bcd       0x68 Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
+ .debug_str     0x000000000000062c      0x741 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
+                                        0x7db (size before relaxing)
+ .debug_str     0x0000000000000d6d       0x68 Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
                                          0xcd (size before relaxing)
- .debug_str     0x0000000000000c35      0xa01 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
-                                        0xdad (size before relaxing)
- .debug_str     0x0000000000001636     0x10ab Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
-                                       0x1629 (size before relaxing)
- .debug_str     0x00000000000026e1      0x717 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
-                                       0x105c (size before relaxing)
- .debug_str     0x0000000000002df8     0x12cb Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
-                                       0x1cd8 (size before relaxing)
- .debug_str     0x00000000000040c3      0x16d Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
-                                        0x3a9 (size before relaxing)
- .debug_str     0x0000000000004230      0x39f Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
-                                        0xc40 (size before relaxing)
- .debug_str     0x00000000000045cf       0xab Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+ .debug_str     0x0000000000000dd5      0xa72 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+                                        0xe44 (size before relaxing)
+ .debug_str     0x0000000000001847     0x10b0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+                                       0x166c (size before relaxing)
+ .debug_str     0x00000000000028f7      0x71c Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+                                       0x1095 (size before relaxing)
+ .debug_str     0x0000000000003013     0x12d0 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+                                       0x1d11 (size before relaxing)
+ .debug_str     0x00000000000042e3      0x172 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+                                        0x3c8 (size before relaxing)
+ .debug_str     0x0000000000004455      0x3bb Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+                                        0xd3f (size before relaxing)
+ .debug_str     0x0000000000004810       0xb7 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
                                         0x2bc (size before relaxing)
 
-.comment        0x0000000000000000       0x3f
+.comment        0x0000000000000000       0x71
  .comment       0x0000000000000000       0x3f Output/nrf52832_xxaa/Obj/hello_world/main.o
                                          0x40 (size before relaxing)
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
- .comment       0x000000000000003f       0x40 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
- .comment       0x000000000000003f       0x40 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
- .comment       0x000000000000003f       0x40 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
- .comment       0x000000000000003f       0x40 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+ .comment       0x000000000000003f       0x32 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
+                                         0x33 (size before relaxing)
+ .comment       0x0000000000000071       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+ .comment       0x0000000000000071       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+ .comment       0x0000000000000071       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+ .comment       0x0000000000000071       0x33 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+ .comment       0x0000000000000071       0x33 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+ .comment       0x0000000000000071       0x33 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+ .comment       0x0000000000000071       0x40 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+ .comment       0x0000000000000071       0x40 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+ .comment       0x0000000000000071       0x40 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+ .comment       0x0000000000000071       0x40 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
 
 .ARM.attributes
-                0x0000000000000000       0x37
+                0x0000000000000000       0x39
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/hello_world/main.o
  .ARM.attributes
                 0x0000000000000039       0x20 Output/nrf52832_xxaa/Obj/hello_world/ses_nrf52_startup.o
  .ARM.attributes
-                0x0000000000000059       0x39 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
+                0x0000000000000059       0x36 Output/nrf52832_xxaa/Obj/hello_world/system_nrf52.o
  .ARM.attributes
-                0x0000000000000092       0x20 Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
+                0x000000000000008f       0x20 Output/nrf52832_xxaa/Obj/hello_world/thumb_crt0.o
  .ARM.attributes
-                0x00000000000000b2       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
+                0x00000000000000af       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_clock.o
  .ARM.attributes
-                0x00000000000000eb       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
+                0x00000000000000e5       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_gpiote.o
  .ARM.attributes
-                0x0000000000000124       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
+                0x000000000000011b       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_spi.o
  .ARM.attributes
-                0x000000000000015d       0x39 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
+                0x0000000000000151       0x36 Output/nrf52832_xxaa/Obj/hello_world/nrf_drv_uart.o
  .ARM.attributes
-                0x0000000000000196       0x39 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
+                0x0000000000000187       0x36 Output/nrf52832_xxaa/Obj/hello_world/app_fifo.o
  .ARM.attributes
-                0x00000000000001cf       0x39 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
+                0x00000000000001bd       0x36 Output/nrf52832_xxaa/Obj/hello_world/app_uart_fifo.o
  .ARM.attributes
-                0x0000000000000208       0x39 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
+                0x00000000000001f3       0x39 Output/nrf52832_xxaa/Obj/hello_world/retarget.o
  .ARM.attributes
-                0x0000000000000241       0x20 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000000022c       0x20 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
  .ARM.attributes
-                0x0000000000000261       0x34 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000000024c       0x34 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
  .ARM.attributes
-                0x0000000000000295       0x20 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x0000000000000280       0x20 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
  .ARM.attributes
-                0x00000000000002b5       0x34 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+                0x00000000000002a0       0x34 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
  .ARM.attributes
-                0x00000000000002e9       0x34 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x00000000000002d4       0x34 /Applications/SEGGER Embedded Studio for ARM 5.64/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)

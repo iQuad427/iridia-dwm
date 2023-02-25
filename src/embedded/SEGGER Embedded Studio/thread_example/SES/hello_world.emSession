@@ -16,6 +16,7 @@
   <ProjectSessionItem path="hello_world"/>
   <ProjectSessionItem path="hello_world;hello_world"/>
   <ProjectSessionItem path="hello_world;hello_world;Application"/>
+  <ProjectSessionItem path="hello_world;hello_world;nRF_Libraries"/>
   <ProjectSessionItem path="hello_world;hello_world;Thread"/>
  </Project>
  <Register1/>
@@ -41,7 +42,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="195" useTextEdit="1" path="../main.c" left="0" selected="1" top="173" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="195" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../main.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="111" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../lib/nRF5_SDK_14.2.0/components/libraries/uart/retarget.c" selected="0" top="75" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../include/dwm/dwm.h" selected="0" top="1180" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="229" useTextEdit="0" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../lib/dwm/dwm.o" selected="1" top="33" codecName=""/>
  </Files>
- <EMStudioWindow activeProject="hello_world" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="hello_world" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
