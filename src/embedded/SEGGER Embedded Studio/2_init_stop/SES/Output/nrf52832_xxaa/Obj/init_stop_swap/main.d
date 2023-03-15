@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/init_stop_swap/main.o: \
- C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\src\embedded\SEGGER\ Embedded\ Studio\init_stop\main.c \
+ C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\src\embedded\SEGGER\ Embedded\ Studio\2_init_stop\main.c \
  ../config/sdk_config.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/bsp/bsp.h \
  C\:/Users/quent/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \

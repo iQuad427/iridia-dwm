@@ -48,6 +48,8 @@ static uint8 rx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE
 
 #define ADDED_VARIABLES_TO_MSG 1
 
+#define TIME_BEFORE_SWITCHING 10000
+
 /* Frame sequence number, incremented after each transmission. */
 static uint8 frame_seq_nb = 0;
 
@@ -90,10 +92,8 @@ static volatile int rx_count = 0 ; // Successful receive counter
 */
 int ss_init_run(void)
 {
-
-
   /* Loop forever initiating ranging exchanges. */
-
+  int time = 0;
 
   /* Write frame data to DW1000 and prepare transmission. See NOTE 3 below. */
   tx_poll_msg[ALL_MSG_SN_IDX] = frame_seq_nb;
@@ -106,18 +106,26 @@ int ss_init_run(void)
   dwt_starttx(DWT_START_TX_IMMEDIATE | DWT_RESPONSE_EXPECTED);
   tx_count++;
   // printf("Transmission # : %d\r\n",tx_count);
-  // printf("%c\r\n", tx_poll_msg[DW_ID_TS_IDX]);
-
 
   /* We assume that the transmission is achieved correctly, poll for reception of a frame or error/timeout. See NOTE 4 below. */
-  while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) & (SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR)))
-  {};
+  while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) & (SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR))) 
+  {
+    if (time > TIME_BEFORE_SWITCHING) {
+      printf("stopping time\r\n");
+      return 0;
+    }
+    time++;
+  }
+
+  // printf("time!\r\n");
 
   /* Increment frame sequence number after transmission of the poll message (modulo 256). */
   frame_seq_nb++;
 
   if (status_reg & SYS_STATUS_RXFCG)
   {		
+    printf("passed\r\n");
+
     uint32 frame_len;
 
     /* Clear good RX frame event in the DW1000 status register. */
@@ -129,8 +137,6 @@ int ss_init_run(void)
     if (frame_len <= RX_BUF_LEN)
     {
       dwt_readrxdata(rx_buffer, frame_len, 0);
-      // printf("%c\r\n", rx_buffer[DW_ID_TS_IDX]);
-
     }
 
     /* Check that the frame is the expected response from the companion "SS TWR responder" example.
@@ -166,8 +172,10 @@ int ss_init_run(void)
   }
   else
   {
+    printf("timeout\r\n");
+
     /* Clear RX error/timeout events in the DW1000 status register. */
-    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR);
+    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR);
 
     /* Reset RX to properly reinitialise LDE operation. */
     dwt_rxreset();

@@ -33,6 +33,8 @@
 #include "deca_device_api.h"
 #include "uart.h"
 #include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 	
 //-----------------dw1000----------------------------
@@ -66,20 +68,39 @@ static dwt_config_t config = {
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
+#define MAX_CYCLES 10
+
 extern int ss_init_run(void);
-extern int ss_resp_run(struct timeval swap_timer);
+extern int ss_resp_run(void);
 
-void handle_function(char* input, char* state) {
+void handle_function(char* input, char* state) 
+{
   printf("TOTAL INPUT : %s\r\n", input);
-
-  if (!strcmp(input, "INIT")) {
+  if (!strcmp(input, "INIT"))
+  {
     strcpy(state, input);
-  } else if (!strcmp(input, "STOP")) {
+  } 
+  else if (!strcmp(input, "STOP"))
+  {
     strcpy(state, input);
   }
-
   printf("STATE : %s\r\n", state);
+}
 
+
+void toggle_mode(char* state) 
+{
+  if (!strcmp("RESP", state) || !strcmp("INIT", state)) 
+  {
+    strcpy(state, "POLL");
+    dwt_setrxtimeout(65000);
+  } 
+  else if (!strcmp("POLL", state)) 
+  {
+    strcpy(state, "RESP");
+    dwt_setrxtimeout(0);
+  }
+  printf("STATE : %s\r\n", state);
 }
 
 int main(void)
@@ -143,9 +164,7 @@ int main(void)
   strcpy(state, "STOP");
 
   // timer for toggle of transmission mode
-  struct timeval resp_swap_timer; // timer at which we shall stop responding
-  struct timeval poll_swap_timer; // timer at which we shall stop polling
-  struct timeval time; // current time
+  int time = 0; // current time
 
   // Loop forever responding to ranging requests.
   while (1) 
@@ -174,38 +193,34 @@ int main(void)
 
 
     if (!strcmp(state, "STOP")) {
+      time = 0;
       continue;
     } else if (!strcmp(state, "INIT")) {
-      strcpy(state, "RESP");
-      gettimeofday(&resp_swap_timer, NULL);
-      gettimeofday(&poll_swap_timer, NULL);
+      toggle_mode(state);
     }
     
-    gettimeofday(&time, NULL);
     if (!strcmp(state, "RESP")) 
     {
-      if (!((resp_swap_timer.tv_sec > time.tv_sec) && 
-          (resp_swap_timer.tv_usec > time.tv_usec))) {
-        ss_resp_run(resp_swap_timer);
+      if (time < MAX_CYCLES) {
+        printf("responding!\r\n");
+        ss_resp_run();
       } else {
-        strcpy(state, "POLL");
-        printf("STATE : %s\r\n", state);
-        gettimeofday(&poll_swap_timer, NULL);
-        poll_swap_timer.tv_sec += 3; // we want to toggle mode after 3 seconds
+        toggle_mode(state);
+        time = 0;
       }
     } 
     else if (!strcmp(state, "POLL")) 
     {
-      if (!((poll_swap_timer.tv_sec > time.tv_sec) && 
-           (poll_swap_timer.tv_usec > time.tv_usec))) {
+      if (time < MAX_CYCLES) {
+        printf("polling!\r\n");
         ss_init_run();
       } else {
-        strcpy(state, "RESP");
-        printf("STATE : %s\r\n", state);
-        gettimeofday(&resp_swap_timer, NULL);
-        resp_swap_timer.tv_sec += 3; // we want to toggle mode after 3 seconds
+        toggle_mode(state);
+        time = 0;
       }
     }
+
+    time++;
 
   }
 

@@ -46,6 +46,8 @@ static uint8 tx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE
 
 #define ADDED_VARIABLES_TO_MSG 1
 
+#define TIME_BEFORE_SWITCHING 10000
+
 /* Frame sequence number, incremented after each transmission. */
 static uint8 frame_seq_nb = 0;
 
@@ -97,25 +99,30 @@ static uint64 resp_tx_ts;
 * @return none
 */
 
-int ss_resp_run(struct timeval swap_timer)
+int ss_resp_run()
 {
-  struct timeval time;
+  int time = 0;
 
   /* Activate reception immediately. */
   dwt_rxenable(DWT_START_RX_IMMEDIATE);
 
   /* Poll for reception of a frame or error/timeout. See NOTE 5 below. */
-  do {
-    gettimeofday(&time, NULL);
-  } while (
-    !((time.tv_sec > swap_timer.tv_sec) && (time.tv_usec > swap_timer.tv_usec)) &&
-    !((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) & (SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR))
-  );
+  while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) & (SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR))) 
+  {
+    if (time > TIME_BEFORE_SWITCHING) {
+      printf("stopping time\r\n");
+      return 0;
+    }
+    time++;
+  }
 
+  // printf("time!\r\n");
 
   if (status_reg & SYS_STATUS_RXFCG)
   {
     uint32 frame_len;
+
+    printf("passed\r\n");
 
     /* Clear good RX frame event in the DW1000 status register. */
     dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_RXFCG);
@@ -190,8 +197,10 @@ int ss_resp_run(struct timeval swap_timer)
   }
   else
   {
+    printf("timeout\r\n");
+
     /* Clear RX error events in the DW1000 status register. */
-    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_ALL_RX_ERR);
+    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR);
 
     /* Reset RX to properly reinitialise LDE operation. */
     dwt_rxreset();

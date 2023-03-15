@@ -107,7 +107,7 @@ Discarded input sections
                 0x0000000000000000       0xf0 Output/nrf52832_xxaa/Obj/init_stop_swap/boards.o
  .debug_ranges  0x0000000000000000       0xe0 Output/nrf52832_xxaa/Obj/init_stop_swap/boards.o
  .debug_line    0x0000000000000000      0x543 Output/nrf52832_xxaa/Obj/init_stop_swap/boards.o
- .debug_str     0x0000000000000000      0x790 Output/nrf52832_xxaa/Obj/init_stop_swap/boards.o
+ .debug_str     0x0000000000000000      0x792 Output/nrf52832_xxaa/Obj/init_stop_swap/boards.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/boards.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/boards.o
@@ -139,7 +139,7 @@ Discarded input sections
                 0x0000000000000000       0x50 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp.o
  .debug_ranges  0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp.o
  .debug_line    0x0000000000000000      0x195 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp.o
- .debug_str     0x0000000000000000      0x78b Output/nrf52832_xxaa/Obj/init_stop_swap/bsp.o
+ .debug_str     0x0000000000000000      0x78d Output/nrf52832_xxaa/Obj/init_stop_swap/bsp.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp.o
@@ -155,7 +155,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp_nfc.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/bsp_nfc.o
- .debug_str     0x0000000000000000      0x267 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp_nfc.o
+ .debug_str     0x0000000000000000      0x269 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp_nfc.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp_nfc.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/bsp_nfc.o
@@ -604,7 +604,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/app_button.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/app_button.o
- .debug_str     0x0000000000000000      0x279 Output/nrf52832_xxaa/Obj/init_stop_swap/app_button.o
+ .debug_str     0x0000000000000000      0x27b Output/nrf52832_xxaa/Obj/init_stop_swap/app_button.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/app_button.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/app_button.o
@@ -643,7 +643,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/app_scheduler.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/app_scheduler.o
- .debug_str     0x0000000000000000      0x27f Output/nrf52832_xxaa/Obj/init_stop_swap/app_scheduler.o
+ .debug_str     0x0000000000000000      0x281 Output/nrf52832_xxaa/Obj/init_stop_swap/app_scheduler.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/app_scheduler.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/app_scheduler.o
@@ -684,7 +684,7 @@ Discarded input sections
                 0x0000000000000000       0x50 Output/nrf52832_xxaa/Obj/init_stop_swap/app_util_platform.o
  .debug_ranges  0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/init_stop_swap/app_util_platform.o
  .debug_line    0x0000000000000000      0x2fa Output/nrf52832_xxaa/Obj/init_stop_swap/app_util_platform.o
- .debug_str     0x0000000000000000      0x7c5 Output/nrf52832_xxaa/Obj/init_stop_swap/app_util_platform.o
+ .debug_str     0x0000000000000000      0x7c7 Output/nrf52832_xxaa/Obj/init_stop_swap/app_util_platform.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/app_util_platform.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/app_util_platform.o
@@ -704,7 +704,7 @@ Discarded input sections
                 0x0000000000000000       0x20 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_assert.o
  .debug_ranges  0x0000000000000000       0x10 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_assert.o
  .debug_line    0x0000000000000000      0x102 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_assert.o
- .debug_str     0x0000000000000000      0x2d2 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_assert.o
+ .debug_str     0x0000000000000000      0x2d4 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_assert.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_assert.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_assert.o
@@ -732,7 +732,7 @@ Discarded input sections
                 0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_balloc.o
  .debug_ranges  0x0000000000000000       0x30 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_balloc.o
  .debug_line    0x0000000000000000      0x26e Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_balloc.o
- .debug_str     0x0000000000000000      0x3a6 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_balloc.o
+ .debug_str     0x0000000000000000      0x3a8 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_balloc.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_balloc.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_balloc.o
@@ -754,7 +754,7 @@ Discarded input sections
                 0x0000000000000000       0x28 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf.o
  .debug_ranges  0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf.o
  .debug_line    0x0000000000000000      0x16e Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf.o
- .debug_str     0x0000000000000000      0x355 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf.o
+ .debug_str     0x0000000000000000      0x357 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf.o
@@ -784,7 +784,7 @@ Discarded input sections
                 0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf_format.o
  .debug_ranges  0x0000000000000000       0x30 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf_format.o
  .debug_line    0x0000000000000000      0x463 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf_format.o
- .debug_str     0x0000000000000000      0x3d0 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf_format.o
+ .debug_str     0x0000000000000000      0x3d2 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf_format.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf_format.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_fprintf_format.o
@@ -822,7 +822,7 @@ Discarded input sections
                 0x0000000000000000       0x68 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_memobj.o
  .debug_ranges  0x0000000000000000       0x58 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_memobj.o
  .debug_line    0x0000000000000000      0x417 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_memobj.o
- .debug_str     0x0000000000000000      0x5a8 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_memobj.o
+ .debug_str     0x0000000000000000      0x5aa Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_memobj.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_memobj.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_memobj.o
@@ -849,7 +849,7 @@ Discarded input sections
                 0x0000000000000000       0x28 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_strerror.o
  .debug_ranges  0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_strerror.o
  .debug_line    0x0000000000000000      0x19b Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_strerror.o
- .debug_str     0x0000000000000000      0x313 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_strerror.o
+ .debug_str     0x0000000000000000      0x315 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_strerror.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_strerror.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_strerror.o
@@ -870,7 +870,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_rtt.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_rtt.o
- .debug_str     0x0000000000000000      0x290 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_rtt.o
+ .debug_str     0x0000000000000000      0x292 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_rtt.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_rtt.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_rtt.o
@@ -886,7 +886,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_serial.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_serial.o
- .debug_str     0x0000000000000000      0x293 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_serial.o
+ .debug_str     0x0000000000000000      0x295 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_serial.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_serial.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_serial.o
@@ -902,7 +902,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_uart.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_uart.o
- .debug_str     0x0000000000000000      0x291 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_uart.o
+ .debug_str     0x0000000000000000      0x293 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_uart.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_uart.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_backend_uart.o
@@ -918,7 +918,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_default_backends.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_default_backends.o
- .debug_str     0x0000000000000000      0x295 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_default_backends.o
+ .debug_str     0x0000000000000000      0x297 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_default_backends.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_default_backends.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_default_backends.o
@@ -934,7 +934,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_frontend.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_frontend.o
- .debug_str     0x0000000000000000      0x28d Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_frontend.o
+ .debug_str     0x0000000000000000      0x28f Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_frontend.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_frontend.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_frontend.o
@@ -950,7 +950,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_str_formatter.o
  .debug_line    0x0000000000000000       0x1d Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_str_formatter.o
- .debug_str     0x0000000000000000      0x292 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_str_formatter.o
+ .debug_str     0x0000000000000000      0x294 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_str_formatter.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_str_formatter.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_log_str_formatter.o
@@ -1038,7 +1038,7 @@ Discarded input sections
                 0x0000000000000000      0x108 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT.o
  .debug_ranges  0x0000000000000000       0xf8 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT.o
  .debug_line    0x0000000000000000      0x871 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT.o
- .debug_str     0x0000000000000000      0x66c Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT.o
+ .debug_str     0x0000000000000000      0x66e Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT.o
@@ -1046,7 +1046,7 @@ Discarded input sections
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_KEIL.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_KEIL.o
  .debug_line    0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_KEIL.o
- .debug_str     0x0000000000000000      0x1fc Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_KEIL.o
+ .debug_str     0x0000000000000000      0x1fe Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_KEIL.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_KEIL.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_KEIL.o
@@ -1054,7 +1054,7 @@ Discarded input sections
  .data          0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_SES.o
  .bss           0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_SES.o
  .debug_line    0x0000000000000000        0x0 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_SES.o
- .debug_str     0x0000000000000000      0x1fb Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_SES.o
+ .debug_str     0x0000000000000000      0x1fd Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_SES.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_SES.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_Syscalls_SES.o
@@ -1084,7 +1084,7 @@ Discarded input sections
                 0x0000000000000000       0x40 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_printf.o
  .debug_ranges  0x0000000000000000       0x48 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_printf.o
  .debug_line    0x0000000000000000      0x468 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_printf.o
- .debug_str     0x0000000000000000      0x399 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_printf.o
+ .debug_str     0x0000000000000000      0x39b Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_printf.o
  .comment       0x0000000000000000       0x26 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_printf.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/nrf52832_xxaa/Obj/init_stop_swap/SEGGER_RTT_printf.o
@@ -4423,66 +4423,66 @@ LOAD linker stubs
  .debug_ranges  0x0000000000000d30       0x40 Output/nrf52832_xxaa/Obj/init_stop_swap/app_uart_fifo.o
  .debug_ranges  0x0000000000000d70       0x18 Output/nrf52832_xxaa/Obj/init_stop_swap/retarget.o
 
-.debug_line     0x0000000000000000     0x702a
- .debug_line    0x0000000000000000      0x31f Output/nrf52832_xxaa/Obj/init_stop_swap/init_main.o
- .debug_line    0x000000000000031f      0x3a7 Output/nrf52832_xxaa/Obj/init_stop_swap/main.o
- .debug_line    0x00000000000006c6     0x152f Output/nrf52832_xxaa/Obj/init_stop_swap/deca_device.o
- .debug_line    0x0000000000001bf5       0x9c Output/nrf52832_xxaa/Obj/init_stop_swap/deca_params_init.o
- .debug_line    0x0000000000001c91      0x5cf Output/nrf52832_xxaa/Obj/init_stop_swap/port_platform.o
- .debug_line    0x0000000000002260       0xd5 Output/nrf52832_xxaa/Obj/init_stop_swap/ses_nrf52_startup.o
- .debug_line    0x0000000000002335      0x78e Output/nrf52832_xxaa/Obj/init_stop_swap/system_nrf52.o
- .debug_line    0x0000000000002ac3      0x2b8 Output/nrf52832_xxaa/Obj/init_stop_swap/thumb_crt0.o
- .debug_line    0x0000000000002d7b      0x21c Output/nrf52832_xxaa/Obj/init_stop_swap/UART.o
- .debug_line    0x0000000000002f97      0x749 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_clock.o
- .debug_line    0x00000000000036e0      0x2da Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_common.o
- .debug_line    0x00000000000039ba      0xeec Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_gpiote.o
- .debug_line    0x00000000000048a6      0x8de Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_spi.o
- .debug_line    0x0000000000005184     0x1216 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_uart.o
- .debug_line    0x000000000000639a      0x231 Output/nrf52832_xxaa/Obj/init_stop_swap/app_error.o
- .debug_line    0x00000000000065cb      0x1c4 Output/nrf52832_xxaa/Obj/init_stop_swap/app_error_weak.o
- .debug_line    0x000000000000678f      0x2e6 Output/nrf52832_xxaa/Obj/init_stop_swap/app_fifo.o
- .debug_line    0x0000000000006a75      0x48f Output/nrf52832_xxaa/Obj/init_stop_swap/app_uart_fifo.o
- .debug_line    0x0000000000006f04      0x126 Output/nrf52832_xxaa/Obj/init_stop_swap/retarget.o
+.debug_line     0x0000000000000000     0x7030
+ .debug_line    0x0000000000000000      0x321 Output/nrf52832_xxaa/Obj/init_stop_swap/init_main.o
+ .debug_line    0x0000000000000321      0x3a9 Output/nrf52832_xxaa/Obj/init_stop_swap/main.o
+ .debug_line    0x00000000000006ca     0x152f Output/nrf52832_xxaa/Obj/init_stop_swap/deca_device.o
+ .debug_line    0x0000000000001bf9       0x9c Output/nrf52832_xxaa/Obj/init_stop_swap/deca_params_init.o
+ .debug_line    0x0000000000001c95      0x5cf Output/nrf52832_xxaa/Obj/init_stop_swap/port_platform.o
+ .debug_line    0x0000000000002264       0xd5 Output/nrf52832_xxaa/Obj/init_stop_swap/ses_nrf52_startup.o
+ .debug_line    0x0000000000002339      0x78e Output/nrf52832_xxaa/Obj/init_stop_swap/system_nrf52.o
+ .debug_line    0x0000000000002ac7      0x2ba Output/nrf52832_xxaa/Obj/init_stop_swap/thumb_crt0.o
+ .debug_line    0x0000000000002d81      0x21c Output/nrf52832_xxaa/Obj/init_stop_swap/UART.o
+ .debug_line    0x0000000000002f9d      0x749 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_clock.o
+ .debug_line    0x00000000000036e6      0x2da Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_common.o
+ .debug_line    0x00000000000039c0      0xeec Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_gpiote.o
+ .debug_line    0x00000000000048ac      0x8de Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_spi.o
+ .debug_line    0x000000000000518a     0x1216 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_uart.o
+ .debug_line    0x00000000000063a0      0x231 Output/nrf52832_xxaa/Obj/init_stop_swap/app_error.o
+ .debug_line    0x00000000000065d1      0x1c4 Output/nrf52832_xxaa/Obj/init_stop_swap/app_error_weak.o
+ .debug_line    0x0000000000006795      0x2e6 Output/nrf52832_xxaa/Obj/init_stop_swap/app_fifo.o
+ .debug_line    0x0000000000006a7b      0x48f Output/nrf52832_xxaa/Obj/init_stop_swap/app_uart_fifo.o
+ .debug_line    0x0000000000006f0a      0x126 Output/nrf52832_xxaa/Obj/init_stop_swap/retarget.o
 
-.debug_str      0x0000000000000000     0x5790
- .debug_str     0x0000000000000000      0x8b9 Output/nrf52832_xxaa/Obj/init_stop_swap/init_main.o
-                                        0x910 (size before relaxing)
- .debug_str     0x00000000000008b9      0x391 Output/nrf52832_xxaa/Obj/init_stop_swap/main.o
-                                        0xb72 (size before relaxing)
- .debug_str     0x0000000000000c4a      0xcb6 Output/nrf52832_xxaa/Obj/init_stop_swap/deca_device.o
+.debug_str      0x0000000000000000     0x57f8
+ .debug_str     0x0000000000000000      0x8bd Output/nrf52832_xxaa/Obj/init_stop_swap/init_main.o
+                                        0x914 (size before relaxing)
+ .debug_str     0x00000000000008bd      0x393 Output/nrf52832_xxaa/Obj/init_stop_swap/main.o
+                                        0xb76 (size before relaxing)
+ .debug_str     0x0000000000000c50      0xd16 Output/nrf52832_xxaa/Obj/init_stop_swap/deca_device.o
                                         0xffe (size before relaxing)
- .debug_str     0x0000000000001900       0x51 Output/nrf52832_xxaa/Obj/init_stop_swap/deca_params_init.o
+ .debug_str     0x0000000000001966       0x51 Output/nrf52832_xxaa/Obj/init_stop_swap/deca_params_init.o
                                         0x311 (size before relaxing)
- .debug_str     0x0000000000001951      0x50a Output/nrf52832_xxaa/Obj/init_stop_swap/port_platform.o
-                                        0xfb5 (size before relaxing)
- .debug_str     0x0000000000001e5b       0x7d Output/nrf52832_xxaa/Obj/init_stop_swap/ses_nrf52_startup.o
+ .debug_str     0x00000000000019b7      0x50a Output/nrf52832_xxaa/Obj/init_stop_swap/port_platform.o
+                                        0xfb7 (size before relaxing)
+ .debug_str     0x0000000000001ec1       0x7d Output/nrf52832_xxaa/Obj/init_stop_swap/ses_nrf52_startup.o
                                          0xdd (size before relaxing)
- .debug_str     0x0000000000001ed8      0x4ee Output/nrf52832_xxaa/Obj/init_stop_swap/system_nrf52.o
+ .debug_str     0x0000000000001f3e      0x4ee Output/nrf52832_xxaa/Obj/init_stop_swap/system_nrf52.o
                                         0x7c1 (size before relaxing)
- .debug_str     0x00000000000023c6       0x71 Output/nrf52832_xxaa/Obj/init_stop_swap/thumb_crt0.o
-                                         0xdf (size before relaxing)
- .debug_str     0x0000000000002437      0x3bd Output/nrf52832_xxaa/Obj/init_stop_swap/UART.o
-                                        0x69b (size before relaxing)
- .debug_str     0x00000000000027f4      0x753 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_clock.o
-                                        0xdc3 (size before relaxing)
- .debug_str     0x0000000000002f47      0x114 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_common.o
-                                        0x6af (size before relaxing)
- .debug_str     0x000000000000305b      0xdd2 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_gpiote.o
-                                       0x163f (size before relaxing)
- .debug_str     0x0000000000003e2d      0x34c Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_spi.o
-                                       0x1072 (size before relaxing)
- .debug_str     0x0000000000004179     0x10f5 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_uart.o
-                                       0x1cee (size before relaxing)
- .debug_str     0x000000000000526e      0x12a Output/nrf52832_xxaa/Obj/init_stop_swap/app_error.o
-                                        0x37b (size before relaxing)
- .debug_str     0x0000000000005398       0x85 Output/nrf52832_xxaa/Obj/init_stop_swap/app_error_weak.o
-                                        0x34d (size before relaxing)
- .debug_str     0x000000000000541d      0x167 Output/nrf52832_xxaa/Obj/init_stop_swap/app_fifo.o
-                                        0x3bf (size before relaxing)
- .debug_str     0x0000000000005584      0x161 Output/nrf52832_xxaa/Obj/init_stop_swap/app_uart_fifo.o
-                                        0xc56 (size before relaxing)
- .debug_str     0x00000000000056e5       0xab Output/nrf52832_xxaa/Obj/init_stop_swap/retarget.o
-                                        0x2d2 (size before relaxing)
+ .debug_str     0x000000000000242c       0x73 Output/nrf52832_xxaa/Obj/init_stop_swap/thumb_crt0.o
+                                         0xe3 (size before relaxing)
+ .debug_str     0x000000000000249f      0x3bd Output/nrf52832_xxaa/Obj/init_stop_swap/UART.o
+                                        0x69d (size before relaxing)
+ .debug_str     0x000000000000285c      0x753 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_clock.o
+                                        0xdc5 (size before relaxing)
+ .debug_str     0x0000000000002faf      0x114 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_common.o
+                                        0x6b1 (size before relaxing)
+ .debug_str     0x00000000000030c3      0xdd2 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_gpiote.o
+                                       0x1641 (size before relaxing)
+ .debug_str     0x0000000000003e95      0x34c Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_spi.o
+                                       0x1074 (size before relaxing)
+ .debug_str     0x00000000000041e1     0x10f5 Output/nrf52832_xxaa/Obj/init_stop_swap/nrf_drv_uart.o
+                                       0x1cf0 (size before relaxing)
+ .debug_str     0x00000000000052d6      0x12a Output/nrf52832_xxaa/Obj/init_stop_swap/app_error.o
+                                        0x37d (size before relaxing)
+ .debug_str     0x0000000000005400       0x85 Output/nrf52832_xxaa/Obj/init_stop_swap/app_error_weak.o
+                                        0x34f (size before relaxing)
+ .debug_str     0x0000000000005485      0x167 Output/nrf52832_xxaa/Obj/init_stop_swap/app_fifo.o
+                                        0x3c1 (size before relaxing)
+ .debug_str     0x00000000000055ec      0x161 Output/nrf52832_xxaa/Obj/init_stop_swap/app_uart_fifo.o
+                                        0xc58 (size before relaxing)
+ .debug_str     0x000000000000574d       0xab Output/nrf52832_xxaa/Obj/init_stop_swap/retarget.o
+                                        0x2d4 (size before relaxing)
 
 .comment        0x0000000000000000       0x25
  .comment       0x0000000000000000       0x25 Output/nrf52832_xxaa/Obj/init_stop_swap/init_main.o
