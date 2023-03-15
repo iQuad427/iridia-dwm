@@ -6,6 +6,9 @@ This repository is a starting point to use the DWM1001 module from Decawave (Qor
 Contact me at : 
 - quentin.roels@gmail.com
 
+> Note : here is a source I discovered later in my project, that would have been quite usefull to start working properly faster
+> https://github.com/TIERS/dwm1001-uwb-firmware
+
 ## Project description
 
 The main goal of the project was to design and implement different communication protocols between UWB modules. However, as the previous work on the selected module (DWM1001) were inconclusive, the project was started by creating a basis to allow for further implementation. 
