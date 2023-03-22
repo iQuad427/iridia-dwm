@@ -31,7 +31,7 @@
 
 /* Frames used in the ranging process. See NOTE 2,3 below. */
 static uint8 rx_poll_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'W', 'A', 'V', 'E', 0xE0, 'I', 0, 0};
-static uint8 tx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE1, 'R', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static uint8 tx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE1, '2', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 /* Length of the common part of the message (up to and including the function code, see NOTE 3 below). */
 #define ALL_MSG_COMMON_LEN 10
@@ -112,7 +112,6 @@ int ss_resp_run(void)
 
     /* Clear good RX frame event in the DW1000 status register. */
     dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_RXFCG);
-    // printf("Ready!\r\n");
 
     /* A frame has been received, read it into the local buffer. */
     frame_len = dwt_read32bitreg(RX_FINFO_ID) & RX_FINFO_RXFL_MASK_1023;
