@@ -1,3 +1,0 @@
-./_build/segger_rtt_syscalls_keil.o: \
-  ..\..\..\..\..\lib\nRF5_SDK_14.2.0\external\segger_rtt\SEGGER_RTT_Syscalls_KEIL.c \
-  ..\config\sdk_config.h
