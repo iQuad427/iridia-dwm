@@ -1,0 +1,223 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Quentin Roels, ULB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  Q:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      Segger\JL2CM3.dll V2.99.42.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+C:\Users\quent\OneDrive\Bureau\git\iridia-dwm\src\embedded\Kiel µVision\responder\Keil µVvision\responder.uvprojx
+Project File Date:  02/20/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'Q:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'nrf52832_xxaa'
+compiling bsp_nfc.c...
+compiling bsp.c...
+compiling boards.c...
+../resp_main.c(73): warning: redefinition of typedef 'int64' is a C11 feature [-Wtypedef-redefinition]
+typedef signed long long int64;
+                         ^
+../../../../../lib/deca_driver/port\port_platform.h(106): note: previous definition is here
+typedef int64_t         int64 ;
+                        ^
+../resp_main.c(74): warning: redefinition of typedef 'uint64' is a C11 feature [-Wtypedef-redefinition]
+typedef unsigned long long uint64;
+                           ^
+../../../../../lib/deca_driver/port\port_platform.h(104): note: previous definition is here
+typedef uint64_t        uint64 ;
+                        ^
+../resp_main.c(85): warning: redefinition of typedef 'uint64' is a C11 feature [-Wtypedef-redefinition]
+typedef unsigned long long uint64;
+                           ^
+../resp_main.c(74): note: previous definition is here
+typedef unsigned long long uint64;
+                           ^
+3 warnings generated.
+compiling resp_main.c...
+../main.c(58): warning: 'TX_ANT_DLY' macro redefined [-Wmacro-redefined]
+#define TX_ANT_DLY 16300
+        ^
+../../../../../lib/deca_driver/port\port_platform.h(45): note: previous definition is here
+#define TX_ANT_DLY 16456
+        ^
+1 warning generated.
+compiling main.c...
+compiling nrf_drv_common.c...
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(78): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+#if (SPI_ONLY && ENABLED_SPI_COUNT) || ((SPI_SPIM_PRESENT) && \
+     ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(66): note: expanded from macro 'SPI_ONLY'
+#define SPI_ONLY         (!defined(SPIM_PRESENT) &&   defined(SPI_PRESENT))
+                           ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(78): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(66): note: expanded from macro 'SPI_ONLY'
+#define SPI_ONLY         (!defined(SPIM_PRESENT) &&   defined(SPI_PRESENT))
+                                                      ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(78): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+#if (SPI_ONLY && ENABLED_SPI_COUNT) || ((SPI_SPIM_PRESENT) && \
+                                         ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(65): note: expanded from macro 'SPI_SPIM_PRESENT'
+#define SPI_SPIM_PRESENT ( defined(SPIM_PRESENT)  &&  defined(SPI_PRESENT))
+                           ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(78): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(65): note: expanded from macro 'SPI_SPIM_PRESENT'
+#define SPI_SPIM_PRESENT ( defined(SPIM_PRESENT)  &&  defined(SPI_PRESENT))
+                                                      ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(79): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    (SPI0_WITHOUT_DMA || SPI1_WITHOUT_DMA || SPI2_WITHOUT_DMA))
+     ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(72): note: expanded from macro 'SPI0_WITHOUT_DMA'
+#define SPI0_WITHOUT_DMA (defined(SPI0_USE_EASY_DMA) && !SPI0_USE_EASY_DMA && SPI0_ENABLED)
+                          ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(79): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    (SPI0_WITHOUT_DMA || SPI1_WITHOUT_DMA || SPI2_WITHOUT_DMA))
+                         ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(73): note: expanded from macro 'SPI1_WITHOUT_DMA'
+#define SPI1_WITHOUT_DMA (defined(SPI1_USE_EASY_DMA) && !SPI1_USE_EASY_DMA && SPI1_ENABLED)
+                          ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(79): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    (SPI0_WITHOUT_DMA || SPI1_WITHOUT_DMA || SPI2_WITHOUT_DMA))
+                                             ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(74): note: expanded from macro 'SPI2_WITHOUT_DMA'
+#define SPI2_WITHOUT_DMA (defined(SPI2_USE_EASY_DMA) && !SPI2_USE_EASY_DMA && SPI2_ENABLED)
+                          ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(83): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+#if (SPIM_ONLY && ENABLED_SPI_COUNT) || ((SPI_SPIM_PRESENT) &&  \
+     ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(64): note: expanded from macro 'SPIM_ONLY'
+#define SPIM_ONLY        ( defined(SPIM_PRESENT)  && !defined(SPI_PRESENT))
+                           ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(83): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(64): note: expanded from macro 'SPIM_ONLY'
+#define SPIM_ONLY        ( defined(SPIM_PRESENT)  && !defined(SPI_PRESENT))
+                                                      ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(83): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+#if (SPIM_ONLY && ENABLED_SPI_COUNT) || ((SPI_SPIM_PRESENT) &&  \
+                                          ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(65): note: expanded from macro 'SPI_SPIM_PRESENT'
+#define SPI_SPIM_PRESENT ( defined(SPIM_PRESENT)  &&  defined(SPI_PRESENT))
+                           ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(83): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(65): note: expanded from macro 'SPI_SPIM_PRESENT'
+#define SPI_SPIM_PRESENT ( defined(SPIM_PRESENT)  &&  defined(SPI_PRESENT))
+                                                      ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(84): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    (SPI0_WITH_DMA || SPI1_WITH_DMA || SPI2_WITH_DMA))
+     ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(68): note: expanded from macro 'SPI0_WITH_DMA'
+#define SPI0_WITH_DMA (defined(SPI0_USE_EASY_DMA) && SPI0_USE_EASY_DMA && SPI0_ENABLED)
+                       ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(84): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    (SPI0_WITH_DMA || SPI1_WITH_DMA || SPI2_WITH_DMA))
+                      ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(69): note: expanded from macro 'SPI1_WITH_DMA'
+#define SPI1_WITH_DMA (defined(SPI1_USE_EASY_DMA) && SPI1_USE_EASY_DMA && SPI1_ENABLED)
+                       ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(84): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    (SPI0_WITH_DMA || SPI1_WITH_DMA || SPI2_WITH_DMA))
+                                       ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(70): note: expanded from macro 'SPI2_WITH_DMA'
+#define SPI2_WITH_DMA (defined(SPI2_USE_EASY_DMA) && SPI2_USE_EASY_DMA && SPI2_ENABLED)
+                       ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(752): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    #if (SPI1_WITH_DMA || SPIM_ONLY)
+         ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(69): note: expanded from macro 'SPI1_WITH_DMA'
+#define SPI1_WITH_DMA (defined(SPI1_USE_EASY_DMA) && SPI1_USE_EASY_DMA && SPI1_ENABLED)
+                       ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(752): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+    #if (SPI1_WITH_DMA || SPIM_ONLY)
+                          ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(64): note: expanded from macro 'SPIM_ONLY'
+#define SPIM_ONLY        ( defined(SPIM_PRESENT)  && !defined(SPI_PRESENT))
+                           ^
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(752): warning: macro expansion producing 'defined' has undefined behavior [-Wexpansion-to-defined]
+../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/spi_master/nrf_drv_spi.c(64): note: expanded from macro 'SPIM_ONLY'
+#define SPIM_ONLY        ( defined(SPIM_PRESENT)  && !defined(SPI_PRESENT))
+                                                      ^
+17 warnings generated.
+compiling nrf_drv_spi.c...
+compiling nrf_drv_gpiote.c...
+compiling nrf_drv_clock.c...
+compiling app_button.c...
+compiling nrf_drv_uart.c...
+compiling app_error_weak.c...
+compiling nrf_assert.c...
+compiling app_scheduler.c...
+compiling app_error.c...
+compiling app_util_platform.c...
+compiling nrf_balloc.c...
+compiling nrf_fprintf.c...
+compiling nrf_fprintf_format.c...
+compiling nrf_strerror.c...
+compiling nrf_memobj.c...
+compiling app_fifo.c...
+compiling retarget.c...
+compiling app_uart_fifo.c...
+compiling nrf_log_backend_serial.c...
+compiling nrf_log_backend_rtt.c...
+compiling nrf_log_backend_uart.c...
+compiling nrf_log_frontend.c...
+compiling nrf_log_str_formatter.c...
+compiling nrf_log_default_backends.c...
+compiling SEGGER_RTT.c...
+compiling SEGGER_RTT_Syscalls_KEIL.c...
+compiling deca_params_init.c...
+assembling arm_startup_nrf52.s...
+compiling port_platform.c...
+compiling SEGGER_RTT_printf.c...
+compiling UART.c...
+compiling deca_device.c...
+compiling system_nrf52.c...
+linking...
+Program Size: Code=11292 RO-data=784 RW-data=68 ZI-data=9060  
+FromELF: creating hex file...
+".\_build\nrf52832_xxaa.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM.CMSIS.4.5.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.15.4.pack
+                NordicSemiconductor.nRF_DeviceFamilyPack.8.15.4
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.15.4
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_nrf52832_xxaa
+  Q:/Users/quent/AppData/Local/Arm/Packs/ARM/CMSIS/4.5.0/CMSIS/Include
+  Q:/Users/quent/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_DeviceFamilyPack/8.15.4/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: NordicSemiconductor::Device:Startup:8.15.4
+      Include file:  Device/Include/system_nrf52.h
+      Source file:   Device/Source/arm/arm_startup_nrf52.s
+      Source file:   Device/Source/system_nrf52.c
+Build Time Elapsed:  00:00:05
+</pre>
+</body>
+</html>

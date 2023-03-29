@@ -1,0 +1,50 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="testing"/>
+  <ProjectSessionItem path="testing;testing"/>
+  <ProjectSessionItem path="testing;testing;Application"/>
+  <ProjectSessionItem path="testing;testing;Decadriver"/>
+  <ProjectSessionItem path="testing;testing;Thread"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../test_main.c" left="0" top="163" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="121" useTextEdit="1" path="../main.c" left="0" selected="1" top="111" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="4" y="100" useTextEdit="1" openedFrom="/Users/quentin/Desktop/uwb_project/iridia-uwb/src/embedded/programs/testing_project/main.c" path="../../../../../lib/deca_driver/port/port_platform.c" left="0" top="87" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="testing" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
