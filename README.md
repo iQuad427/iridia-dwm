@@ -29,8 +29,7 @@ The repository is self contained for SEGGER Embedded Studio, all paths are relat
 
 It is designed as a plug-in solution, clone the repo, duplicate an example project and start programming. It should compile properly. However, If you want to change the repo structure you will need to play a lot with the projects relative paths to drivers and libraries
 
-> Note : to change paths, right click on the project directory in the Project View of SES, and go to "Options...". Here you will find all you need to update dependencies
-> In "Preprocessor > User Include Directories" you will find the list of all the dependencies, do not hesitate to add your own dependencies
+**For everything to work properly, I advise you to keep the repository structure as it is, only duplicate and rename existing projects, do not try to move an existing file or create one from scratch, It won't work because of all the mandatory relative path currently required by the projects** (cf. the troubleshooting section for creating a new SES project)
 
 #### Start-up
 
@@ -71,3 +70,26 @@ To start working on your own Keil µVision project, I recommend that you duplica
 
 > Note : For any additional packages, Keil has a really good package installer and overall is great at managing versions of the packages installed and included in the project.
 
+## Troubleshooting
+
+### New SES Project not Compiling 
+
+Whenever you want to create a new project, be aware of the following to ensure a working configuration :
+- You should duplicate an existing project, it already contains a lot of woking dependencies
+- You must add all the files you are going to use in the project explorer of SES
+	- Change the relative path macro to the libraries
+		1. In project explorer tab, right click on "Solution 'name_of_solution'"
+		2. Go to "Options..." > "Code" > "Build" > "Project macros"
+		3. Change or add : RELATIVE_PATH to be the relative path to the base directory of the project (containing src, lib,...)
+	- Change the paths to include files
+		1. In project explorer tab, right click on "Project 'name_of_project'"
+		2. Go to "Options..." > "Code" > "Preprocessor" > "User Include Directories"
+		3. If not already done, change all paths before the /lib to $(RELATIVE_PATH)
+	- For each file.c that you want to use in your project
+		1. Create a directory in the project (Right click on "Project" in project explorer tab and click on "New Folder...")
+		2. Right click on the new directory and select "Add Existing File..."
+		3. Navigate to the file you want to add to the project and double-click on it
+
+IMPORTANT NOTES : If you have changed the depth of the project files (i.e. you moved the folder that you duplicated), all the files that were added to the project are now wrongly added. Since all files are added using relative path from the SES project file. You will need to add them all once again manually, be organized!
+
+The error that typically occurs when this is not done properly is a simple ```Build Error``` with zero other information, if its your case, you better start all the steps again from the duplication part.
