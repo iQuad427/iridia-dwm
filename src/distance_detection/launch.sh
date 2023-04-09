@@ -4,7 +4,7 @@
 cd ros
 catkin_make
 source devel/setup.bash
-roslaunch communication execute.launch
+roslaunch communication communication_nodes.launch
 
 echo "Application Launched!"
 
