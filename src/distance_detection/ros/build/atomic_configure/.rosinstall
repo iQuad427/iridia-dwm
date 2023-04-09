@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/quentin/Dev/iridia-dwm/src/distance_detection/ros/devel/setup.sh

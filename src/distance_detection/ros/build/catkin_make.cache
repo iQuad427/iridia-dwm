@@ -1,0 +1,2 @@
+communication
+-DCATKIN_DEVEL_PREFIX=/home/quentin/Dev/iridia-dwm/src/distance_detection/ros/devel -DCMAKE_INSTALL_PREFIX=/home/quentin/Dev/iridia-dwm/src/distance_detection/ros/install -G Unix Makefiles

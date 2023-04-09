@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="communication" type="publisher_node.py" name="publisher_node" output="screen"></node>
+    <node pkg="communication" type="subscriber_node.py" name="subscriber_node" output="screen"></node>
+</launch>
