@@ -1,12 +1,12 @@
 Output/nrf52832_xxaa/Obj/initiator/deca_device.o: \
- C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\deca_device.c \
- Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.42/include/assert.h \
- C\:/Users/quent/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdlib.h \
- C\:/Users/quent/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
- Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.42/include/stdlib.h \
- Q\:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.42/include/__crossworks.h \
- C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\deca_types.h \
- C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\deca_param_types.h \
- C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\deca_regs.h \
- C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\deca_version.h \
- C\:\Users\quent\OneDrive\Bureau\git\iridia-dwm\lib\deca_driver\deca_device_api.h
+ /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/deca_device.c \
+ /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.64/include/assert.h \
+ /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdlib.h \
+ /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
+ /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.64/include/stdlib.h \
+ /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.64/include/__crossworks.h \
+ /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/deca_types.h \
+ /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/deca_param_types.h \
+ /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/deca_regs.h \
+ /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/deca_version.h \
+ /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/deca_device_api.h

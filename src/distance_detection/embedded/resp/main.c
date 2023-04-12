@@ -64,30 +64,9 @@ static dwt_config_t config = {
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
-extern int ss_init_run(void);
 extern int ss_resp_run(char* src);
+void set_id(char* id);
 
-void handle_function(char* input, char* state, char* id) {
-  printf("TOTAL INPUT : %s\r\n", input);
-
-  if (!strcmp(input, "RESP")) {
-    strcpy(state, input);
-    printf("WENT RESP : %s\r\n", state);
-    id[0] = '\0';
-
-    printf("ENTER RECEIVER ID : \r\n");
-    while (id[0] == '\0') {
-      boUART_getc(id);
-    }
-    
-    printf("CHOSEN ID : %c\r\n", id[0]);
-  } else if (!strcmp(input, "STOP")) {
-    strcpy(state, input);
-    printf("WENT STOP : %s\r\n", state);
-  }
-
-
-}
 
 int main(void)
 {
@@ -102,7 +81,6 @@ int main(void)
   
   /*Initialization UART*/
   boUART_Init ();
-  printf("RESPONDER\r\n");
   
   /* Reset DW1000 */
   reset_DW1000(); 
@@ -113,7 +91,7 @@ int main(void)
   /* Init the DW1000 */
   if (dwt_initialise(DWT_LOADUCODE) == DWT_ERROR)
   {
-    //Init of DW1000 Failed
+    // DW1000 init failed
     while (1) {};
   }
 
@@ -123,59 +101,30 @@ int main(void)
   /* Configure DW1000. */
   dwt_configure(&config);
 
-  /* Apply default antenna delay value. See NOTE 2 below. */
+  /* Apply default antenna delay value. */
   dwt_setrxantennadelay(RX_ANT_DLY);
   dwt_settxantennadelay(TX_ANT_DLY);
 
-  /* Set preamble timeout for expected frames. See NOTE 3 below. */
-  //dwt_setpreambledetecttimeout(0); // PRE_TIMEOUT
-          
-  /* Set expected response's delay and timeout. 
-  * As this example only handles one incoming frame with always the same delay and timeout, those values can be set here once for all. */
+  /* Set preamble timeout for expected frames. */
   dwt_setrxaftertxdelay(POLL_TX_TO_RESP_RX_DLY_UUS);
-  dwt_setrxtimeout(0); // Maximum value timeout with DW1000 is 65ms
+  dwt_setrxtimeout(0);
   // DW1000 END INIT  ------------------------------------
 
-  // INPUR READING INIT
-  char input_buffer[1];
-  char total_input[1024];
-  char state[5];
-  int input_index = 0;
-
+  // INPUT READING INIT
   char id_buffer[1];
 
-  memcpy(state, 0, sizeof(state));
+  memcpy(id_buffer, 0, sizeof(id_buffer));
 
+  set_id(id_buffer);
 
   // Loop forever responding to ranging requests.
-  while (1) 
-  {
-    boUART_getc(input_buffer);
-
-
-    if(input_buffer[0] == '\r') {
-      // user ended the transmission (sent 'Z')
-      printf("END OF TRANSMISSION\r\n");
-
-      total_input[input_index] = '\0';
-      handle_function(total_input, state, id_buffer);
-
-      // clean buffer memory
-      memset(input_buffer, 0, sizeof(input_buffer));
-      input_index = 0;
-    } else if (input_buffer[0] != '\0') {
-      // add input to buffer
-      printf("RECEIVED : %c\r\n", input_buffer[0]);
-      total_input[input_index] = input_buffer[0];
-      input_index += 1;
-    }
-    // clean the input buffer
-    input_buffer[0] = '\0';
-
-    if (!strcmp(state, "RESP")) {
+  while (1) {
       ss_resp_run(id_buffer);
-    }
-
   }
+}
 
+void set_id(char* id) {
+  while (id[0] == '\0') {
+    boUART_getc(id);
+  }
 }

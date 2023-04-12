@@ -121,16 +121,12 @@ int ss_resp_run(char* id)
       dwt_readrxdata(rx_buffer, frame_len, 0);
     }
 
-    printf("SRC : %c, SHOULD BE : %c\r\n", rx_buffer[DW_ID_RX_IDX], id[0]);
-
     /* Check that the frame is a poll sent by "SS TWR initiator" example.
     * As the sequence number field of the frame is not relevant, it is cleared to simplify the validation of the frame. */
     rx_buffer[ALL_MSG_SN_IDX] = 0; // Sequence number of message need to be erased
     if (memcmp(rx_buffer, rx_poll_msg, ALL_MSG_COMMON_LEN) == 0 
         && rx_buffer[DW_ID_RX_IDX] == id[0]) // Check source module ID, respond if we are destination of poll
-    {
-      printf("WENT BY, RESPONDING TO SOURCE...\r\n");
-      
+    { 
       uint32 resp_tx_time;
       int ret;
 
