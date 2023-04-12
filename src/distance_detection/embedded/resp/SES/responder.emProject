@@ -1,5 +1,5 @@
 <!DOCTYPE CrossStudio_Project_File>
-<solution Name="resp_stop_swap" target="8" version="2">
+<solution Name="responder" target="8" version="2">
   <configuration Name="Internal" hidden="Yes" />
   <configuration
     Name="nrf52832_xxaa"
@@ -7,7 +7,7 @@
     linker_additional_options=""
     linker_printf_fp_enabled="Float"
     linker_section_placement_file="$(ProjectDir)/RTE/flash_placement.xml" />
-  <project Name="resp_stop_swap">
+  <project Name="responder">
     <configuration
       Name="Common"
       arm_architecture="v7EM"

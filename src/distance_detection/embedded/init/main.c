@@ -65,36 +65,7 @@ static dwt_config_t config = {
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
 extern int ss_init_run(char* id, char* dest);
-extern int ss_resp_run(void);
-
-void handle_function(char* input, char* state, char* id, char* dest) {
-  printf("TOTAL INPUT : %s\r\n", input);
-
-   if (!strcmp(input, "INIT")) {
-    strcpy(state, input);
-    printf("WENT INIT : %s\r\n", state);
-    dest[0] = '\0';
-    id[0] = '\0';
-
-    printf("ENTER ID : \r\n");
-    while (id[0] == '\0') {
-      boUART_getc(id);
-    }
-    printf("CHOSEN ID : %c\r\n", id[0]);
-
-    printf("ENTER DESTINATION : \r\n");
-    while (dest[0] == '\0') {
-      boUART_getc(dest);
-    }
-    printf("CHOSEN DEST : %c\r\n", dest[0]);
-
-  } else if (!strcmp(input, "STOP")) {
-    strcpy(state, input);
-    printf("WENT STOP : %s\r\n", state);
-  }
-
-
-}
+void set_id(char* id);
 
 int main(void)
 {
@@ -145,46 +116,38 @@ int main(void)
   // DW1000 END INIT  ------------------------------------
 
   // INPUR READING INIT
+  char id[1];
+  char dest[1];
   char input_buffer[1];
-  char total_input[1024];
-  char state[5];
-  int input_index = 0;
 
-  char dest_buffer[1];
-  char id_buffer[1];
+  memcpy(id, 0, sizeof(id));
+  memcpy(dest, 0, sizeof(dest));
+  memcpy(input_buffer, 0, sizeof(input_buffer));
 
-  memcpy(state, 0, sizeof(state));
-
+  set_id(id);
 
   // Loop forever responding to ranging requests.
   while (1) 
   {
     boUART_getc(input_buffer);
 
+    if (input_buffer[0] != '\0') {
+      // save_destination
+      dest[0] = input_buffer[0];
 
-    if(input_buffer[0] == '\r') {
-      // user ended the transmission (sent 'Z')
-      printf("END OF TRANSMISSION\r\n");
-
-      total_input[input_index] = '\0';
-      handle_function(total_input, state, id_buffer, dest_buffer);
-
-      // clean buffer memory
-      memset(input_buffer, 0, sizeof(input_buffer));
-      input_index = 0;
-    } else if (input_buffer[0] != '\0') {
-      // add input to buffer
-      printf("RECEIVED : %c\r\n", input_buffer[0]);
-      total_input[input_index] = input_buffer[0];
-      input_index += 1;
-    }
-    // clean the input buffer
-    input_buffer[0] = '\0';
-
-    if (!strcmp(state, "INIT")) {
-      ss_init_run(id_buffer, dest_buffer);
+      // clean the input buffer
+      input_buffer[0] = '\0';
     }
 
+    if (dest[0] != '\0') {
+      ss_init_run(id, dest);
+    }
   }
+}
 
+void set_id(char* id) {
+    printf("ENTER ID : \r\n");
+    while (id[0] == '\0') {
+      boUART_getc(id);
+    }
 }
