@@ -25,11 +25,13 @@ struct Distance_
 
   Distance_()
     : robot_id(0)
-    , distance(0.0)  {
+    , distance(0.0)
+    , color()  {
     }
   Distance_(const ContainerAllocator& _alloc)
     : robot_id(0)
-    , distance(0.0)  {
+    , distance(0.0)
+    , color(_alloc)  {
   (void)_alloc;
     }
 
@@ -40,6 +42,9 @@ struct Distance_
 
    typedef float _distance_type;
   _distance_type distance;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _color_type;
+  _color_type color;
 
 
 
@@ -71,7 +76,8 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::communication::Distance_<ContainerAllocator1> & lhs, const ::communication::Distance_<ContainerAllocator2> & rhs)
 {
   return lhs.robot_id == rhs.robot_id &&
-    lhs.distance == rhs.distance;
+    lhs.distance == rhs.distance &&
+    lhs.color == rhs.color;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -104,12 +110,12 @@ struct IsMessage< ::communication::Distance_<ContainerAllocator> const>
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::communication::Distance_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::communication::Distance_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -128,12 +134,12 @@ struct MD5Sum< ::communication::Distance_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "71d39cf2a915bcac00e8d5cd675dce87";
+    return "cd8303e074167b796d0380292be4fd56";
   }
 
   static const char* value(const ::communication::Distance_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x71d39cf2a915bcacULL;
-  static const uint64_t static_value2 = 0x00e8d5cd675dce87ULL;
+  static const uint64_t static_value1 = 0xcd8303e074167b79ULL;
+  static const uint64_t static_value2 = 0x6d0380292be4fd56ULL;
 };
 
 template<class ContainerAllocator>
@@ -154,6 +160,7 @@ struct Definition< ::communication::Distance_<ContainerAllocator> >
   {
     return "int16 robot_id\n"
 "float32 distance\n"
+"string color\n"
 ;
   }
 
@@ -174,6 +181,7 @@ namespace serialization
     {
       stream.next(m.robot_id);
       stream.next(m.distance);
+      stream.next(m.color);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -196,6 +204,8 @@ struct Printer< ::communication::Distance_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.robot_id);
     s << indent << "distance: ";
     Printer<float>::stream(s, indent + "  ", v.distance);
+    s << indent << "color: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.color);
   }
 };
 

@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # File used to launch all requirements at once for the simple distance/communication experiment
 
 cd ros

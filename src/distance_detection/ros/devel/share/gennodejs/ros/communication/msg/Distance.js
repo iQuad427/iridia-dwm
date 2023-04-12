@@ -20,6 +20,7 @@ class Distance {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.robot_id = null;
       this.distance = null;
+      this.color = null;
     }
     else {
       if (initObj.hasOwnProperty('robot_id')) {
@@ -34,6 +35,12 @@ class Distance {
       else {
         this.distance = 0.0;
       }
+      if (initObj.hasOwnProperty('color')) {
+        this.color = initObj.color
+      }
+      else {
+        this.color = '';
+      }
     }
   }
 
@@ -43,6 +50,8 @@ class Distance {
     bufferOffset = _serializer.int16(obj.robot_id, buffer, bufferOffset);
     // Serialize message field [distance]
     bufferOffset = _serializer.float32(obj.distance, buffer, bufferOffset);
+    // Serialize message field [color]
+    bufferOffset = _serializer.string(obj.color, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -54,11 +63,15 @@ class Distance {
     data.robot_id = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [distance]
     data.distance = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [color]
+    data.color = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 6;
+    let length = 0;
+    length += _getByteLength(object.color);
+    return length + 10;
   }
 
   static datatype() {
@@ -68,7 +81,7 @@ class Distance {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '71d39cf2a915bcac00e8d5cd675dce87';
+    return 'cd8303e074167b796d0380292be4fd56';
   }
 
   static messageDefinition() {
@@ -76,6 +89,7 @@ class Distance {
     return `
     int16 robot_id
     float32 distance
+    string color
     
     `;
   }
@@ -98,6 +112,13 @@ class Distance {
     }
     else {
       resolved.distance = 0.0
+    }
+
+    if (msg.color !== undefined) {
+      resolved.color = msg.color;
+    }
+    else {
+      resolved.color = ''
     }
 
     return resolved;
