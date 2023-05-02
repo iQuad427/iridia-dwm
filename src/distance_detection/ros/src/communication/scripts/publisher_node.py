@@ -94,7 +94,11 @@ def talker():
                 msg = Distance()
                 msg.robot_id = int(res[0])
                 msg.distance = float(res[1])
-                msg.color = COLORS[str(res[2])[0]]
+                
+                if len(res[2]) > 1:
+                    msg.color = COLORS[str(res[2])[0]]
+                else:
+                    msg.color = 'g'
 
                 pub.publish(msg)
 
