@@ -3,4 +3,6 @@
           ROBOT_ID
           DISTANCE-VAL
           DISTANCE
+          COLOR-VAL
+          COLOR
 ))

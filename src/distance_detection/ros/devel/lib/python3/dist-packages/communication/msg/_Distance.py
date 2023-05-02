@@ -8,14 +8,15 @@ import struct
 
 
 class Distance(genpy.Message):
-  _md5sum = "71d39cf2a915bcac00e8d5cd675dce87"
+  _md5sum = "cd8303e074167b796d0380292be4fd56"
   _type = "communication/Distance"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """int16 robot_id
 float32 distance
+string color
 """
-  __slots__ = ['robot_id','distance']
-  _slot_types = ['int16','float32']
+  __slots__ = ['robot_id','distance','color']
+  _slot_types = ['int16','float32','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -25,7 +26,7 @@ float32 distance
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       robot_id,distance
+       robot_id,distance,color
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -38,9 +39,12 @@ float32 distance
         self.robot_id = 0
       if self.distance is None:
         self.distance = 0.
+      if self.color is None:
+        self.color = ''
     else:
       self.robot_id = 0
       self.distance = 0.
+      self.color = ''
 
   def _get_types(self):
     """
@@ -56,6 +60,12 @@ float32 distance
     try:
       _x = self
       buff.write(_get_struct_hf().pack(_x.robot_id, _x.distance))
+      _x = self.color
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -71,6 +81,15 @@ float32 distance
       start = end
       end += 6
       (_x.robot_id, _x.distance,) = _get_struct_hf().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.color = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.color = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -85,6 +104,12 @@ float32 distance
     try:
       _x = self
       buff.write(_get_struct_hf().pack(_x.robot_id, _x.distance))
+      _x = self.color
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -101,6 +126,15 @@ float32 distance
       start = end
       end += 6
       (_x.robot_id, _x.distance,) = _get_struct_hf().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.color = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.color = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill

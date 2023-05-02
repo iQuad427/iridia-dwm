@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import rospy
-import random
 import serial
-import time
+import copy
 from communication.msg import Distance
 
 
@@ -12,6 +11,15 @@ DEVICE_BYTESIZE = serial.EIGHTBITS
 DEVICE_PARITY = serial.PARITY_NONE
 DEVICE_STOPBITS = serial.STOPBITS_ONE
 DEVICE_TIMEOUT = 1
+
+COLORS = {
+    'R' : "red",
+    'B' : "blue",
+    'G' : "green",
+    'Y' : "yellow",
+    'b' : "black",
+    'g' : "grey"
+}
 
 
 class DWM1001:
@@ -38,6 +46,9 @@ class DWM1001:
         self.device.close()
         print("Connection with the device closed")
     
+    def write(self, string):
+        self.device.write(bytes(string, encoding='utf-8'))
+
     def get_output(self):
         return str(self.device.readline(), 'utf-8')
 
@@ -56,21 +67,39 @@ def talker():
     rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
-    device = DWM1001()
+    device = DWM1001('/dev/ttyACM0')
+    # responder = DWM1001('/dev/ttyACM1')
 
-    i = 0
-    rng = random.Random()
+    id = input("Enter module ID : ")
+    device.write(id) # robot own id
+    # responder.write(id)
+
+    agents = set()
+    agents.add('A') # adding broadcast address (ALL) to find other agents
+
     while not rospy.is_shutdown():
+        for robot_id in copy.copy(agents):
+            if robot_id == id:
+                continue
 
-        out = device.get_output()
-        res = out.split(" : ")
+            device.write(robot_id) # ask to poll for distance to robot_id
 
-        msg = Distance()
-        msg.robot_id = i
-        msg.distance = float(res[1])
+            out = device.get_output()
+            rospy.loginfo(f"{out[:-2]}")
 
-        pub.publish(msg)
-        rate.sleep()
+            res = out.split(' : ')
+            if len(res) == 3:
+                agents.add(res[0])
+
+                msg = Distance()
+                msg.robot_id = int(res[0])
+                msg.distance = float(res[1])
+                msg.color = COLORS[str(res[2])[0]]
+
+                pub.publish(msg)
+
+            
+
 
 if __name__ == '__main__':
     try:
