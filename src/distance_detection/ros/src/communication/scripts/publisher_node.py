@@ -6,7 +6,7 @@ import time
 from communication.msg import Distance
 
 
-DEVICE_PORT = '/dev/ttyACM1'
+DEVICE_PORT = '/dev/ttyACM0'
 DEVICE_BAUDRATE = 115200
 DEVICE_BYTESIZE = serial.EIGHTBITS
 DEVICE_PARITY = serial.PARITY_NONE

@@ -31,7 +31,7 @@
 
 /* Frames used in the ranging process. See NOTE 2,3 below. */
 static uint8 rx_poll_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'W', 'A', 'V', 'E', 0xE0, '0', '0', 0, 0};
-static uint8 tx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE1, '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static uint8 tx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE1, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 /* Length of the common part of the message (up to and including the function code, see NOTE 3 below). */
 #define ALL_MSG_COMMON_LEN 10
@@ -41,10 +41,11 @@ static uint8 tx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE
 #define RESP_MSG_TS_LEN 4
 #define DW_ID_TX_IDX 10 // ID of the module sending the frame
 #define DW_ID_RX_IDX 11 // ID of the module receiving the frame
-#define RESP_MSG_POLL_RX_TS_IDX 12
-#define RESP_MSG_RESP_TX_TS_IDX 16
+#define DW_TX_COLOR 12
+#define RESP_MSG_POLL_RX_TS_IDX 13
+#define RESP_MSG_RESP_TX_TS_IDX 17
 
-#define ADDED_VARIABLES_TO_MSG 2
+#define ADDED_VARIABLES_TO_MSG 3
 
 /* Frame sequence number, incremented after each transmission. */
 static uint8 frame_seq_nb = 0;
@@ -97,7 +98,7 @@ static uint64 resp_tx_ts;
 * @return none
 */
 
-int ss_resp_run(char* id)
+int ss_resp_run(char* id, char* color)
 {
 
   /* Activate reception immediately. */
@@ -125,7 +126,8 @@ int ss_resp_run(char* id)
     * As the sequence number field of the frame is not relevant, it is cleared to simplify the validation of the frame. */
     rx_buffer[ALL_MSG_SN_IDX] = 0; // Sequence number of message need to be erased
     if (memcmp(rx_buffer, rx_poll_msg, ALL_MSG_COMMON_LEN) == 0 
-        && rx_buffer[DW_ID_RX_IDX] == id[0]) // Check source module ID, respond if we are destination of poll
+        && (rx_buffer[DW_ID_RX_IDX] == id[0] || rx_buffer[DW_ID_RX_IDX] == 'A')
+        ) // Check source module ID, respond if we are destination of poll or it was broadcasted
     { 
       uint32 resp_tx_time;
       int ret;
@@ -149,6 +151,7 @@ int ss_resp_run(char* id)
       tx_resp_msg[ALL_MSG_SN_IDX] = frame_seq_nb;
       tx_resp_msg[DW_ID_TX_IDX] = id[0]; // Place us as the sender of the response
       tx_resp_msg[DW_ID_RX_IDX] = rx_buffer[DW_ID_TX_IDX]; // DEST is the one who polled us
+      tx_resp_msg[DW_TX_COLOR] = color[0];
       dwt_writetxdata(sizeof(tx_resp_msg), tx_resp_msg, 0); /* Zero offset in TX buffer. See Note 5 below.*/
       dwt_writetxfctrl(sizeof(tx_resp_msg), 0, 1); /* Zero offset in TX buffer, ranging. */
       ret = dwt_starttx(DWT_START_TX_DELAYED);

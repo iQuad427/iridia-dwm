@@ -34,7 +34,7 @@
 
 /* Frames used in the ranging process. See NOTE 1,2 below. */
 static uint8 tx_poll_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'W', 'A', 'V', 'E', 0xE0, '0', '0', 0, 0};
-static uint8 rx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE1, '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static uint8 rx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE1, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 /* Length of the common part of the message (up to and including the function code, see NOTE 1 below). */
 #define ALL_MSG_COMMON_LEN 10
@@ -44,10 +44,11 @@ static uint8 rx_resp_msg[] = {0x41, 0x88, 0, 0xCA, 0xDE, 'V', 'E', 'W', 'A', 0xE
 #define RESP_MSG_TS_LEN 4
 #define DW_ID_TX_IDX 10 // ID of the module sending the frame
 #define DW_ID_RX_IDX 11 // ID of the module receiving the frame
-#define RESP_MSG_POLL_RX_TS_IDX 12
-#define RESP_MSG_RESP_TX_TS_IDX 16
+#define DW_TX_COLOR 12
+#define RESP_MSG_POLL_RX_TS_IDX 13
+#define RESP_MSG_RESP_TX_TS_IDX 17
 
-#define ADDED_VARIABLES_TO_MSG 2
+#define ADDED_VARIABLES_TO_MSG 3
 
 /* Frame sequence number, incremented after each transmission. */
 static uint8 frame_seq_nb = 0;
@@ -136,11 +137,10 @@ int ss_init_run(char* id, char* dest)
     * As the sequence number field of the frame is not relevant, it is cleared to simplify the validation of the frame. */
     rx_buffer[ALL_MSG_SN_IDX] = 0;
     if (memcmp(rx_buffer, rx_resp_msg, ALL_MSG_COMMON_LEN) == 0 
-        && rx_buffer[DW_ID_TX_IDX] == dest[0] // Check that the message come from the right source
+        && (rx_buffer[DW_ID_TX_IDX] == dest[0] || dest[0] == 'A') // Check that the message come from the right source
         && rx_buffer[DW_ID_RX_IDX] == id[0] // Check that we are the destination of the message
     ) {	    
       rx_count++;
-      // printf("Reception # : %d\r\n",rx_count);
       uint32 poll_tx_ts, resp_rx_ts, poll_rx_ts, resp_tx_ts;
       int32 rtd_init, rtd_resp;
       float clockOffsetRatio ;
@@ -162,7 +162,7 @@ int ss_init_run(char* id, char* dest)
 
       tof = ((rtd_init - rtd_resp * (1.0f - clockOffsetRatio)) / 2.0f) * DWT_TIME_UNITS; // Specifying 1.0f and 2.0f are floats to clear warning 
       distance = tof * SPEED_OF_LIGHT;
-      printf("[%c] Distance : %f\r\n", rx_buffer[DW_ID_TX_IDX], distance);
+      printf("%c : %f : %c\r\n", rx_buffer[DW_ID_TX_IDX], distance, rx_buffer[DW_TX_COLOR]);
     }
   }
   else

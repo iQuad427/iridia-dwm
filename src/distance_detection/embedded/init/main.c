@@ -101,11 +101,11 @@ int main(void)
   /* Configure DW1000. */
   dwt_configure(&config);
 
-  /* Apply default antenna delay value. See NOTE 2 below. */
+  /* Apply default antenna delay value. */
   dwt_setrxantennadelay(RX_ANT_DLY);
   dwt_settxantennadelay(TX_ANT_DLY);
 
-  /* Set preamble timeout for expected frames. See NOTE 3 below. */
+  /* Set preamble timeout for expected frames. */
   //dwt_setpreambledetecttimeout(0); // PRE_TIMEOUT
           
   /* Set expected response's delay and timeout. 
@@ -127,8 +127,7 @@ int main(void)
   set_id(id);
 
   // Loop forever responding to ranging requests.
-  while (1) 
-  {
+  while (1) {
     boUART_getc(input_buffer);
 
     if (input_buffer[0] != '\0') {
@@ -146,7 +145,6 @@ int main(void)
 }
 
 void set_id(char* id) {
-    printf("ENTER ID : \r\n");
     while (id[0] == '\0') {
       boUART_getc(id);
     }

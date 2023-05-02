@@ -64,7 +64,7 @@ static dwt_config_t config = {
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
-extern int ss_resp_run(char* src);
+extern int ss_resp_run(char* src, char* color);
 void set_id(char* id);
 
 
@@ -81,6 +81,7 @@ int main(void)
   
   /*Initialization UART*/
   boUART_Init ();
+  printf("RESPONDER\r\n");
   
   /* Reset DW1000 */
   reset_DW1000(); 
@@ -112,14 +113,32 @@ int main(void)
 
   // INPUT READING INIT
   char id_buffer[1];
+  char color_buffer[1];
+  char color[1]; // starting color is None
 
   memcpy(id_buffer, 0, sizeof(id_buffer));
+  memcpy(color_buffer, 0, sizeof(color_buffer));
+  memcpy(color, 0, sizeof(color));
 
   set_id(id_buffer);
 
   // Loop forever responding to ranging requests.
   while (1) {
-      ss_resp_run(id_buffer);
+    boUART_getc(color_buffer);
+
+    if (color_buffer[0] != '\0') {
+      // save_destination
+      color[0] = color_buffer[0];
+
+      printf("Color: %c\r\n", color[0]);
+
+      // clean the input buffer
+      color_buffer[0] = '\0';
+    }
+
+    if (color[0] != '\0') {
+      ss_resp_run(id_buffer, color);
+    }
   }
 }
 
