@@ -1,3 +1,4 @@
+import serial
 
 DEVICE_PORT = '/dev/ttyACM0'
 DEVICE_BAUDRATE = 115200

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import rospy
-import serial
 import copy
 from communication.msg import Distance
 from dwm1001 import DWM1001
