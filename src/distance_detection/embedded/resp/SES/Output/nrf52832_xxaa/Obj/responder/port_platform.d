@@ -1,6 +1,6 @@
 Output/nrf52832_xxaa/Obj/responder/port_platform.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/port/port_platform.c \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/deca_driver/port/port_platform.h \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/deca_driver/port/port_platform.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/deca_driver/port/port_platform.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
  /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.64/include/stdint.h \

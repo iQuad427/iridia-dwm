@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/responder/retarget.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/uart/retarget.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/uart/retarget.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
@@ -33,7 +33,7 @@ Output/nrf52832_xxaa/Obj/responder/retarget.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_macros.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdio.h \
  /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.64/include/stdio.h \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/uart/app_uart.h \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/uart/app_uart.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_util_platform.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/nrf_assert.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error.h \

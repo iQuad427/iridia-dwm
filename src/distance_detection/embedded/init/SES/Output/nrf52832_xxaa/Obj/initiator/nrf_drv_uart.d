@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/drivers_nrf/uart/nrf_drv_uart.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/drivers_nrf/uart/nrf_drv_uart.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
@@ -31,7 +31,7 @@ Output/nrf52832_xxaa/Obj/initiator/nrf_drv_uart.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52_name_change.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/compiler_abstraction.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_macros.h \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/drivers_nrf/uart/nrf_drv_uart.h \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/drivers_nrf/uart/nrf_drv_uart.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_peripherals.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52832_peripherals.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_uart.h \

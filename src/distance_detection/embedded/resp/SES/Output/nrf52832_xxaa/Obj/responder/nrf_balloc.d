@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/responder/nrf_balloc.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/balloc/nrf_balloc.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/balloc/nrf_balloc.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
@@ -31,7 +31,7 @@ Output/nrf52832_xxaa/Obj/responder/nrf_balloc.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52_name_change.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/compiler_abstraction.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_macros.h \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/balloc/nrf_balloc.h \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/balloc/nrf_balloc.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_errors.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_util_platform.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/nrf_assert.h \

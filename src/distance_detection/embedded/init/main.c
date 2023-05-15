@@ -64,14 +64,18 @@ static dwt_config_t config = {
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
-extern int ss_init_run(char* id, char* dest);
+extern int ss_init_run(char* id, char* dest, char* color);
 void set_id(char* id);
 
 int main(void)
 {
   /* Setup some LEDs for debug Green and Blue on DWM1001-DEV */
-  LEDS_CONFIGURE(BSP_LED_1_MASK);
-  LEDS_ON(BSP_LED_1_MASK);
+  int mask_all = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
+  int mask_on = BSP_LED_2_MASK|BSP_LED_3_MASK;
+  int mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK;
+
+  LEDS_CONFIGURE(mask_all);
+  LEDS_OFF(mask_all);
 
   // DW1000 INIT -------------------------------------------------	
 
@@ -119,10 +123,12 @@ int main(void)
   char id[1];
   char dest[1];
   char input_buffer[1];
+  char color[1];
 
   memcpy(id, 0, sizeof(id));
   memcpy(dest, 0, sizeof(dest));
   memcpy(input_buffer, 0, sizeof(input_buffer));
+  memcpy(color, 0, sizeof(dest));
 
   set_id(id);
 
@@ -138,8 +144,31 @@ int main(void)
       input_buffer[0] = '\0';
     }
 
+    LEDS_ON(mask_all);
+
+    switch (color[0]) {
+      case 'R':
+        mask_on = BSP_LED_3_MASK;
+        mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK;
+        break;;
+      case 'G':
+        mask_on = BSP_LED_0_MASK;
+        mask_off = BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
+        break;;
+      case 'B':
+        mask_on = BSP_LED_1_MASK;
+        mask_off = BSP_LED_0_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
+        break;;
+      default:
+        mask_on = mask_all;
+        mask_off = 0;
+    }
+
+    LEDS_OFF(mask_off);
+    LEDS_ON(mask_on);
+
     if (dest[0] != '\0') {
-      ss_init_run(id, dest);
+      ss_init_run(id, dest, color);
     }
   }
 }

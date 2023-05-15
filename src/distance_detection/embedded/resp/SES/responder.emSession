@@ -38,7 +38,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="116" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="109" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="10" y="78" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="62" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="14" y="132" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../resp_main.c" selected="0" top="142" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="responder" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>

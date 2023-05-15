@@ -1,7 +1,7 @@
 Output/nrf52832_xxaa/Obj/initiator/SEGGER_RTT.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/external/segger_rtt/SEGGER_RTT.c \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/external/segger_rtt/SEGGER_RTT.h \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/external/segger_rtt/SEGGER_RTT_Conf.h \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/external/segger_rtt/SEGGER_RTT.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/external/segger_rtt/SEGGER_RTT.h \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/external/segger_rtt/SEGGER_RTT_Conf.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/nordic_common.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_util_platform.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \

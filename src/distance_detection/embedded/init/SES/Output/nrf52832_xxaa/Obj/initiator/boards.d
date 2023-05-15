@@ -1,6 +1,6 @@
 Output/nrf52832_xxaa/Obj/initiator/boards.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/boards/boards.c \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/boards/boards.h \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/boards/boards.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/boards/boards.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/drivers_nrf/hal/nrf_gpio.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/nrf52.h \

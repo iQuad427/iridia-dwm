@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/initiator/init_main.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/src/distance_detection/embedded/init/init_main.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/src/distance_detection/embedded/init/init_main.c \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdio.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
  /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.64/include/stdio.h \

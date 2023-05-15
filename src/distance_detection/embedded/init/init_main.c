@@ -90,7 +90,7 @@ static volatile int rx_count = 0 ; // Successful receive counter
 *
 * @return none
 */
-int ss_init_run(char* id, char* dest)
+int ss_init_run(char* id, char* dest, char* color)
 {
   /* Loop forever initiating ranging exchanges. */
 
@@ -163,6 +163,7 @@ int ss_init_run(char* id, char* dest)
       tof = ((rtd_init - rtd_resp * (1.0f - clockOffsetRatio)) / 2.0f) * DWT_TIME_UNITS; // Specifying 1.0f and 2.0f are floats to clear warning 
       distance = tof * SPEED_OF_LIGHT;
       printf("%c : %f : %c\r\n", rx_buffer[DW_ID_TX_IDX], distance, rx_buffer[DW_TX_COLOR]);
+      color[0] = rx_buffer[DW_TX_COLOR];
     }
   }
   else
