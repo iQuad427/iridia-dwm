@@ -127,6 +127,7 @@ int ss_resp_run(char* id, char* color)
     rx_buffer[ALL_MSG_SN_IDX] = 0; // Sequence number of message need to be erased
     if (memcmp(rx_buffer, rx_poll_msg, ALL_MSG_COMMON_LEN) == 0 
         && (rx_buffer[DW_ID_RX_IDX] == id[0] || rx_buffer[DW_ID_RX_IDX] == 'A')
+        && rx_buffer[DW_ID_TX_IDX] != id[0]
         ) // Check source module ID, respond if we are destination of poll or it was broadcasted
     { 
       uint32 resp_tx_time;

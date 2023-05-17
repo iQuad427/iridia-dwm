@@ -70,7 +70,7 @@ SECTIONS
   .text ALIGN(__init_rodata_end__ , 4) : AT(ALIGN(__init_rodata_end__ , 4))
   {
     __text_start__ = .;
-    *(.text .text.* .gnu.linkonce.t.* .glue_7t .glue_7 .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
+    *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
   }
   __text_end__ = __text_start__ + SIZEOF(.text);
   __text_size__ = SIZEOF(.text);
@@ -445,8 +445,6 @@ SECTIONS
 
   . = ASSERT(__heap_start__ == __heap_end__ || (__heap_end__ - __SRAM_segment_start__) <= __SRAM_segment_size__ , "error: .heap is too large to fit in SRAM memory segment");
 
-  . = ASSERT(__heap_size__ <= __HEAPSIZE__ , "error: .heap is larger than specified size");
-
   __stack_load_start__ = __SRAM_segment_start__ + (__SRAM_segment_size__ - 1024);
   .stack __SRAM_segment_start__ + (__SRAM_segment_size__ - 1024) (NOLOAD) : AT(__SRAM_segment_start__ + (__SRAM_segment_size__ - 1024))
   {
@@ -463,8 +461,6 @@ SECTIONS
   . = ASSERT(__stack_start__ == __stack_end__ || (__stack_end__ - __SRAM_segment_start__) <= __SRAM_segment_size__ , "error: .stack is too large to fit in SRAM memory segment");
   . = ASSERT(__heap_end__ <= __stack_start__ , "error: section .heap overlaps absolute placed section .stack");
 
-  . = ASSERT(__stack_size__ <= __STACKSIZE__ , "error: .stack is larger than specified size");
-
   __stack_process_load_start__ = ALIGN(__stack_end__ , 8);
   .stack_process ALIGN(__stack_end__ , 8) (NOLOAD) : AT(ALIGN(__stack_end__ , 8))
   {
@@ -480,8 +476,6 @@ SECTIONS
   __SRAM_segment_used_size__ = __SRAM_segment_used_end__ - __SRAM_segment_start__;
 
   . = ASSERT(__stack_process_start__ == __stack_process_end__ || (__stack_process_end__ - __SRAM_segment_start__) <= __SRAM_segment_size__ , "error: .stack_process is too large to fit in SRAM memory segment");
-
-  . = ASSERT(__stack_process_size__ <= __STACKSIZE_PROCESS__ , "error: .stack_process is larger than specified size");
 
 }
 

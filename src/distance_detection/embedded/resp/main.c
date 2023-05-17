@@ -31,6 +31,7 @@
 #include "deca_param_types.h"
 #include "deca_regs.h"
 #include "deca_device_api.h"
+#include "dwm_api.h"
 #include "uart.h"
 	
 //-----------------dw1000----------------------------
@@ -125,12 +126,22 @@ int main(void)
   memcpy(color, 0, sizeof(color));
 
   set_id(id_buffer);
+  LEDS_ON(mask_all);
 
   // Loop forever responding to ranging requests.
   while (1) {
     boUART_getc(color_buffer);
 
-    if (color_buffer[0] != '\0') {
+    if (color_buffer[0] == 'Z') {
+      LEDS_OFF(mask_all);
+
+      id_buffer[0] = '\0';
+      color_buffer[0] = '\0';
+      color[0] = '\0';
+
+      set_id(id_buffer);
+      LEDS_ON(mask_all);
+    } else if (color_buffer[0] != '\0') {
       // save_destination
       color[0] = color_buffer[0];
 
@@ -140,30 +151,28 @@ int main(void)
       color_buffer[0] = '\0';
     }
 
-    LEDS_ON(mask_all);
-
-    switch (color[0]) {
-      case 'R':
-        mask_on = BSP_LED_3_MASK;
-        mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK;
-        break;;
-      case 'G':
-        mask_on = BSP_LED_0_MASK;
-        mask_off = BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-        break;;
-      case 'B':
-        mask_on = BSP_LED_1_MASK;
-        mask_off = BSP_LED_0_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-        break;;
-      default:
-        mask_on = mask_all;
-        mask_off = 0;
-    }
-
-    LEDS_OFF(mask_off);
-    LEDS_ON(mask_on);
-
     if (color[0] != '\0') {
+      switch (color[0]) {
+        case 'R':
+          mask_on = BSP_LED_3_MASK;
+          mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK;
+          break;;
+        case 'G':
+          mask_on = BSP_LED_0_MASK;
+          mask_off = BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
+          break;;
+        case 'B':
+          mask_on = BSP_LED_1_MASK;
+          mask_off = BSP_LED_0_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
+          break;;
+        default:
+          mask_on = 0;
+          mask_off = mask_all;
+      }
+
+      LEDS_OFF(mask_off);
+      LEDS_ON(mask_on);
+
       ss_resp_run(id_buffer, color);
     }
   }

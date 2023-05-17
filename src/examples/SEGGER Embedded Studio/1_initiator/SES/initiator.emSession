@@ -38,8 +38,8 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="176" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../init_main.c" selected="0" top="36" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="57" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="176" useTextEdit="1" path="../init_main.c" left="0" top="140" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="81" useTextEdit="1" path="../main.c" left="0" selected="1" top="64" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="initiator" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <EMStudioWindow activeProject="initiator" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

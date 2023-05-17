@@ -36,7 +36,7 @@ Output/nrf52832_xxaa/Obj/responder/bsp_nfc.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error_weak.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdlib.h \
  /Applications/SEGGER\ Embedded\ Studio\ for\ ARM\ 5.64/include/stdlib.h \
- ../../../../../include/boards/dw1001_dev.h \
+ ../../../../../lib/boards/dw1001_dev.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_util_platform.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/device/compiler_abstraction.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/nrf_assert.h

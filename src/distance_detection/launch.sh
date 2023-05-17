@@ -3,15 +3,29 @@
 
 
 initiator="/dev/ttyACM0"
-responder="/dev/ttyACM0"
+responder="/dev/ttyACM1"
 
+echo "Modules Initialisation..."
+
+echo "1" >> $responder
+echo "G" >> $responder
+sleep 1
 echo "1" >> $initiator
+echo "A" >> $initiator
+
+echo "Module Initialised, leds should be on."
+
+echo "Launching ROS"
 
 cd ros
 catkin_make
 source devel/setup.bash
 roslaunch communication communication_nodes.launch
 
-echo "Application Launched!"
+echo "Stopping the modules..."
 
+echo "Z" >> $responder
+sleep 1
+echo "Z" >> $initiator
 
+echo "Application ended!"

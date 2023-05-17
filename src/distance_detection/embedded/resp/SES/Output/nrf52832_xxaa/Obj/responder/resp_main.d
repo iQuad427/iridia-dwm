@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/responder/resp_main.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/src/distance_detection/embedded/resp/resp_main.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/src/distance_detection/embedded/resp/resp_main.c \
  ../config/sdk_config.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdio.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
@@ -70,5 +70,5 @@ Output/nrf52832_xxaa/Obj/responder/resp_main.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/experimental_section_vars/nrf_section.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/experimental_log/src/nrf_log_internal.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/boards/boards.h \
- ../../../../../include/boards/dw1001_dev.h \
+ ../../../../../lib/boards/dw1001_dev.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error.h

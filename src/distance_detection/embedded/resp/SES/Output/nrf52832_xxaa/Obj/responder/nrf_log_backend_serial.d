@@ -1,5 +1,5 @@
 Output/nrf52832_xxaa/Obj/responder/nrf_log_backend_serial.o: \
- /Users/quentin/Desktop/Oui./uwb_project/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/experimental_log/src/nrf_log_backend_serial.c \
+ /Users/quentin/Desktop/IRIDIA/Git/iridia-dwm/lib/nRF5_SDK_14.2.0/components/libraries/experimental_log/src/nrf_log_backend_serial.c \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/sdk_common.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
  /Users/quentin/Library/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \

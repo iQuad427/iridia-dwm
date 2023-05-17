@@ -70,5 +70,5 @@ Output/nrf52832_xxaa/Obj/initiator/init_main.o: \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/experimental_section_vars/nrf_section.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/experimental_log/src/nrf_log_internal.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/boards/boards.h \
- ../../../../../include/boards/dw1001_dev.h \
+ ../../../../../lib/boards/dw1001_dev.h \
  ../../../../../lib/nRF5_SDK_14.2.0/components/libraries/util/app_error.h

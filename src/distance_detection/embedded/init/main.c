@@ -131,12 +131,23 @@ int main(void)
   memcpy(color, 0, sizeof(dest));
 
   set_id(id);
+  LEDS_ON(mask_all);
 
   // Loop forever responding to ranging requests.
   while (1) {
     boUART_getc(input_buffer);
 
-    if (input_buffer[0] != '\0') {
+    if (input_buffer[0] == 'Z') {
+      LEDS_OFF(mask_all);
+
+      id[0] = '\0';
+      dest[0] = '\0';
+      color[0] = '\0';
+      input_buffer[0] = '\0';
+
+      set_id(id);
+      LEDS_ON(mask_all);
+    } else if (input_buffer[0] != '\0') {
       // save_destination
       dest[0] = input_buffer[0];
 
@@ -144,30 +155,28 @@ int main(void)
       input_buffer[0] = '\0';
     }
 
-    LEDS_ON(mask_all);
-
-    switch (color[0]) {
-      case 'R':
-        mask_on = BSP_LED_3_MASK;
-        mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK;
-        break;;
-      case 'G':
-        mask_on = BSP_LED_0_MASK;
-        mask_off = BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-        break;;
-      case 'B':
-        mask_on = BSP_LED_1_MASK;
-        mask_off = BSP_LED_0_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-        break;;
-      default:
-        mask_on = mask_all;
-        mask_off = 0;
-    }
-
-    LEDS_OFF(mask_off);
-    LEDS_ON(mask_on);
-
     if (dest[0] != '\0') {
+      switch (color[0]) {
+        case 'R':
+          mask_on = BSP_LED_3_MASK;
+          mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK;
+          break;;
+        case 'G':
+          mask_on = BSP_LED_0_MASK;
+          mask_off = BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
+          break;;
+        case 'B':
+          mask_on = BSP_LED_1_MASK;
+          mask_off = BSP_LED_0_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
+          break;;
+        default:
+          mask_on = mask_all;
+          mask_off = mask_all;
+      }
+
+      LEDS_OFF(mask_off);
+      LEDS_ON(mask_on);
+
       ss_init_run(id, dest, color);
     }
   }
