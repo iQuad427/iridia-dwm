@@ -7,6 +7,7 @@ DEVICE_PARITY = serial.PARITY_NONE
 DEVICE_STOPBITS = serial.STOPBITS_ONE
 DEVICE_TIMEOUT = 1
 
+
 class DWM1001:
     def __init__(self, port=None):
         try:
@@ -42,7 +43,4 @@ class DWM1001:
             output = self.get_output()
             if output != '':
                 print(output, end='')
-
-    def write(self, string):
-        self.device.write(bytes(string, encoding='utf-8'))
 
