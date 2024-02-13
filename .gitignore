@@ -35,3 +35,20 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+##############
+# User files #
+##############
+/src/ros/build
+/src/ros/devel
+/Output
+/_build
+/RTE
+*.quent
+JLinkLog.txt
+JLinkSettings.ini
+*.jlink
+*.d
+*.elf
+*.map
+*.emSession
