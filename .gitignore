@@ -39,11 +39,11 @@ Thumbs.db
 ##############
 # User files #
 ##############
-/src/ros/build
-/src/ros/devel
-/Output
-/_build
-/RTE
+*build
+*devel
+*Output
+*_build
+*RTE
 *.quent
 JLinkLog.txt
 JLinkSettings.ini
@@ -52,3 +52,7 @@ JLinkSettings.ini
 *.elf
 *.map
 *.emSession
+*.crf
+*.ind
+*.ld
+*.scvd
