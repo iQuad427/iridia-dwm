@@ -9,6 +9,8 @@ Contact me at :
 > Note : here is a source I discovered later in my project, that would have been quite usefull to start working properly faster
 > https://github.com/TIERS/dwm1001-uwb-firmware
 
+> Might want to look into the Zephyr software and the following git repository later on : https://github.com/foldedtoad/dwm1001
+
 ## Project description
 
 The main goal of the project was to design and implement different communication protocols between UWB modules. However, as the previous work on the selected module (DWM1001) were inconclusive, the project was started by creating a basis to allow for further implementation. 
