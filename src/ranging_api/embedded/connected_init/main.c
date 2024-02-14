@@ -64,7 +64,8 @@ static dwt_config_t config = {
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
-extern int ss_init_run(char* id, char* dest, char* color);
+extern int ss_init_run(char* id, char* dest);
+extern int transmit_info_run(char* id);
 void set_id(char* id);
 
 int main(void)
@@ -119,21 +120,19 @@ int main(void)
 
   // DW1000 END INIT  ------------------------------------
 
-  // INPUR READING INIT
+  // INPUT READING INIT
   char id[1];
   char dest[1];
   char input_buffer[1];
-  char color[1];
 
   memcpy(id, 0, sizeof(id));
   memcpy(dest, 0, sizeof(dest));
   memcpy(input_buffer, 0, sizeof(input_buffer));
-  memcpy(color, 0, sizeof(dest));
 
   set_id(id);
   LEDS_ON(mask_all);
 
-  // Loop forever responding to ranging requests.
+  // Loop forever sending ranging requests.
   while (1) {
     boUART_getc(input_buffer);
 
@@ -142,42 +141,28 @@ int main(void)
 
       id[0] = '\0';
       dest[0] = '\0';
-      color[0] = '\0';
+
       input_buffer[0] = '\0';
 
       set_id(id);
       LEDS_ON(mask_all);
-    } else if (input_buffer[0] != '\0') {
+    } else if (input_buffer[0] != 'T') {
       // save_destination
       dest[0] = input_buffer[0];
 
       // clean the input buffer
       input_buffer[0] = '\0';
+    } else if (input_buffer[0] != '\0') {
+      // broadcast known information
+      transmit_info_run(id);
     }
 
     if (dest[0] != '\0') {
-      switch (color[0]) {
-        case 'R':
-          mask_on = BSP_LED_3_MASK;
-          mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK;
-          break;;
-        case 'G':
-          mask_on = BSP_LED_0_MASK;
-          mask_off = BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-          break;;
-        case 'B':
-          mask_on = BSP_LED_1_MASK;
-          mask_off = BSP_LED_0_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-          break;;
-        default:
-          mask_on = mask_all;
-          mask_off = mask_all;
-      }
 
       LEDS_OFF(mask_off);
       LEDS_ON(mask_on);
 
-      ss_init_run(id, dest, color);
+      ss_init_run(id, dest);
     }
   }
 }

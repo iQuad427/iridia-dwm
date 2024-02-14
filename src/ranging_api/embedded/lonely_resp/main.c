@@ -65,9 +65,7 @@ static dwt_config_t config = {
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
-extern int ss_resp_run(char* src, char* color);
-void set_id(char* id);
-
+extern int ss_resp_run(char* src);
 
 int main(void)
 {
@@ -117,69 +115,13 @@ int main(void)
   // DW1000 END INIT  ------------------------------------
 
   // INPUT READING INIT
-  char id_buffer[1];
-  char color_buffer[1];
-  char color[1]; // starting color is None
-
-  memcpy(id_buffer, 0, sizeof(id_buffer));
-  memcpy(color_buffer, 0, sizeof(color_buffer));
-  memcpy(color, 0, sizeof(color));
-
-  set_id(id_buffer);
-  LEDS_ON(mask_all);
+  char id[] = {'E'};
+  
+  LEDS_OFF(mask_off);
+  LEDS_ON(mask_on);
 
   // Loop forever responding to ranging requests.
   while (1) {
-    boUART_getc(color_buffer);
-
-    if (color_buffer[0] == 'Z') {
-      LEDS_OFF(mask_all);
-
-      id_buffer[0] = '\0';
-      color_buffer[0] = '\0';
-      color[0] = '\0';
-
-      set_id(id_buffer);
-      LEDS_ON(mask_all);
-    } else if (color_buffer[0] != '\0') {
-      // save_destination
-      color[0] = color_buffer[0];
-
-      printf("Color: %c\r\n", color[0]);
-
-      // clean the input buffer
-      color_buffer[0] = '\0';
-    }
-
-    if (color[0] != '\0') {
-      switch (color[0]) {
-        case 'R':
-          mask_on = BSP_LED_3_MASK;
-          mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK;
-          break;;
-        case 'G':
-          mask_on = BSP_LED_0_MASK;
-          mask_off = BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-          break;;
-        case 'B':
-          mask_on = BSP_LED_1_MASK;
-          mask_off = BSP_LED_0_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-          break;;
-        default:
-          mask_on = 0;
-          mask_off = mask_all;
-      }
-
-      LEDS_OFF(mask_off);
-      LEDS_ON(mask_on);
-
-      ss_resp_run(id_buffer, color);
-    }
-  }
-}
-
-void set_id(char* id) {
-  while (id[0] == '\0') {
-    boUART_getc(id);
+    ss_resp_run(id);
   }
 }

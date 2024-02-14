@@ -47,22 +47,22 @@
 #define FRAME_NB 0
 
 /* Frames used in the ranging process. See NOTE 2,3 below. */
-static uint8 tx_poll_msg[] = {TWR_MSG, PAN_ID, TX_ID, RX_ID, INIT_TO_RESP, FRAME_NB, LENGTH, 0, 0};
-static uint8 rx_resp_msg[] = {TWR_MSG, PAN_ID, TX_ID, RX_ID, RESP_TO_INIT, FRAME_NB, LENGTH, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static uint8 tx_poll_msg[] = {TWR_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, RX_ID, LENGTH, 0, 0};
+static uint8 rx_resp_msg[] = {TWR_MSG, PAN_ID, RESP_TO_INIT, FRAME_NB, TX_ID, RX_ID, LENGTH, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-static uint8 tx_info_msg[] = {INFO_MSG, PAN_ID, TX_ID, RX_ID, INIT_TO_RESP, FRAME_NB, LENGTH, 0, 0};
+static uint8 tx_info_msg[] = {INFO_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, RX_ID, LENGTH, 0, 0};
 
 /* Length of the common part of the message (up to and including the function code, see NOTE 3 below). */
-#define ALL_MSG_COMMON_LEN 5 // Don't take frame number, length and later information into account
-// TODO: in fact, TX_ID and RX_ID shouldn't be in common in the comparison, since we don't know yet who sent the message at this point
+#define ALL_MSG_COMMON_LEN 4 // Don't take tx id, rx id, length and later information into account
+// Note : frame number is taken into account because it is used to identify the frame and ensure that we receive the response to the right one
 
 /* Index to access some fields in the frames involved in the process. */
 #define MSG_TYPE_IDX 0  // Type of message (Two-Way-Ranging, Data Communication, ...)
 #define MSG_PAN_IDX 1   // PAN ID (network ID, to allow for multiple non-overlapping networks)
-#define MSG_TX_IDX 2    // Transmitter ID (the one that sent the message)
-#define MSG_RX_IDX 3    // Receiver ID (the one that is supposed to receive the message)
-#define MSG_DIR_IDX 4   // Direction of message (0xE0: from init to resp, 0xE1: from resp to init)
-#define MSG_FRM_IDX 5   // Frame number (to ensure that we respond to the right frame if two are sent)
+#define MSG_DIR_IDX 2   // Direction of message (0xE0: from init to resp, 0xE1: from resp to init)
+#define MSG_FRM_IDX 3   // Frame number (to ensure that we respond to the right frame if two are sent)
+#define MSG_TX_IDX 4    // Transmitter ID (the one that sent the message)
+#define MSG_RX_IDX 5    // Receiver ID (the one that is supposed to receive the message)
 #define MSG_LEN_IDX 6   // Length of message (length of the data)
 
 // Data Communication Specific
@@ -80,6 +80,16 @@ static uint8 tx_info_msg[] = {INFO_MSG, PAN_ID, TX_ID, RX_ID, INIT_TO_RESP, FRAM
 * Its size is adjusted to the longest frame that this example code is supposed to handle. */
 #define RX_BUF_LEN 9
 static uint8 rx_buffer[RX_BUF_LEN];
+
+/* Ranges measurements */
+// Array of int16 being the ranges to all the robots
+static int16 ranges[30];
+static int next_id = 0;
+// Array of int being the index of all the robots, depending on their ID
+static int ids_to_index[30] = {-1};
+
+/* Frame sequence number, incremented after each transmission. */
+static uint8 frame_seq_nb = 0;
 
 /* Hold copy of status register state here for reference so that it can be examined at a debug breakpoint. */
 static uint32 status_reg = 0;
@@ -100,8 +110,8 @@ static void resp_msg_get_ts(uint8 *ts_field, uint32 *ts);
 
 
 /*Transactions Counters */
-static volatile int tx_count = 0 ; // Successful transmit counter
-static volatile int rx_count = 0 ; // Successful receive counter 
+static volatile int tx_count = 0; // Successful transmit counter
+static volatile int rx_count = 0; // Successful receive counter
 
 
 /*! ------------------------------------------------------------------------------------------------------------------
@@ -113,110 +123,126 @@ static volatile int rx_count = 0 ; // Successful receive counter
 *
 * @return none
 */
-int ss_init_run(char* id, char* dest, char* color)
-{
-  /* Loop forever initiating ranging exchanges. */
+int ss_init_run(char *id, char *dest) {
+    /* Loop forever initiating ranging exchanges. */
 
-  /* Write frame data to DW1000 and prepare transmission. See NOTE 3 below. */
-  tx_poll_msg[MSG_FRM_IDX] = frame_seq_nb;
-  tx_poll_msg[MSG_TX_IDX] = id[0]; // Set ourselves as sender (as source)
-  tx_poll_msg[MSG_RX_IDX] = dest[0]; // Set destination chosen by user
-  dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS);
-  dwt_writetxdata(sizeof(tx_poll_msg), tx_poll_msg, 0); /* Zero offset in TX buffer. */
-  dwt_writetxfctrl(sizeof(tx_poll_msg), 0, 1); /* Zero offset in TX buffer, ranging. */
+    /* Write frame data to DW1000 and prepare transmission. See NOTE 3 below. */
+    tx_poll_msg[MSG_FRM_IDX] = frame_seq_nb;
+    tx_poll_msg[MSG_TX_IDX] = id[0]; // Set ourselves as sender (as source)
+    tx_poll_msg[MSG_RX_IDX] = dest[0]; // Set destination chosen by user
+    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS);
+    dwt_writetxdata(sizeof(tx_poll_msg), tx_poll_msg, 0); /* Zero offset in TX buffer. */
+    dwt_writetxfctrl(sizeof(tx_poll_msg), 0, 1); /* Zero offset in TX buffer, ranging. */
 
-  /* Start transmission, indicating that a response is expected so that reception is enabled automatically after the frame is sent and the delay
-  * set by dwt_setrxaftertxdelay() has elapsed. */
-  dwt_starttx(DWT_START_TX_IMMEDIATE | DWT_RESPONSE_EXPECTED);
-  tx_count++;
-  // printf("Transmission # : %d\r\n",tx_count);
-  // printf("%c\r\n", tx_poll_msg[DW_ID_TS_IDX]);
+    /* Start transmission, indicating that a response is expected so that reception is enabled automatically after the frame is sent and the delay
+    * set by dwt_setrxaftertxdelay() has elapsed. */
+    dwt_starttx(DWT_START_TX_IMMEDIATE | DWT_RESPONSE_EXPECTED);
+    tx_count++;
+    // printf("Transmission # : %d\r\n",tx_count);
+    // printf("%c\r\n", tx_poll_msg[DW_ID_TS_IDX]);
 
 
-  /* We assume that the transmission is achieved correctly, poll for reception of a frame or error/timeout. See NOTE 4 below. */
-  while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) & (SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR)))
-  {};
+    /* We assume that the transmission is achieved correctly, poll for reception of a frame or error/timeout. See NOTE 4 below. */
+    while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) &
+             (SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR))) {};
 
-  /* Increment frame sequence number after transmission of the poll message (modulo 256). */
-  frame_seq_nb++;
+    /* Increment frame sequence number after transmission of the poll message (modulo 256). */
+    frame_seq_nb++;
 
-  if (status_reg & SYS_STATUS_RXFCG)
-  {		
-    uint32 frame_len;
+    if (status_reg & SYS_STATUS_RXFCG) {
+        uint32 frame_len;
 
-    /* Clear good RX frame event in the DW1000 status register. */
-    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_RXFCG);
+        /* Clear good RX frame event in the DW1000 status register. */
+        dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_RXFCG);
 
-    /* A frame has been received, read it into the local buffer. */
-    frame_len = dwt_read32bitreg(RX_FINFO_ID) & RX_FINFO_RXFLEN_MASK;
-   
-    if (frame_len <= RX_BUF_LEN)
-    {
-      dwt_readrxdata(rx_buffer, frame_len, 0);
+        /* A frame has been received, read it into the local buffer. */
+        frame_len = dwt_read32bitreg(RX_FINFO_ID) & RX_FINFO_RXFLEN_MASK;
+
+        if (frame_len <= RX_BUF_LEN) {
+            dwt_readrxdata(rx_buffer, frame_len, 0);
+        }
+
+        if (memcmp(rx_buffer, rx_resp_msg, ALL_MSG_COMMON_LEN) == 0
+            && (rx_buffer[MSG_TX_IDX] == dest[0] || dest[0] == 'A') // Check that the message come from the right source
+            && rx_buffer[MSG_RX_IDX] == id[0] // Check that we are the destination of the message
+                ) {
+            rx_count++;
+            uint32 poll_tx_ts, resp_rx_ts, poll_rx_ts, resp_tx_ts;
+            int32 rtd_init, rtd_resp;
+            float clockOffsetRatio;
+
+            /* Retrieve poll transmission and response reception timestamps. See NOTE 5 below. */
+            poll_tx_ts = dwt_readtxtimestamplo32();
+            resp_rx_ts = dwt_readrxtimestamplo32();
+
+            /* Read carrier integrator value and calculate clock offset ratio. See NOTE 7 below. */
+            clockOffsetRatio =
+                    dwt_readcarrierintegrator() * (FREQ_OFFSET_MULTIPLIER * HERTZ_TO_PPM_MULTIPLIER_CHAN_5 / 1.0e6);
+
+            /* Get timestamps embedded in response message. */
+            resp_msg_get_ts(&rx_buffer[RESP_MSG_POLL_RX_TS_IDX], &poll_rx_ts);
+            resp_msg_get_ts(&rx_buffer[RESP_MSG_RESP_TX_TS_IDX], &resp_tx_ts);
+
+            /* Compute time of flight and distance, using clock offset ratio to correct for differing local and remote clock rates */
+            rtd_init = resp_rx_ts - poll_tx_ts;
+            rtd_resp = resp_tx_ts - poll_rx_ts;
+
+            tof = ((rtd_init - rtd_resp * (1.0f - clockOffsetRatio)) / 2.0f) *
+                  DWT_TIME_UNITS; // Specifying 1.0f and 2.0f are floats to clear warning
+            distance = tof * SPEED_OF_LIGHT;
+            printf("%c : %f\r\n", rx_buffer[MSG_TX_IDX], distance);
+
+            // Save distance and ID (put distance in centimeters, and cast to int16)
+            if (ids_to_index[rx_buffer[MSG_TX_IDX] - '0'] == -1) {
+                ids_to_index[rx_buffer[MSG_TX_IDX] - '0'] = next_id;
+                ranges[next_id] = (int16)(distance * 100);
+                next_id++;
+            } else {
+                ranges[ids_to_index[rx_buffer[MSG_TX_IDX] - '0']] = (int16)(distance * 100);
+            }
+        }
+    } else {
+        /* Clear RX error/timeout events in the DW1000 status register. */
+        dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR);
+
+        /* Reset RX to properly reinitialise LDE operation. */
+        dwt_rxreset();
     }
 
-    /* Check that the frame is the expected response from the companion "SS TWR responder" example.
-    * As the sequence number field of the frame is not relevant, it is cleared to simplify the validation of the frame. */
-    rx_buffer[ALL_MSG_SN_IDX] = 0;
-    if (memcmp(rx_buffer, rx_resp_msg, ALL_MSG_COMMON_LEN) == 0 
-        && (rx_buffer[MSG_TX_IDX] == dest[0] || dest[0] == 'A') // Check that the message come from the right source
-        && rx_buffer[MSG_RX_IDX] == id[0] // Check that we are the destination of the message
-    ) {	    
-      rx_count++;
-      uint32 poll_tx_ts, resp_rx_ts, poll_rx_ts, resp_tx_ts;
-      int32 rtd_init, rtd_resp;
-      float clockOffsetRatio ;
+    /* Execute a delay between ranging exchanges. */
+    deca_sleep(RNG_DELAY_MS);
 
-      /* Retrieve poll transmission and response reception timestamps. See NOTE 5 below. */
-      poll_tx_ts = dwt_readtxtimestamplo32();
-      resp_rx_ts = dwt_readrxtimestamplo32();
-
-      /* Read carrier integrator value and calculate clock offset ratio. See NOTE 7 below. */
-      clockOffsetRatio = dwt_readcarrierintegrator() * (FREQ_OFFSET_MULTIPLIER * HERTZ_TO_PPM_MULTIPLIER_CHAN_5 / 1.0e6) ;
-
-      /* Get timestamps embedded in response message. */
-      resp_msg_get_ts(&rx_buffer[RESP_MSG_POLL_RX_TS_IDX], &poll_rx_ts);
-      resp_msg_get_ts(&rx_buffer[RESP_MSG_RESP_TX_TS_IDX], &resp_tx_ts);
-
-      /* Compute time of flight and distance, using clock offset ratio to correct for differing local and remote clock rates */
-      rtd_init = resp_rx_ts - poll_tx_ts;
-      rtd_resp = resp_tx_ts - poll_rx_ts;
-
-      tof = ((rtd_init - rtd_resp * (1.0f - clockOffsetRatio)) / 2.0f) * DWT_TIME_UNITS; // Specifying 1.0f and 2.0f are floats to clear warning 
-      distance = tof * SPEED_OF_LIGHT;
-      printf("%c : %f\r\n", rx_buffer[DW_ID_TX_IDX], distance);
-    }
-  }
-  else
-  {
-    /* Clear RX error/timeout events in the DW1000 status register. */
-    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR);
-
-    /* Reset RX to properly reinitialise LDE operation. */
-    dwt_rxreset();
-  }
-
-  /* Execute a delay between ranging exchanges. */
-  deca_sleep(RNG_DELAY_MS);
-
-  return(1);
+    return (1);
 }
 
-int transmit_info_run() {
-  /* Write frame data to DW1000 and prepare transmission. See NOTE 3 below. */
-  tx_poll_msg[MSG_FRM_IDX] = frame_seq_nb;
-  tx_poll_msg[MSG_TX_IDX] = id[0]; // Set ourselves as sender (as source)
-  tx_poll_msg[MSG_RX_IDX] = dest[0]; // Set destination chosen by user
-  dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS);
-  dwt_writetxdata(sizeof(tx_poll_msg), tx_poll_msg, 0); /* Zero offset in TX buffer. */
-  dwt_writetxfctrl(sizeof(tx_poll_msg), 0, 1); /* Zero offset in TX buffer, ranging. */
+int transmit_info_run(char *id) {
+    /* Write frame data to DW1000 and prepare transmission. See NOTE 3 below. */
+    tx_poll_msg[MSG_TX_IDX] = id[0]; // Set ourselves as sender (as source)
+    tx_poll_msg[MSG_RX_IDX] = 'A'; // Set destination chosen by user
 
-  // TODO : add ranging data to message
+    // Create a buffer with the right size
+    int length = next_id;
+    uint8 info_msg[sizeof(tx_info_msg) + length * 3]; // One byte for the ID, and two bytes for the distance
 
+    // Copy the message
+    memcpy(info_msg, tx_info_msg, sizeof(tx_info_msg));
 
-  /* Start transmission */
-  dwt_starttx(DWT_START_TX_IMMEDIATE | DWT_RESPONSE_EXPECTED);
-  tx_count++;
+    // Add ID + ranges to message
+    for (int i = 0; i < length; i++) {
+        info_msg[MSG_DATA_IDX + i * 3] = i + '0';
+        info_msg[MSG_DATA_IDX + i * 3 + 1] = (uint8)(ranges[ids_to_index[i + '0']] >> 8);
+        info_msg[MSG_DATA_IDX + i * 3 + 2] = (uint8)(ranges[ids_to_index[i + '0']]);
+    }
+
+    info_msg[MSG_LEN_IDX] = next_id;
+
+    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS);
+    dwt_writetxdata(sizeof(info_msg), info_msg, 0); /* Zero offset in TX buffer. */
+    dwt_writetxfctrl(sizeof(info_msg), 0, 1); /* Zero offset in TX buffer, ranging. */
+
+    /* Start transmission */
+    dwt_starttx(DWT_START_TX_IMMEDIATE | DWT_RESPONSE_EXPECTED);
+    tx_count++;
 }
 
 /*! ------------------------------------------------------------------------------------------------------------------
@@ -230,14 +256,12 @@ int transmit_info_run() {
 *
 * @return none
 */
-static void resp_msg_get_ts(uint8 *ts_field, uint32 *ts)
-{
-  int i;
-  *ts = 0;
-  for (i = 0; i < RESP_MSG_TS_LEN; i++)
-  {
-    *ts += ts_field[i] << (i * 8);
-  }
+static void resp_msg_get_ts(uint8 *ts_field, uint32 *ts) {
+    int i;
+    *ts = 0;
+    for (i = 0; i < RESP_MSG_TS_LEN; i++) {
+        *ts += ts_field[i] << (i * 8);
+    }
 }
 
 /*****************************************************************************************************************************************************
