@@ -16,7 +16,7 @@ COLORS = {
 
 
 def talker():
-    pub = rospy.Publisher('distance_polling', Distance, queue_size=10)
+    pub = rospy.Publisher('distance_polling', DistanceColor, queue_size=10)
     rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10)  # 10hz
 

@@ -58,7 +58,7 @@ def callback(data):
 
 def listener():
     rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber("distance_polling", Distance, callback)
+    rospy.Subscriber("distance_polling", DistanceColor, callback)
     while not rospy.is_shutdown():
         pass
     # rospy.spin()
