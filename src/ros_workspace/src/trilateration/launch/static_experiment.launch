@@ -1,4 +1,4 @@
 <launch>
-    <node pkg="trilateration" type="sensor_read.py" name="Sensor Reading Node" output="screen"></node>
-    <node pkg="trilateration" type="trilateration.py" name="Trilateration Computation Node" output="screen"></node>
+    <node pkg="trilateration" type="sensor_read.py" name="sensor_reading_node" output="screen"></node>
+    <node pkg="trilateration" type="trilateration_computation.py" name="trilateration_computation_node" output="screen"></node>
 </launch>

@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import rospy
 import copy
-from communication.msg import Distance
+from communication.msg import DistanceColor
 from dwm1001 import DWM1001
 
 
@@ -48,7 +48,7 @@ def talker():
                 if len(res) == 3:
                     agents.add(res[0])
 
-                    msg = Distance()
+                    msg = DistanceColor()
                     msg.robot_id = int(res[0])
                     msg.distance = float(res[1])
 
