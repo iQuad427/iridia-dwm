@@ -59,7 +59,7 @@
 File    : SEGGER_RTT_Syscalls_SES.c
 Purpose : Reimplementation of printf, puts and __getchar using RTT 
           in SEGGER Embedded Studio.
-          To use RTT for printf output, include this file in your 
+          To use RTT for printf output, include this file in your
           application.
 Revision: $Rev: 4351 $
 ----------------------------------------------------------------------

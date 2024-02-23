@@ -1,24 +1,22 @@
 #!/usr/bin/python3
+import pickle
+
 import numpy as np
 import rospy
-import numpy
 import matplotlib.pyplot as plt
-from trilateration.msg import Distances, Distance
+from trilateration.msg import Distances
 
 from numpy.linalg import svd
 
 from sklearn.manifold import MDS
-
 import matplotlib
-
-matplotlib.use("Agg")
-
 import matplotlib.backends.backend_agg as agg
 import pylab
 import pygame
 from pygame.locals import *
 
 
+matplotlib.use("Agg")
 pygame.init()
 
 fig = pylab.figure(figsize=[6, 6], dpi=100)
@@ -139,6 +137,10 @@ def update_plot():
         screen.blit(surf, (0, 0))
         pygame.display.flip()
 
+        return embedding
+
+    return None
+
 
 def MDS_fitting(matrix):
     mds = MDS(n_components=2, dissimilarity='precomputed', normalized_stress=False, metric=True)
@@ -153,7 +155,7 @@ def callback(data):
     robot_idx = data.robot_id - ord('B')  # starts at B because A (all) is the broadcast address
 
     for robot in data.ranges:
-        other_robot_idx = robot.other_robot_id
+        other_robot_idx = robot.other_robot_id - ord('B')
         distance = robot.distance
 
         x = robot_idx
@@ -167,18 +169,21 @@ def callback(data):
 
 def listener():
     rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber("trilateration_compute", Distances, callback)
+    rospy.Subscriber('sensor_read', Distances, callback)
 
-    crashed = False
-    while not crashed:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT or rospy.is_shutdown():
-                crashed = True
+    with open("output.txt", "w") as f:
+        crashed = False
+        while not crashed:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT or rospy.is_shutdown():
+                    crashed = True
 
-        # Update the data in the plot
-        update_plot()
+            # Update the data in the plot
+            embedding = update_plot()
+            if embedding is not None:
+                f.write(str(embedding))
 
-        clock.tick(30)  # Limit to 30 frames per second
+            clock.tick(30)  # Limit to 30 frames per second
 
 
 if __name__ == '__main__':

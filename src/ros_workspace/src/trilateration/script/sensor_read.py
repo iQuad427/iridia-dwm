@@ -37,16 +37,16 @@ def talker():
     rospy.init_node('talker', anonymous=True)
 
     rate = rospy.Rate(10)  # 10hz
-    faulty_frame = False
 
     responder = DWM('/dev/ttyACM0')
 
     while not rospy.is_shutdown():
-        # TODO: read SPI and publish into ROS topic
+        faulty_frame = False
 
         msg = Distances()
 
         line: str = responder.read()
+        # print(line)
 
         infos = line.split(",")
 
@@ -68,10 +68,12 @@ def talker():
 
                     msg.ranges.append(data)
                 except ValueError:
-                    faulty_frame = True
                     break
 
+            # print(msg)
+
             if not faulty_frame:
+                # print("publishing")
                 pub.publish(msg)
 
 
