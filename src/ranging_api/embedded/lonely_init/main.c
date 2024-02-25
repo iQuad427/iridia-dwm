@@ -119,12 +119,12 @@ int main(void) {
     // DW1000 END INIT  ------------------------------------
 
     // INPUT READING INIT
-    char id[] = {'C'};
+    char id[] = {'E'};
     //char dest[] = {'B'};
 
     char C[1] = {'B'};
-    char D[1] = {'D'};
-    char E[1] = {'E'};
+    char D[1] = {'C'};
+    char E[1] = {'D'};
     char *dest[3] = {C, D, E};
 
     LEDS_ON(mask_on);
@@ -145,7 +145,7 @@ int main(void) {
         printf("Range Communication\r\n");
         for (int j = 0; j < 5; j++) {
             transmit_info_run(id);
-            deca_sleep(25);
+            deca_sleep(10);
         }
 
         deca_sleep(100);

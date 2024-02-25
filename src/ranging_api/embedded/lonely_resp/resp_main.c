@@ -220,7 +220,7 @@ int ss_resp_run(char *id) {
         dwt_rxreset();
     }
 
-    deca_sleep(RNG_DELAY_MS);
+    deca_sleep(20);
 
     return (1);
 }

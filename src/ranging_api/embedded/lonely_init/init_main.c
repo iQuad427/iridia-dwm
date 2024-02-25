@@ -148,9 +148,6 @@ int ss_init_run(char *id, char *dest) {
     while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) &
              (SYS_STATUS_RXFCG | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR))) {};
 
-    /* Increment frame sequence number after transmission of the poll message (modulo 256). */
-    frame_seq_nb++;
-
     if (status_reg & SYS_STATUS_RXFCG) {
         uint32 frame_len;
 
@@ -171,6 +168,8 @@ int ss_init_run(char *id, char *dest) {
             rx_buffer[MSG_TYPE_IDX] == TWR_MSG
             && 
             rx_buffer[MSG_DIR_IDX] == RESP_TO_INIT
+            &&
+            rx_buffer[MSG_FRM_IDX] == frame_seq_nb % 255
             &&
             (rx_buffer[MSG_TX_IDX] == dest[0] || dest[0] == 'A') // Check that the message come from the right source
             && 
@@ -226,6 +225,9 @@ int ss_init_run(char *id, char *dest) {
         /* Reset RX to properly reinitialise LDE operation. */
         dwt_rxreset();
     }
+
+    /* Increment frame sequence number after transmission of the poll message (modulo 256). */
+    frame_seq_nb++;
 
     deca_sleep(RNG_DELAY_MS);
 

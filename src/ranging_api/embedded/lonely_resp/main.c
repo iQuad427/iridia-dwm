@@ -71,8 +71,8 @@ int main(void)
 {
   /* Setup some LEDs for debug Green and Blue on DWM1001-DEV */
   int mask_all = BSP_LED_0_MASK|BSP_LED_1_MASK|BSP_LED_2_MASK|BSP_LED_3_MASK;
-  int mask_on = BSP_LED_2_MASK|BSP_LED_3_MASK;
-  int mask_off = BSP_LED_0_MASK|BSP_LED_1_MASK;
+  int mask_off = BSP_LED_2_MASK|BSP_LED_3_MASK;
+  int mask_on = BSP_LED_0_MASK|BSP_LED_1_MASK;
 
   LEDS_CONFIGURE(mask_all);
   LEDS_OFF(mask_all);
