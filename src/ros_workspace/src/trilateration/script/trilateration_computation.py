@@ -16,6 +16,7 @@ import pygame
 from pygame.locals import *
 
 
+np.set_printoptions(linewidth=np.inf)
 matplotlib.use("Agg")
 pygame.init()
 
@@ -171,7 +172,7 @@ def listener():
     rospy.init_node('listener', anonymous=True)
     rospy.Subscriber('sensor_read', Distances, callback)
 
-    with open("output.txt", "w") as f:
+    with open("output.txt", "wb") as f:
         crashed = False
         while not crashed:
             for event in pygame.event.get():
@@ -181,7 +182,8 @@ def listener():
             # Update the data in the plot
             embedding = update_plot()
             if embedding is not None:
-                f.write(str(embedding))
+                print(embedding)
+                f.write(pickle.dumps(embedding))
 
             clock.tick(30)  # Limit to 30 frames per second
 
