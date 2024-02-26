@@ -172,6 +172,8 @@ def listener():
     rospy.init_node('listener', anonymous=True)
     rospy.Subscriber('sensor_read', Distances, callback)
 
+    data = []
+
     with open("output.txt", "wb") as f:
         crashed = False
         while not crashed:
@@ -182,10 +184,12 @@ def listener():
             # Update the data in the plot
             embedding = update_plot()
             if embedding is not None:
-                print(embedding)
-                f.write(pickle.dumps(embedding))
+                data.append(embedding)
+                # print(embedding)
 
             clock.tick(30)  # Limit to 30 frames per second
+
+        pickle.dump(data, f)
 
 
 if __name__ == '__main__':

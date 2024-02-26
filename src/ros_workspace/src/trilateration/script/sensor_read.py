@@ -92,7 +92,7 @@ def talker():
         msg = Distances()
 
         line: str = responder.read()
-        # print(line)
+        print(line)
 
         infos = line.split(",")
 
