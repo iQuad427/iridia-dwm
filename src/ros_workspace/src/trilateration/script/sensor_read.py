@@ -7,7 +7,7 @@ from trilateration.msg import Distance, Distances
 
 
 def add_noise(number: int):
-    return number + int(np.random.normal(10, 10))
+    return number + int(np.random.normal(0, 10))
 
 
 class FakeDWM:
@@ -24,18 +24,18 @@ class FakeDWM:
     def __init__(self):
         self.counter = 0
         self.messages = [
-            "B=0,C=100,D=100,E=141,",
-            "C=0,B=100,D=141,E=100,",
-            "D=0,B=100,C=141,E=100,",
-            "E=0,B=141,C=100,D=100,"
+            "B=0:100,C=100:100,D=100:100,E=141:100,",
+            "C=0:100,B=100:100,D=141:100,E=100:100,",
+            "D=0:100,B=100:100,C=141:100,E=100:100,",
+            "E=0:100,B=141:100,C=100:100,D=100:100,"
         ]
 
     def update_noise(self):
         self.messages = [
-            f"B=0,C={add_noise(100)},D={add_noise(100)},E={add_noise(141)},",
-            f"C=0,B={add_noise(100)},D={add_noise(141)},E={add_noise(100)},",
-            f"D=0,B={add_noise(100)},C={add_noise(141)},E={add_noise(100)},",
-            f"E=0,B={add_noise(141)},C={add_noise(100)},D={add_noise(100)},"
+            f"B=0:100,C={add_noise(100)}:100,D={add_noise(100)}:100,E={add_noise(141)}:100,",
+            f"C=0:100,B={add_noise(100)}:100,D={add_noise(141)}:100,E={add_noise(100)}:100,",
+            f"D=0:100,B={add_noise(100)}:100,C={add_noise(141)}:100,E={add_noise(100)}:100,",
+            f"E=0:100,B={add_noise(141)}:100,C={add_noise(100)}:100,D={add_noise(100)}:100,"
         ]
 
     def next(self):
@@ -83,7 +83,7 @@ def talker():
 
     try:
         responder = DWM('/dev/ttyACM0')
-    except Exception as e:
+    except serial.SerialException as e:
         responder = FakeDWM()
 
     while not rospy.is_shutdown():
@@ -92,7 +92,7 @@ def talker():
         msg = Distances()
 
         line: str = responder.read()
-        print(line)
+        # print(line)
 
         infos = line.split(",")
 
@@ -100,17 +100,19 @@ def talker():
             sender_robot = infos[0]
             sender_info = sender_robot.split("=")
 
-            if sender_info[1] == "0":
+            if sender_info[1] == "0:100":
                 msg.robot_id = ord(sender_info[0])
 
             for info in infos[1:]:
                 try:
                     robot, distance = info.split("=")
+                    distance, certainty = distance.split(":")
 
                     data = Distance()
 
                     data.other_robot_id = ord(robot)
                     data.distance = int(distance)
+                    data.certainty = int(certainty)
 
                     msg.ranges.append(data)
                 except ValueError:
