@@ -119,12 +119,11 @@ int main(void) {
     // DW1000 END INIT  ------------------------------------
 
     // INPUT READING INIT
-    char id[] = {'E'};
-    //char dest[] = {'B'};
+    char id[] = {'D'};
 
     char C[1] = {'B'};
     char D[1] = {'C'};
-    char E[1] = {'D'};
+    char E[1] = {'E'};
     char *dest[3] = {C, D, E};
 
     LEDS_ON(mask_on);

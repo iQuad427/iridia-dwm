@@ -63,7 +63,8 @@ static uint8 rx_info_msg[] = {INFO_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, R
 #define MSG_LEN_IDX 6   // Length of message (length of the data)
 
 // Data Communication Specific
-#define MSG_DATA_IDX 7  // Where data starts in the message
+#define MSG_SIZE_IDX 7  // Information on the size of one information (id + range + certainty)
+#define MSG_DATA_IDX 8  // Where data starts in the message
 
 // TWR Specific
 #define RESP_MSG_POLL_RX_TS_IDX 7 // Poll Reception Timestamp
@@ -75,8 +76,8 @@ static uint8 rx_info_msg[] = {INFO_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, R
 
 /* Buffer to store received response message.
 * Its size is adjusted to longest frame that this example code is supposed to handle. */
-#define RX_BUFFER_LEN 9
-static uint8 rx_buffer[RX_BUFFER_LEN];
+#define RX_BUF_LEN 9
+static uint8 rx_buffer[RX_BUF_LEN];
 
 /* Hold copy of status register state here for reference so that it can be examined at a debug breakpoint. */
 static uint32 status_reg = 0;
@@ -139,7 +140,7 @@ int ss_resp_run(char *id) {
 
         /* A frame has been received, read it into the local buffer. */
         frame_len = dwt_read32bitreg(RX_FINFO_ID) & RX_FINFO_RXFL_MASK_1023;
-        if (frame_len <= RX_BUFFER_LEN) {
+        if (frame_len <= RX_BUF_LEN) {
             dwt_readrxdata(rx_buffer, frame_len, 0);
 
             if (
@@ -203,10 +204,15 @@ int ss_resp_run(char *id) {
                 &&
                 rx_data_buffer[MSG_RX_IDX] == 'A'
             ) {
+                int msg_size = rx_data_buffer[MSG_SIZE_IDX];
 
                 for (int i = 0; i < rx_data_buffer[MSG_LEN_IDX]; ++i) {
-                    printf("%c=%d,", rx_data_buffer[MSG_DATA_IDX + i * 3],
-                           (int16)(rx_data_buffer[MSG_DATA_IDX + i * 3 + 1] << 8 | rx_data_buffer[MSG_DATA_IDX + i * 3 + 2])
+
+                    printf(
+                        "%c=%d:%d,", 
+                        rx_data_buffer[MSG_DATA_IDX + i * msg_size], 
+                        rx_data_buffer[MSG_DATA_IDX + i * msg_size + 1] << 8 | rx_data_buffer[MSG_DATA_IDX + i * msg_size + 2], 
+                        rx_data_buffer[MSG_DATA_IDX + i * msg_size + 3]
                     );
                 }
                 printf("\r\n");

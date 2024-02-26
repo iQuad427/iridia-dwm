@@ -43,6 +43,7 @@
 #define INIT_TO_RESP 0xAB
 #define RESP_TO_INIT 0xBA
 
+#define SIZE 0
 #define LENGTH 0
 #define FRAME_NB 0
 
@@ -50,7 +51,7 @@
 static uint8 tx_poll_msg[] = {TWR_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, RX_ID, LENGTH, 0, 0};
 static uint8 rx_resp_msg[] = {TWR_MSG, PAN_ID, RESP_TO_INIT, FRAME_NB, TX_ID, RX_ID, LENGTH, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-static uint8 tx_info_msg[] = {INFO_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, RX_ID, LENGTH, 0, 0};
+static uint8 tx_info_msg[] = {INFO_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, RX_ID, SIZE, LENGTH, 0, 0};
 
 /* Length of the common part of the message (up to and including the function code, see NOTE 3 below). */
 #define ALL_MSG_COMMON_LEN 4 // Don't take tx id, rx id, length and later information into account
@@ -66,7 +67,8 @@ static uint8 tx_info_msg[] = {INFO_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, R
 #define MSG_LEN_IDX 6   // Length of message (length of the data)
 
 // Data Communication Specific
-#define MSG_DATA_IDX 7  // Where data starts in the message
+#define MSG_SIZE_IDX 7  // Information on the size of one information (id + range + certainty)
+#define MSG_DATA_IDX 8  // Where data starts in the message
 
 // TWR Specific
 #define RESP_MSG_POLL_RX_TS_IDX 7 // Poll Reception Timestamp
@@ -78,16 +80,23 @@ static uint8 tx_info_msg[] = {INFO_MSG, PAN_ID, INIT_TO_RESP, FRAME_NB, TX_ID, R
 
 /* Buffer to store received response message.
 * Its size is adjusted to the longest frame that this example code is supposed to handle. */
-#define RX_BUFFER_LEN 17
-static uint8 rx_buffer[RX_BUFFER_LEN];
+#define RX_BUF_LEN 17
+static uint8 rx_buffer[RX_BUF_LEN];
 
 /* Ranges measurements */
+#define NUM_AGENTS 10
+
 // Array of int16 being the ranges to all the robots
-static int16 ranges[10];
-static int8 ids[10];
+static uint16 ranges[NUM_AGENTS];
+static uint16 ranges_noise[NUM_AGENTS];
+
+static int8 ids[NUM_AGENTS];
 static int next_id = 0;
+
+// Array of float representing the certainty of the measurement (practically, its age)
+static float ranges_certainty[NUM_AGENTS] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 // Array of int being the index of all the robots, depending on their ID
-static int ids_to_index[10] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+static int ids_to_index[NUM_AGENTS] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 
 /* Frame sequence number, incremented after each transmission. */
 static uint8 frame_seq_nb = 0;
@@ -114,6 +123,15 @@ static void resp_msg_get_ts(uint8 *ts_field, uint32 *ts);
 static volatile int tx_count = 0; // Successful transmit counter
 static volatile int rx_count = 0; // Successful receive counter
 
+/* Decrease Certainty of Measurements */
+void update_certainty() {
+    for (int i = 0; i < NUM_AGENTS; ++i) {
+        float certainty = ranges_certainty[i];
+        if (certainty != -1) {
+            ranges_certainty[i] = certainty * 0.99;
+        }
+    }
+}
 
 /*! ------------------------------------------------------------------------------------------------------------------
 * @fn main()
@@ -160,7 +178,7 @@ int ss_init_run(char *id, char *dest) {
         frame_len = dwt_read32bitreg(RX_FINFO_ID) & RX_FINFO_RXFLEN_MASK;
         //printf("lenght: %d\r\n", frame_len);
 
-        if (frame_len <= RX_BUFFER_LEN) {
+        if (frame_len <= RX_BUF_LEN) {
             dwt_readrxdata(rx_buffer, frame_len, 0);
         }
 
@@ -205,15 +223,28 @@ int ss_init_run(char *id, char *dest) {
             distance = tof * SPEED_OF_LIGHT;
             printf("%c : %f\r\n", rx_buffer[MSG_TX_IDX], distance);
 
-            // Save distance and ID (put distance in centimeters, and cast to int16)
+            // Save distance and ID (put distance in centimeters, and cast to uint16)
             if (ids_to_index[rx_buffer[MSG_TX_IDX] - 'A'] == -1) {
                 printf("found new measurement\r\n");
+
                 ids_to_index[rx_buffer[MSG_TX_IDX] - 'A'] = next_id;
-                ranges[next_id] = (int16)(distance * 100);
+
+                ranges[next_id] = (uint16)(distance * 100);
+                ranges_noise[next_id] = (uint16)(distance * 100);
+
+                ranges_certainty[next_id] = 1.0f;
+
                 ids[next_id] = rx_buffer[MSG_TX_IDX];
                 next_id++;
             } else {
-                ranges[ids_to_index[rx_buffer[MSG_TX_IDX] - 'A']] = (int16)(distance * 100);
+                ranges_certainty[ids_to_index[rx_buffer[MSG_TX_IDX] - 'A']] = 1.0f;
+
+                // Without noise mitigation (uses last measure)
+                ranges[ids_to_index[rx_buffer[MSG_TX_IDX] - 'A']] = (uint16)(distance * 100);
+
+                // With noise mitigation (averages previous value and new measurement)
+                uint16 previous_range = ranges_noise[ids_to_index[rx_buffer[MSG_TX_IDX] - 'A']];
+                ranges_noise[ids_to_index[rx_buffer[MSG_TX_IDX] - 'A']] = (previous_range + (uint16)(distance * 100))/2;
             }
         }
     } else {
@@ -229,6 +260,7 @@ int ss_init_run(char *id, char *dest) {
     /* Increment frame sequence number after transmission of the poll message (modulo 256). */
     frame_seq_nb++;
 
+    update_certainty(); 
     deca_sleep(RNG_DELAY_MS);
 
     return (1);
@@ -241,7 +273,8 @@ int transmit_info_run(char *id) {
 
     // Create a buffer with the right size
     uint8 length = next_id + 1;
-    uint8 info_msg[sizeof(tx_info_msg) + length * 3]; // One byte for the ID, and two bytes for the distance
+    int msg_size = 4; // One byte for the ID, two bytes for the distance, one byte for certainty (0-100)
+    uint8 info_msg[sizeof(tx_info_msg) + length * msg_size];
 
     // Copy the message
     memcpy(info_msg, 0, sizeof(info_msg));
@@ -252,16 +285,22 @@ int transmit_info_run(char *id) {
     info_msg[MSG_DATA_IDX + 1] = 0;
     info_msg[MSG_DATA_IDX + 2] = 0;
 
+    info_msg[MSG_DATA_IDX + 3] = 100;
+
     // Add ID + ranges to message
     for (int i = 1; i < length; i++) {
         uint8 id = ids[i - 1];
-        uint16 range = ranges[i - 1];
+        uint16 range = ranges_noise[i - 1];
+        float certainty = ranges_certainty[i - 1];
 
-        info_msg[MSG_DATA_IDX + i * 3] = id;
-        info_msg[MSG_DATA_IDX + i * 3 + 1] = (uint8)(range >> 8);
-        info_msg[MSG_DATA_IDX + i * 3 + 2] = (uint8)(range);
+        info_msg[MSG_DATA_IDX + i * msg_size] = id;
+        info_msg[MSG_DATA_IDX + i * msg_size + 1] = (uint8)(range >> 8);
+        info_msg[MSG_DATA_IDX + i * msg_size + 2] = (uint8)(range);
+
+        info_msg[MSG_DATA_IDX + i * msg_size + 3] = (uint8)(certainty * 100);
     }
 
+    info_msg[MSG_SIZE_IDX] = msg_size;
     info_msg[MSG_LEN_IDX] = length;
 
     dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS);
@@ -284,6 +323,7 @@ int transmit_info_run(char *id) {
         dwt_rxreset();
     }
 
+    update_certainty();
     deca_sleep(RNG_DELAY_MS);
 
     return (1);
