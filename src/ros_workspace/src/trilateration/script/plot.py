@@ -46,11 +46,11 @@ if __name__ == '__main__':
     with open("output.txt", "rb") as f:
         error = []
 
-        while line := f.readline():
-            if line == b'':
-                break
+        data = pickle.load(f)
 
-            embedding = pickle.loads(line)
+        for embedding in data:
+
+            print(embedding)
 
             # Rotate and translate the estimated position to fit the expected position
             rotation = find_rotation_matrix(expected.T, embedding.T)
@@ -71,11 +71,16 @@ if __name__ == '__main__':
             embedding = embedding + translation
 
             # Compute the mean square error between the expected position and the estimated position
-            error.append(np.mean((expected - embedding)**2))
+            mse = np.mean((expected - embedding)**2)
+
+            if mse < 10_000:
+                error.append(mse)
+
+        print(len(error))
 
         # Plot the error over time
-        plt.plot(error)
-        plt.xlabel('Time')
+        plt.plot(np.arange(len(error)) / 30, error)
+        plt.xlabel('Time (seconds)')
         plt.ylabel('Mean square error')
         plt.title('Error over time')
         plt.show()
