@@ -1,0 +1,15 @@
+<launch>
+    <node pkg="range_and_bearing" type="main_sensor.py" name="sensor_reading" output="screen" cwd="node"></node>
+    <node pkg="range_and_bearing" type="main_computation.py" name="direction_estimating" output="screen" cwd="node" args="$(arg r) $(arg n) $(arg beacons)"></node>
+</launch>
+
+<!-- <launch> -->
+<!--     <node pkg="compute" type="area.py" name="areaB" output="screen" cwd="node" args="$(arg b) $(arg n) $(arg beacons)"></node> -->
+<!--     <node pkg="compute" type="area.py" name="areaC" output="screen" cwd="node" args="$(arg c) $(arg n) $(arg beacons)"></node> -->
+<!--     <node pkg="compute" type="area.py" name="areaD" output="screen" cwd="node" args="$(arg d) $(arg n) $(arg beacons)"></node> -->
+<!--     <node pkg="compute" type="area.py" name="areaE" output="screen" cwd="node" args="$(arg e) $(arg n) $(arg beacons)"></node> -->
+<!-- </launch> -->
+
+
+<!--  Argument beacon give the ID of the agent being a beacon in the experiment -->
+<!--  roslaunch compute real_triangulation.launch n:="5" b:="B" c:="C" d:="D" e:="E" beacons:="Z" -->

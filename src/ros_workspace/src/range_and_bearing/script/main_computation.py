@@ -1,7 +1,5 @@
-
-
 #!/usr/bin/python3
-import math
+
 import pickle
 import sys
 
@@ -9,11 +7,11 @@ import numpy as np
 import rospy
 import matplotlib.pyplot as plt
 
-from morpho_msgs.msg import Direction, Angle, RangeAndBearing
-from tri_msgs.msg import Distances, Distance
+from range_and_bearing.msg import RangeAndBearing
+from trilateration.msg import Distances, Distance
 
 from utils import find_rotation_matrix
-from direction import find_direction_vector_from_position_history, range_and_bearing
+from sensor import find_direction_vector_from_position_history, range_and_bearing
 
 from sklearn.manifold import MDS
 import matplotlib
@@ -27,7 +25,7 @@ np.set_printoptions(linewidth=np.inf)
 matplotlib.use("Agg")
 pygame.init()
 
-fig = pylab.figure(figsize=[6, 6], dpi=100)
+fig = pylab.figure(figsize=[8, 8], dpi=100)
 ax = fig.gca()
 
 canvas = agg.FigureCanvasAgg(fig)
@@ -35,7 +33,7 @@ renderer = canvas.get_renderer()
 
 pygame.display.set_caption("Relative Trilateration of Swarm")
 
-window = pygame.display.set_mode((600, 600), DOUBLEBUF)
+window = pygame.display.set_mode((800, 800), DOUBLEBUF)
 screen = pygame.display.get_surface()
 
 clock = pygame.time.Clock()
@@ -195,7 +193,7 @@ def add_distance(robot_idx, data: Distance):
     if distance_matrix is None or last_update is None:
         raise ValueError("Distance matrix, certainty matrix and update table should be created at this point")
 
-    other_robot_idx = data.other_robot_id - ord('A')
+    other_robot_idx = data.other_robot_id - ord('B')
 
     x = robot_idx
     y = other_robot_idx
@@ -221,12 +219,12 @@ def callback(data, args):
     #       but also, when updated, choose the measurement with the least uncertainty
 
     if isinstance(data, Distance):
-        self_idx = args[0] - ord('A')
+        self_idx = args[0] - ord('B')
         last_update[self_idx] = 0  # TODO: not sure that it should be updated this way
 
         add_distance(self_idx, data)
     elif isinstance(data, Distances):
-        robot_idx = data.robot_id - ord('A')  # FIXME: Should start from 'B' since 'A' is the broadcast address
+        robot_idx = data.robot_id - ord('B')  # FIXME: Should start from 'B' since 'B' is the broadcast address
         last_update[robot_idx] = 0
 
         for robot in data.ranges:
@@ -274,13 +272,17 @@ def listener():
     ros_launch_param = sys.argv[1]
 
     # Parse arguments
-    self_id = ord(ros_launch_param[2])
+    self_id = ord(ros_launch_param)
     n_robots = int(sys.argv[2])
 
+    # TODO: add a parameter for the historic size
+
     if sys.argv[3] != "Z":
-        beacons = [ord(beacon) - ord("A") for beacon in sys.argv[3].split(",")]
+        beacons = [ord(beacon) - ord('B') for beacon in sys.argv[3].split(",")]
     else:
         beacons = None
+
+    print(beacons)
 
     create_matrix(n_robots)
 
@@ -289,9 +291,9 @@ def listener():
 
     rospy.init_node('listener', anonymous=True)
 
-    rospy.Subscriber(f'/{ros_launch_param}/distances', Distances, callback, (self_id,))
-    rospy.Subscriber(f'/{ros_launch_param}/distance', Distance, callback, (self_id,))
-    pub = rospy.Publisher(f'/{ros_launch_param}/range_and_bearing', RangeAndBearing, queue_size=10)
+    rospy.Subscriber(f'/distances', Distances, callback, (self_id,))
+    rospy.Subscriber(f'/distance', Distance, callback, (self_id,))
+    pub = rospy.Publisher(f'/range_and_bearing', RangeAndBearing, queue_size=10)
 
     data = []
     historic = []
@@ -305,9 +307,6 @@ def listener():
     )  # Current estimation of the positions
     position_estimation = np.copy(previous_estimation)
 
-    plot_converged = False
-    count = 0
-
     with open("output/output.txt", "wb") as f:
         crashed = False
         while not crashed:
@@ -319,28 +318,20 @@ def listener():
             measurement_uncertainty = compute_measurement_uncertainty(certainty_matrix)
             time_uncertainty = compute_time_uncertainty(iteration_rate, 15, 10)
 
-            update_plot(self_id - ord('A'), distance_matrix, previous_estimation, historic, measurement_uncertainty, time_uncertainty)
+            update_plot(self_id - ord('B'), distance_matrix, previous_estimation, historic, measurement_uncertainty, time_uncertainty)
 
             if modified:  # Only render and send message if data has changed
                 # Update the data in the plot
                 position_estimation = compute_positions(distance_matrix, previous_estimation, beacons=beacons)
 
-                # If new plot is close to the previous one, consider convergence
-                if count > 10:
-                    plot_converged = True
-                else:
-                    count += 1
-
-                historic.append(list(position_estimation[self_id - ord('A')]))
-                historic = historic[-20:]
+                historic.append(list(position_estimation[self_id - ord('B')]))
+                historic = historic[-5:]
 
                 modified = False
 
-                # If the plot has converged, start sending information to agent (start mission)
-                if plot_converged:
-                    # Compute direction of agent
-                    msg = compute_direction()
-                    pub.publish(msg)
+                # Compute direction of agent
+                msg = compute_direction()
+                pub.publish(msg)
 
             # Save the data for later stats
             if position_estimation is not None:
@@ -353,7 +344,7 @@ def listener():
             certainty_matrix = certainty_matrix * 0.99
 
             # Tick the update clock
-            clock.tick(10)  # Limit to 30 frames per second
+            clock.tick(3)  # Limit to 30 frames per second
 
         pickle.dump(data, f)
 

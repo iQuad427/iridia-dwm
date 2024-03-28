@@ -12,14 +12,12 @@ def add_noise(number: int):
 
 class FakeDWM:
     """
-
     B=====1m====C
-
-
-
-
+    |           |
+    |           |
+    1m          1m
+    |           |
     D=====1m====E
-
     """
     def __init__(self):
         self.counter = 0
