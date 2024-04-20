@@ -1,4 +1,4 @@
 <launch>
-    <node pkg="trilateration" type="sensor_read.py" name="sensor_reading_node" output="screen" cwd="node"></node>
-    <node pkg="trilateration" type="trilateration_computation.py" name="trilateration_computation_node" output="screen" cwd="node"></node>
+    <node pkg="trilateration" type="sensor_read.py" name="sensor_reading_node" output="screen" cwd="node" launch-prefix="$(arg venv)" ></node>
+    <node pkg="trilateration" type="trilateration_computation.py" name="trilateration_computation_node" output="screen" cwd="node" launch-prefix="$(arg venv)" ></node>
 </launch>
