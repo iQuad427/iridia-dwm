@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(trilateration)
+project(utils)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -50,8 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
    DIRECTORY msg
    FILES
-   Distance.msg
-   Distances.msg
+   Manage.msg
 )
 
 ## Generate services in the 'srv' folder

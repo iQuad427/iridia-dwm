@@ -4,7 +4,7 @@ import sys
 import serial
 import rospy
 import numpy as np
-from trilateration.msg import Distance, Distances, Manage
+from utils.msg import Manage
 
 
 class DWM:
@@ -56,7 +56,11 @@ def talker():
     except serial.SerialException as e:
         print("Failed!")
         print(e)
-        exit(1)
+
+        while not rospy.is_shutdown() and not stop:
+            pass
+
+        exit()
 
     with open(f"{output_dir}/{output_file}", "w+") as f:
         while not rospy.is_shutdown() and not stop:
