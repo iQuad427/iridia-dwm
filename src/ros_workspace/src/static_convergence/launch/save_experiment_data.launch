@@ -1,0 +1,15 @@
+
+<launch>
+    <arg name="venv" value="/home/quentin/Dev/argos3-ros-triangulation/venv/bin/python3" />
+
+    <arg name="input_dir" value="/home/quentin/Dev/iridia-dwm/src/ros_workspace/src/static_convergence/script/output/raw_data" />
+    <arg name="input_file" value="raw_data_robot_4_try_3_delay_0_batch_6" />
+    <arg name="simulation" value="False" />
+
+    <arg name="experiment_duration" default="60" />
+
+    <node pkg="ros_utils" type="experiment_manager.py" name="experiment_manager" output="screen" cwd="node" launch-prefix="$(arg venv)" args="$(arg experiment_duration)" ></node>
+
+    <!-- TODO: put sensor reading in another ROS package -->
+    <node pkg="static_convergence" type="sensor_measurements.py" name="sensor_measurements" output="screen" cwd="node" launch-prefix="$(arg venv)" args="$(arg simulation) $(arg input_dir) $(arg input_file)" ></node>
+</launch>

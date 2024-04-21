@@ -7,7 +7,7 @@ from typing import List
 
 import rospy
 
-from ros_utils.msg import Distances, Distance, Odometry, Statistics
+from ros_utils.msg import Distances, Distance, Odometry, Statistics, Manage
 
 
 @dataclasses.dataclass
@@ -37,20 +37,27 @@ ground_truth = Memory(
     positions=[
         Position(0, 0, 0),
         Position(1, 160, 0),
-        Position(2, 160, 160),
-        Position(3, 0, 160),
+        Position(2, 0, 160),
+        Position(3, 160, 160),
     ],
     timestamp=datetime.datetime.now()
 )
 
 iterate = False
-compute = True
+stop = False
+
+
+def callback(msg):
+    global stop
+
+    if msg.stop:
+        stop = True
 
 
 # Add handler for SIGINT
 def signal_handler(sig, frame):
-    global compute
-    compute = False
+    global stop
+    stop = False
 
 
 def positions_callback(positions, args):
@@ -97,12 +104,15 @@ def listener():
 
     rospy.init_node('statistics', anonymous=True)
 
+    # Subscribe to the manager command (to stop the node when needed)
+    rospy.Subscriber('manager_command', Manage, callback)
+
     # Listen to statistics ROS topic
     rospy.Subscriber(f'{agent_id}/positions', Statistics, positions_callback, (estimated_positions, "agent"))
 
     # Name of file is statistics_output_dd_mm_hh_mm.txt
     with open(f"{output_dir}/{output_file}", "w+") as f:
-        while compute:
+        while not stop:
             if iterate:
                 estimation = estimated_positions[-1]
 

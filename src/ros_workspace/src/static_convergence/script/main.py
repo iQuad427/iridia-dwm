@@ -8,7 +8,7 @@ import matplotlib
 import numpy as np
 import pygame
 import rospy
-from ros_utils.msg import Distances, Distance, Odometry, Statistics
+from ros_utils.msg import Distances, Distance, Odometry, Statistics, Manage
 from sklearn.manifold import MDS
 
 warnings.filterwarnings("ignore")
@@ -26,12 +26,19 @@ running = False
 stop = False
 
 
+def callback(msg):
+    global stop
+
+    if msg.stop:
+        stop = True
+
+
 def signal_handler(sig, frame):
     global stop
     stop = True
 
 
-def compute_positions(distances, certainties, ref_plot, beacons=None):
+def compute_positions(distances, certainties, ref_plot, beacons=None, seed=42):
     if distances is not None:
         # Update the data in the plot
         # Make sure the matrix is symmetric
@@ -39,49 +46,34 @@ def compute_positions(distances, certainties, ref_plot, beacons=None):
         matrix_certainty = (certainties + certainties.T)
 
         # Use sklearn MDS to reduce the dimensionality of the matrix
-        mds = MDS(n_components=2, dissimilarity='precomputed', normalized_stress=False, metric=True, random_state=42)
+        mds = MDS(n_components=2, dissimilarity='precomputed', normalized_stress=False, metric=True, random_state=seed)
 
-        if ref_plot is None or ref_plot[(0, 0)] == .0:
-            embedding = mds.fit_transform(matrix)
+        offset = False
+        certainty = True
+        init = False
+
+        if offset:
+            # Remove 20 to all values
+            matrix = matrix - 20
+
+            # 0 on the diagonal
+            np.fill_diagonal(matrix, 0)
+
+            # Negative values to 0
+            matrix = np.where(matrix < 0, 0, matrix)
+
+        weights = matrix_certainty if certainty else None
+
+        if init:
+            if not init or ref_plot is None or ref_plot[(0, 0)] == .0:
+                embedding = mds.fit_transform(matrix, weight=weights)
+            else:
+                try:
+                    embedding = mds.fit_transform(matrix, weight=weights, init=ref_plot)
+                except:
+                    embedding = mds.fit_transform(matrix, weight=weights)
         else:
-            try:
-                embedding = mds.fit_transform(matrix, init=ref_plot)
-            except:
-                embedding = mds.fit_transform(matrix)
-
-        # if ref_plot is None or ref_plot[(0, 0)] == .0:
-        #     embedding = mds.fit_transform(matrix, weight=matrix_certainty)
-        # else:
-        #     try:
-        #         embedding = mds.fit_transform(matrix, weight=matrix_certainty, init=ref_plot)
-        #     except:
-        #         embedding = mds.fit_transform(matrix, weight=matrix_certainty)
-
-        # # Rotate dots to match previous plot
-        # if ref_plot is not None:
-        #     if beacons is None or len(beacons) < 2:
-        #         rotation = find_rotation_matrix(ref_plot.T, embedding.T)
-        #     else:
-        #         rotation = find_rotation_matrix(ref_plot[beacons].T, embedding[beacons].T)
-        #
-        #     # Apply the rotation
-        #     embedding = embedding @ rotation
-        #
-        #     if beacons is None:
-        #         # First, find the centroid of the original points
-        #         previous_centroid = np.mean(ref_plot, axis=0)
-        #         # Then, find the centroid of the MDS points
-        #         current_centroid = np.mean(embedding, axis=0)
-        #     else:
-        #         # TODO: beacons should be the list of IDs of the beacons (therefore, need to modify code)
-        #         previous_centroid = np.mean(ref_plot[beacons], axis=0)
-        #         current_centroid = np.mean(embedding[beacons], axis=0)
-        #
-        #     # Find the translation vector
-        #     translation = previous_centroid - current_centroid
-        #
-        #     # Translate the MDS points
-        #     embedding = embedding + translation
+            embedding = mds.fit_transform(matrix, weight=weights)
 
         return embedding
 
@@ -111,7 +103,7 @@ def add_distance(robot_idx, data: Distance):
         certainty_matrix[x, y] = data.certainty
 
 
-def callback(data, args):
+def sensor_callback(data, args):
     global running
 
     running = True
@@ -154,7 +146,9 @@ def listener():
     self_idx = ord(agent_id[2])
     n_robots = int(sys.argv[2])
 
-    if sys.argv[3] != "Z":
+    random_seed = int(sys.argv[3])
+
+    if sys.argv[4] != "Z":
         beacons = [ord(beacon) - ord('B') for beacon in sys.argv[3].split(",")]
     else:
         beacons = None
@@ -165,10 +159,12 @@ def listener():
         raise ValueError(
             "Distance matrix should exist at this point, ensure that you called create_matrix() beforehand")
 
-    rospy.init_node('listener', anonymous=True)
+    rospy.init_node('main', anonymous=True)
 
-    rospy.Subscriber(f'sensor_read', Distances, callback, (self_idx,))
+    # Subscribe to the manager command (to stop the node when needed)
+    rospy.Subscriber('manager_command', Manage, callback)
 
+    rospy.Subscriber(f'sensor_read', Distances, sensor_callback, (self_idx,))
     statistics_pub = rospy.Publisher(f'/{agent_id}/positions', Statistics, queue_size=10)
 
     # Save previous values
@@ -177,7 +173,8 @@ def listener():
         (distance_matrix + distance_matrix.T),
         certainty_matrix,
         previous_estimation,
-        beacons=beacons
+        beacons=beacons,
+        seed=random_seed
     )  # Current estimation of the positions
 
     iteration_rate = 30
@@ -196,7 +193,13 @@ def listener():
         new_dm = distance_matrix + distance_matrix.T
 
         # Update the data in the plot
-        position_estimation = compute_positions(new_dm, certainty_matrix, previous_estimation, beacons=beacons)
+        position_estimation = compute_positions(
+            new_dm,
+            certainty_matrix,
+            previous_estimation,
+            beacons=beacons,
+            seed=random_seed
+        )
 
         # Save current estimation
         previous_estimation = np.copy(position_estimation)

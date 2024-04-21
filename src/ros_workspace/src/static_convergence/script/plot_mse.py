@@ -98,74 +98,83 @@ if __name__ == '__main__':
     # Seed 5 : 172
 
     limit = 300
-    flip_test = False
-    file_directory = f"../output/experiments/static"
+    flip_test = True
+    file_directory = f"./output/convergence"
 
-    for error in [0.1, 0.3]:
-        for drop in tqdm([0.00, 0.50, 0.90, 0.95, 0.96, 0.97, 0.98, 0.985, 0.99]):
-            # Plot the Mean Square Error of the positions
-            mean_square_error = []
-            time = np.arange(0, limit) / 5
+    time = np.arange(0, limit) / 5
 
-            # Read the file
-            for batch in range(1, 6):
-                file_name = f"drop_{drop:0.2f}_err_{error}_batch_{batch}" if len(str(drop)) <= len(f"{drop:0.2f}") else f"drop_{drop:0.3f}_err_0.1_speed_30_batch_{batch}"
+    last_estimation = None
+    last_simulation = None
 
-                try:
-                    file_reader = FileReader(f"{file_directory}/{file_name}")
-                except:
-                    continue
+    for experiment in [
+        "simple_mds",
+        "init_mds",
+        "certainty_mds",
+        "offset_simple_mds",
+        "offset_init_mds",
+        "offset_certainty_mds",
+    ]:
+        directory = f"{file_directory}/{experiment}"
 
-                mses = []
+        mean_square_error = []
 
-                # print("[0] File :", file_reader.file_path)
-                # print("[0] File name :", file_reader.file_name)
+        # Read the file
+        for batch in range(1, 6):
+            file_name = f"static_convergence_seed_42_robot_4_try_3_delay_0_batch_{batch}"
 
-                for est, sim in file_reader.make_numpy():
-                    mse = np.mean(np.square(est - sim))
-
-                    if flip_test:
-                        # Create a third array that is est with all Y values flipped
-                        flipped_estimation = np.array([[position[0], -position[1]] for position in est])
-
-                        # Rotate and translate the flipped estimation
-                        flipped_estimation = rotate_and_translate(sim, flipped_estimation)
-
-                        # Compare the flipped MSE
-                        flipped_mse = np.mean(np.square(flipped_estimation - sim))
-                        mse = min(mse, flipped_mse)
-
-                    mses.append(mse)
-
-                # If MSEs is shorter than limit, add last value to fill up
-                while len(mses) < limit:
-                    mses = mses + [mses[-1]]
-
-                mses = mses[:limit]
-
-                mean_square_error.append(mses)
-
-            if not mean_square_error:
+            try:
+                file_reader = FileReader(f"{directory}/{file_name}")
+            except:
                 continue
 
-            # Average the result for each time_step
-            mean_square_error = np.mean(np.array(mean_square_error), axis=0)
+            mses = []
 
-            # Plot the Mean Square Error
-            label = f"Drop rate: {drop:0.2f}" if len(str(drop)) <= len(f"{drop:0.2f}") else f"Drop rate: {drop:0.3f}"
-            label_err = f", err: {error}"
-            plt.plot(time, mean_square_error[:limit], label=label+label_err)
+            print("[0] File :", file_reader.file_path)
+            print("[0] File name :", file_reader.file_name)
 
-            # Plot red dots where mean square error is zero
-            # for i, mse in enumerate(mean_square_error):
-            #     if mse == 0:
-            #         plt.scatter(file_reader.time[i], 0, c='r')
+            for est, sim in file_reader.make_numpy():
+                mse = np.mean(np.square(est - sim))
+
+                if flip_test:
+                    # Create a third array that is est with all Y values flipped
+                    flipped_estimation = np.array([[position[0], -position[1]] for position in est])
+
+                    # Rotate and translate the flipped estimation
+                    flipped_estimation = rotate_and_translate(sim, flipped_estimation)
+
+                    # Compare the flipped MSE
+                    flipped_mse = np.mean(np.square(flipped_estimation - sim))
+                    mse = min(mse, flipped_mse)
+
+                mses.append(mse)
+
+                last_estimation = est
+                last_simulation = sim
+
+            # If MSEs is shorter than limit, add last value to fill up
+            while len(mses) < limit:
+                mses = mses + [mses[-1]]
+
+            mses = mses[:limit]
+
+            # plt.plot(time, mses[:limit], label=f"Batch {batch}")
+
+            mean_square_error.append(mses)
+
+        if not mean_square_error:
+            raise ValueError("Nothing to plot")
+
+        # Average the result for each time_step
+        mean_square_error = np.mean(np.array(mean_square_error), axis=0)
+
+        # Plot the Mean Square Error
+        plt.plot(time, mean_square_error[:limit], label=experiment)
 
     # Axis labels
     plt.xlabel("Time (s)")
     plt.ylabel("Mean Square Error (cm²)")
 
-    plt.title(f"MSE of Positions: {file_directory.split('/')[-2]}, {file_directory.split('/')[-1]}" + ", no_invert" if flip_test else "")
+    plt.title(f"MSE of Positions")
     plt.legend()
-    plt.savefig(f"../output/mse_drop_{file_directory.split('/')[-1]}" + "_no_invert" if flip_test else "" + ".png", dpi=300)
+    plt.savefig(f"./output/mse_static_{file_directory.split('/')[-1]}" + ".png", dpi=300)
     plt.show()
