@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>utils</name>
+  <name>static_convergence</name>
   <version>0.0.0</version>
-  <description>utils package</description>
+  <description>The trilateration package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

@@ -114,13 +114,14 @@ def talker():
 
                     msg.ranges.append(data)
                 except ValueError:
-                    break
+                    faulty_frame = True
 
             # print(msg)
 
             if not faulty_frame:
                 # print("publishing")
                 pub.publish(msg)
+                faulty_frame = False
 
 
 if __name__ == '__main__':
