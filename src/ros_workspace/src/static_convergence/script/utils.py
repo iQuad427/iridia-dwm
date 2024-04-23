@@ -32,7 +32,8 @@ def find_rotation_matrix(X, Y, flipped=False):
     R = Vt.T @ U.T
 
     # special reflection case
-    if np.linalg.det(R) < 0 and flipped:
+    if flipped and np.linalg.det(R) < 0:
+        print("Reflection detected")
         Vt[:, 1] *= -1
         R = Vt.T @ U.T
 

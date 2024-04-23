@@ -21,8 +21,12 @@
     <arg name="b" default="fbB" />
     <arg name="beacons" default="Z" />
 
+    <arg name="init" default="False" />
+    <arg name="offset" default="False" />
+    <arg name="certainty" default="False" />
+
     <!-- fbB computation and statistics -->
-    <node pkg="static_convergence" type="main.py" name="main" output="screen" cwd="node" args="$(arg b) $(arg n) $(arg random_seed) $(arg beacons)" launch-prefix="$(arg venv)"></node>
+    <node pkg="static_convergence" type="main.py" name="main" output="screen" cwd="node" args="$(arg b) $(arg n) $(arg random_seed) $(arg init) $(arg offset) $(arg certainty) $(arg beacons)" launch-prefix="$(arg venv)"></node>
     <node pkg="static_convergence" type="statistics.py" name="statistics" output="screen" cwd="node" args="$(arg output_dir) $(arg output_file) $(arg n) $(arg b)" launch-prefix="$(arg venv)" ></node>
 
 </launch>

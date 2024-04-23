@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import dataclasses
 import signal
 import sys
 import warnings
@@ -38,7 +39,18 @@ def signal_handler(sig, frame):
     stop = True
 
 
-def compute_positions(distances, certainties, ref_plot, beacons=None, seed=42):
+@dataclasses.dataclass
+class Config:
+    random_seed: int
+    init: bool
+    offset: bool
+    certainty: bool
+
+    def __repr__(self):
+        return f"Config(random_seed={self.random_seed}, init={self.init}, offset={self.offset}, certainty={self.certainty})"
+
+
+def compute_positions(distances, certainties, ref_plot, beacons=None, config=None):
     if distances is not None:
         # Update the data in the plot
         # Make sure the matrix is symmetric
@@ -46,13 +58,15 @@ def compute_positions(distances, certainties, ref_plot, beacons=None, seed=42):
         matrix_certainty = (certainties + certainties.T)
 
         # Use sklearn MDS to reduce the dimensionality of the matrix
-        mds = MDS(n_components=2, dissimilarity='precomputed', normalized_stress=False, metric=True, random_state=seed)
+        mds = MDS(
+            n_components=2,
+            dissimilarity='precomputed',
+            normalized_stress=False,
+            metric=True,
+            random_state=config.random_seed
+        )
 
-        offset = False
-        certainty = True
-        init = False
-
-        if offset:
+        if config.offset:
             # Remove 20 to all values
             matrix = matrix - 20
 
@@ -62,10 +76,14 @@ def compute_positions(distances, certainties, ref_plot, beacons=None, seed=42):
             # Negative values to 0
             matrix = np.where(matrix < 0, 0, matrix)
 
-        weights = matrix_certainty if certainty else None
+        # print("Offset applied") if config.offset else print("No offset applied")
 
-        if init:
-            if not init or ref_plot is None or ref_plot[(0, 0)] == .0:
+        weights = matrix_certainty if config.certainty else None
+        # print(f"Using weights") if config.certainty else print(f"Not using weights")
+
+        if config.init:
+            # print("Initialized MDS")
+            if ref_plot is None or ref_plot[(0, 0)] == .0:
                 embedding = mds.fit_transform(matrix, weight=weights)
             else:
                 try:
@@ -73,6 +91,7 @@ def compute_positions(distances, certainties, ref_plot, beacons=None, seed=42):
                 except:
                     embedding = mds.fit_transform(matrix, weight=weights)
         else:
+            # print("Not initialized MDS")
             embedding = mds.fit_transform(matrix, weight=weights)
 
         return embedding
@@ -141,14 +160,22 @@ def listener():
 
     # Parse arguments
     agent_id = sys.argv[1]
+    self_idx = ord(agent_id[2])
 
     # Parse arguments
-    self_idx = ord(agent_id[2])
     n_robots = int(sys.argv[2])
 
-    random_seed = int(sys.argv[3])
+    config = Config(
+        random_seed=int(sys.argv[3]),
+        init=True if sys.argv[4] == "True" else False,
+        offset=True if sys.argv[5] == "True" else False,
+        certainty=True if sys.argv[6] == "True" else False,
+    )
 
-    if sys.argv[4] != "Z":
+    print("Running with the following configuration:")
+    print(config)
+
+    if sys.argv[7] != "Z":
         beacons = [ord(beacon) - ord('B') for beacon in sys.argv[3].split(",")]
     else:
         beacons = None
@@ -174,7 +201,7 @@ def listener():
         certainty_matrix,
         previous_estimation,
         beacons=beacons,
-        seed=random_seed
+        config=config
     )  # Current estimation of the positions
 
     iteration_rate = 30
@@ -198,7 +225,7 @@ def listener():
             certainty_matrix,
             previous_estimation,
             beacons=beacons,
-            seed=random_seed
+            config=config
         )
 
         # Save current estimation
