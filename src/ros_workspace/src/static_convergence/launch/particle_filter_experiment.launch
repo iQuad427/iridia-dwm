@@ -1,0 +1,39 @@
+
+<launch>
+    <arg name="venv" value="/home/quentin/Dev/argos3-ros-triangulation/venv/bin/python3" />
+
+    <arg name="input_dir" default="/home/quentin/Dev/iridia-dwm/src/ros_workspace/src/static_convergence/script/output/raw_data" />
+    <arg name="input_file" default="raw_data_robot_4_try_3_delay_0_batch_1" />
+    <arg name="simulation" value="True" />
+
+    <arg name="output_dir" default="/home/quentin/Dev/iridia-dwm/src/ros_workspace/src/static_convergence/script/output/convergence/particle_filter" />
+    <arg name="output_file" default="static_convergence_seed_42_robot_4_try_3_delay_0_batch_1" />
+
+    <arg name="experiment_duration" default="60" />
+    <arg name="random_seed" default="42" />
+
+    <node pkg="ros_utils" type="experiment_manager.py" name="experiment_manager" output="screen" cwd="node" launch-prefix="$(arg venv)" args="$(arg experiment_duration)" ></node>
+
+    <!-- TODO: put sensor reading in another ROS package -->
+    <node pkg="module_utils" type="sensor_measurements.py" name="sensor_measurements" output="screen" cwd="node" launch-prefix="$(arg venv)" args="$(arg simulation) $(arg input_dir) $(arg input_file)" ></node>
+
+    <arg name="n" default="4" />
+    <arg name="b" default="fbB" />
+    <arg name="beacons" default="Z" />
+
+    <!-- Experiment -->
+    <arg name="init" default="False" />
+    <arg name="offset" default="False" />
+    <arg name="certainty" default="False" />
+
+    <!-- Particle Filter -->
+    <arg name="n_particles" default="5000" />
+    <arg name="agents_speed" default="30" />
+    <arg name="sensor_std_err" default="10" />
+    <arg name="dt" default="0.1" />
+
+    <!-- fbB computation and statistics -->
+    <node pkg="static_convergence" type="particle.py" name="particle" output="screen" cwd="node" args="$(arg b) $(arg n) $(arg random_seed) $(arg init) $(arg offset) $(arg certainty) $(arg n_particles) $(arg agents_speed) $(arg sensor_std_err) $(arg dt)" launch-prefix="$(arg venv)"></node>
+    <node pkg="static_convergence" type="statistics.py" name="statistics" output="screen" cwd="node" args="$(arg output_dir) $(arg output_file) $(arg n) $(arg b)" launch-prefix="$(arg venv)" ></node>
+
+</launch>

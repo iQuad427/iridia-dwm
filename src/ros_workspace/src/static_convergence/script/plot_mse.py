@@ -1,5 +1,6 @@
 import dataclasses
 import datetime
+from pathlib import Path
 from typing import List
 
 import numpy as np
@@ -40,6 +41,7 @@ class FileReader:
 
     And allow for doing some operations on it.
     """
+
     def __init__(self, file_path):
         self.file_path = file_path
         self.file_name = file_path.split("/")[-1]
@@ -96,7 +98,7 @@ if __name__ == '__main__':
     # Seed 5 : 172
 
     limit = 300
-    flip_test = False
+    flip_test = True
     file_directory = f"./output/total"
 
     time = np.arange(0, limit) / 5
@@ -106,26 +108,49 @@ if __name__ == '__main__':
 
     # List of all combination of three False/True combinations
     experiments = []
-    experiments_names = []
+    # for i in [False, True]:
+    #     for j in [False, True]:
+    #         for k in [False, True]:
+    #             output_dir = f"static_convergence_mds"
+    #             output_dir += f"_init" if i else ""
+    #             output_dir += f"_offset" if j else ""
+    #             output_dir += f"_certainty" if k else ""
+    #
+    #             experiments.append(output_dir)
+
     for i in [False, True]:
         for j in [False, True]:
             for k in [False, True]:
-                output_dir = f"static_convergence"
+                output_dir = f"static_convergence_pf"
                 output_dir += f"_init" if i else ""
                 output_dir += f"_offset" if j else ""
                 output_dir += f"_certainty" if k else ""
 
                 experiments.append(output_dir)
 
+    # experiments = [
+    #     "static_convergence_pf_init_offset"
+    # ]
+
+    print(experiments)
+
     for experiment in experiments:
         directory = f"{file_directory}/{experiment}"
 
+        path = Path(directory)
+        if not path.is_dir():
+            continue
+
         mean_square_error = []
-        flipped_mean_square_error = []
 
         # Read the file
         for batch in range(1, 6):
-            file_name = f"seed_42_robot_4_try_3_delay_0_batch_{batch}"
+            if "_mds" in directory:
+                file_name = f"seed_42_robot_4_try_3_delay_0_batch_{batch}"
+            elif "_pf" in directory:
+                file_name = f"seed_124_robot_4_try_3_delay_0_particle_10000_dt_0.1_err_15_batch_{batch}"
+            else:
+                raise ValueError("Directory name doesn't match expectations")
 
             try:
                 file_reader = FileReader(f"{directory}/{file_name}")
@@ -134,58 +159,55 @@ if __name__ == '__main__':
                 continue
 
             mses = []
-            flipped_mses = []
+            flips = []
 
             print("[0] File :", file_reader.file_path)
             print("[0] File name :", file_reader.file_name)
 
             for est, sim in file_reader.make_numpy():
-                normal_estimation = rotate_and_translate(sim, est, flipped=False)
-                mse = np.mean(np.square(normal_estimation - sim))
+                est, flip = rotate_and_translate(sim, est)
+                mse = np.mean(np.square(est - sim))
 
-                # if flip_test:
-                #     # Rotate and translate the flipped estimation
-                #     flipped_estimation = rotate_and_translate(sim, est, flipped=True)
-                #
-                #     # Compare the flipped MSE
-                #     flipped_mse = np.mean(np.square(flipped_estimation - sim))
-                #     flipped_mses.append(flipped_mse)
-                #
-                #     mse = min(mse, flipped_mse)
-
-                # Rotate and translate the flipped estimation
-                flipped_estimation = rotate_and_translate(sim, est, flipped=True)
-                flipped_mse = np.mean(np.square(flipped_estimation - sim))
+                # if batch == 4:
+                #     last_estimation = est
+                #     last_simulation = sim
 
                 mses.append(mse)
-                flipped_mses.append(flipped_mse)
+                flips.append(flip)
 
             # If MSEs is shorter than limit, add last value to fill up
             while len(mses) < limit:
                 mses = mses + [mses[-1]]
 
-            while len(flipped_mses) < limit:
-                flipped_mses = flipped_mses + [flipped_mses[-1]]
-
             mses = mses[:limit]
-            flipped_mses = flipped_mses[:limit]
+            flips = flips[:limit]
 
-            # plt.plot(time, mses[:limit], label=f"Batch {batch}")
-            # plt.plot(time, flipped_mses[:limit], label=f"Batch {batch} Flipped", linestyle="--")
+            flips = np.array(flips)
+
+            filtered_time = [time[i] for i in range(len(flips)) if flips[i]]
+            filtered_mses = [mses[i] for i in range(len(flips)) if flips[i]]
+
+            # plt.plot(time, mses[:limit], label=f"Batch {batch}", alpha=0.5)
+            # plt.scatter(filtered_time, filtered_mses, c="r", s=1)
 
             mean_square_error.append(mses)
-            flipped_mean_square_error.append(flipped_mses)
 
-        if not mean_square_error or not flipped_mean_square_error:
+        if not mean_square_error:  # or not flipped_mean_square_error:
             raise ValueError("Nothing to plot")
 
         # Average the result for each time_step
         mean_square_error = np.mean(np.array(mean_square_error), axis=0)
-        flipped_mean_square_error = np.mean(np.array(flipped_mean_square_error), axis=0)
 
         # Plot the Mean Square Error
         plt.plot(time, mean_square_error[:limit], label=experiment)
-        plt.plot(time, flipped_mean_square_error[:limit], label=f"{experiment} Flipped", linestyle="--")
+
+    # plt.scatter(last_estimation[:, 0], last_estimation[:, 1], c="r")
+    # for i, p in enumerate(last_estimation):
+    #     plt.text(p[0], p[1], i, c="r")
+    #
+    # plt.scatter(last_simulation[:, 0], last_simulation[:, 1], c="b")
+    # for i, p in enumerate(last_simulation):
+    #     plt.text(p[0], p[1], i, c="b")
 
     # Axis labels
     plt.xlabel("Time (s)")

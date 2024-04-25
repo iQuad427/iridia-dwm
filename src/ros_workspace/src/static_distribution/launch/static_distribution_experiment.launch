@@ -6,5 +6,5 @@
     <arg name="experiment_duration" default="10" />
 
     <node pkg="utils" type="experiment_manager.py" name="experiment_manager" output="screen" cwd="node" launch-prefix="$(arg venv)" args="$(arg experiment_duration)" ></node>
-    <node pkg="static_distribution" type="sensor_measurements.py" name="sensor_measurements" output="screen" cwd="node" launch-prefix="$(arg venv)" args="$(arg output_dir) $(arg output_file)" ></node>
+    <node pkg="module_utils" type="sensor_measurements.py" name="sensor_measurements" output="screen" cwd="node" launch-prefix="$(arg venv)" args="$(arg output_dir) $(arg output_file)" ></node>
 </launch>
