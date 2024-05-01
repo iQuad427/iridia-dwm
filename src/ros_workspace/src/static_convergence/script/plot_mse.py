@@ -97,42 +97,49 @@ if __name__ == '__main__':
     # Seed 4 : 097
     # Seed 5 : 172
 
-    limit = 300
+    limit = 200  # 300 => 60 seconds
     flip_test = True
     file_directory = f"./output/total"
+
+    mds = False
+    pf = True
+
+    plot_grid = False
 
     time = np.arange(0, limit) / 5
 
     last_estimation = None
     last_simulation = None
 
+    plt.figure(figsize=(10, 5))
+
     # List of all combination of three False/True combinations
     experiments = []
-    # for i in [False, True]:
-    #     for j in [False, True]:
-    #         for k in [False, True]:
-    #             output_dir = f"static_convergence_mds"
-    #             output_dir += f"_init" if i else ""
-    #             output_dir += f"_offset" if j else ""
-    #             output_dir += f"_certainty" if k else ""
-    #
-    #             experiments.append(output_dir)
+    if mds:
+        for i in [False, True]:
+            for j in [False, True]:
+                for k in [False, True]:
+                    output_dir = f"static_convergence_mds"
+                    output_dir += f"_init" if i else ""
+                    output_dir += f"_offset" if j else ""
+                    output_dir += f"_certainty" if k else ""
 
-    for i in [False, True]:
-        for j in [False, True]:
-            for k in [False, True]:
-                output_dir = f"static_convergence_pf"
-                output_dir += f"_init" if i else ""
-                output_dir += f"_offset" if j else ""
-                output_dir += f"_certainty" if k else ""
+                    experiments.append(output_dir)
 
-                experiments.append(output_dir)
+    if pf:
+        for i in [False, True]:
+            for j in [False, True]:
+                for k in [False, True]:
+                    output_dir = f"static_convergence_pf"
+                    output_dir += f"_init" if i else ""
+                    output_dir += f"_offset" if j else ""
+                    output_dir += f"_certainty" if k else ""
+
+                    experiments.append(output_dir)
 
     # experiments = [
-    #     "static_convergence_pf_init_offset"
+    #     "static_convergence_mds",
     # ]
-
-    print(experiments)
 
     for experiment in experiments:
         directory = f"{file_directory}/{experiment}"
@@ -148,7 +155,7 @@ if __name__ == '__main__':
             if "_mds" in directory:
                 file_name = f"seed_42_robot_4_try_3_delay_0_batch_{batch}"
             elif "_pf" in directory:
-                file_name = f"seed_124_robot_4_try_3_delay_0_particle_10000_dt_0.1_err_15_batch_{batch}"
+                file_name = f"seed_42_robot_4_try_3_delay_0_particle_5000_dt_0.1_err_15_batch_{batch}"
             else:
                 raise ValueError("Directory name doesn't match expectations")
 
@@ -168,9 +175,9 @@ if __name__ == '__main__':
                 est, flip = rotate_and_translate(sim, est)
                 mse = np.mean(np.square(est - sim))
 
-                # if batch == 4:
-                #     last_estimation = est
-                #     last_simulation = sim
+                if batch == 5:
+                    last_estimation = est
+                    last_simulation = sim
 
                 mses.append(mse)
                 flips.append(flip)
@@ -187,7 +194,7 @@ if __name__ == '__main__':
             filtered_time = [time[i] for i in range(len(flips)) if flips[i]]
             filtered_mses = [mses[i] for i in range(len(flips)) if flips[i]]
 
-            # plt.plot(time, mses[:limit], label=f"Batch {batch}", alpha=0.5)
+            # plt.plot(time, mses[:limit], label=f"Batch {batch}: {len(filtered_time)}/{len(flips)}", alpha=0.5)
             # plt.scatter(filtered_time, filtered_mses, c="r", s=1)
 
             mean_square_error.append(mses)
@@ -199,21 +206,39 @@ if __name__ == '__main__':
         mean_square_error = np.mean(np.array(mean_square_error), axis=0)
 
         # Plot the Mean Square Error
-        plt.plot(time, mean_square_error[:limit], label=experiment)
+        label = ", ".join(experiment.split("_")[2:])
+        plt.plot(time, mean_square_error[:limit], label=label)
 
-    # plt.scatter(last_estimation[:, 0], last_estimation[:, 1], c="r")
-    # for i, p in enumerate(last_estimation):
-    #     plt.text(p[0], p[1], i, c="r")
-    #
-    # plt.scatter(last_simulation[:, 0], last_simulation[:, 1], c="b")
-    # for i, p in enumerate(last_simulation):
-    #     plt.text(p[0], p[1], i, c="b")
+    # Plot a grid under the plot
+    if plot_grid:
+        plt.grid(True)
 
-    # Axis labels
-    plt.xlabel("Time (s)")
-    plt.ylabel("Mean Square Error (cm²)")
+        plt.scatter(last_estimation[:, 0], last_estimation[:, 1], c="r", label="Estimation")
+        for i, p in enumerate(last_estimation):
+            plt.text(p[0] + 1, p[1] + 1, i, c="r")
 
-    plt.title(f"MSE of Positions")
-    plt.legend()
-    plt.savefig(f"./output/mse_static_{file_directory.split('/')[-1]}" + ".png", dpi=300)
+        plt.scatter(last_simulation[:, 0], last_simulation[:, 1], c="b", label="Reality")
+        for i, p in enumerate(last_simulation):
+            plt.text(p[0] + 1, p[1] + 1, i, c="b")
+
+        # Axis labels
+        plt.xlabel("X-axis (cm)")
+        plt.ylabel("Y-axis (cm)")
+
+        # Equal ratio
+        plt.axis('equal')
+
+        plt.title(f"Wrongly Estimated Positions (4 Static Agents, MDS)")
+        plt.legend()
+        plt.savefig(f"./output/mse_static_positions" + ".png", dpi=300)
+    else:
+        # Axis labels
+        plt.xlabel("Time (s)")
+        plt.ylabel("Mean Square Error (cm²)")
+        plt.title(f"MSE of Positions (4 Static Agents, Particle Filter, 5000 Particles)")
+        # plt.title(f"MSE of Positions (4 Static Agents, MDS)")
+        plt.legend()
+        plt.savefig(f"./output/mse_static_{file_directory.split('/')[-1]}" + ".png", dpi=300)
+        # plt.savefig(f"./output/mse_static_pf_5000_particles_seed_42.png", dpi=300)
+
     plt.show()

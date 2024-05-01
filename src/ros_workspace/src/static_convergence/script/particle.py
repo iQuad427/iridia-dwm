@@ -193,9 +193,9 @@ def listener():
         config.n_particles,
         initial_poses=[
             [0, 0, 0],
-            [160, 0, 0],
-            [0, 160, 0],
-            [160, 160, 0]
+            [30, 0, 0],
+            [0, 30, 0],
+            [30, 30, 0]
         ] if config.init else None
     )
 

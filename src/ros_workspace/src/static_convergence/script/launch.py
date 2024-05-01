@@ -13,12 +13,12 @@ def run_command(command):
 def main():
     input_directory = "/home/quentin/Dev/iridia-dwm/src/ros_workspace/src/static_convergence/script/output/raw_data"
     output_directory = "/home/quentin/Dev/iridia-dwm/src/ros_workspace/src/static_convergence/script/output/total"
-    seed = 124
+    seed = 42
 
     mds = False
     pf = True
 
-    n_particles = 10000
+    n_particles = 5000
     agents_speed = 0
     sensor_std_err = 15
     dt = 0.1
